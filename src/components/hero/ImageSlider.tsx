@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import img from '/public/imgs/hero/1.jpg';
@@ -36,7 +37,7 @@ const ImageSlider = () => {
       hasTrack={false}
       options={options}
       tag='section'
-      className='h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[#0000008e]'
+      className='h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[rgba(0,0,0,0.7)]'
     >
       <SplideTrack className='h-full'>
         {images.map(({ title, image }) => {

@@ -1,22 +1,22 @@
-export const navLinks = [
+export const routes = [
   {
     name: 'About',
-    path: '/about',
+    href: '/about',
   },
   {
     name: 'Vehicles',
-    path: '/vehicles',
+    href: '/vehicles',
   },
   {
     name: 'After Sales',
-    path: '/after-sales',
+    href: '/after-sales',
   },
   {
     name: 'Blog',
-    path: '/blog',
+    href: '/blog',
   },
   {
     name: 'Contact',
-    path: '/contact',
+    href: '/contact',
   },
 ];

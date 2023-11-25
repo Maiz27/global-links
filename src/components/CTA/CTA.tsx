@@ -5,6 +5,7 @@ type props = {
   onClick?: () => void;
   isBtn?: boolean;
   path?: string;
+  btnSize?: 'xs' | 'sm' | 'md' | 'lg';
   btnType?: 'button' | 'submit' | 'reset' | undefined;
   isOutline?: boolean;
   bg?: 'primary' | 'secondary' | 'accent' | 'ghost';
@@ -19,10 +20,11 @@ const CTA = ({
   isBtn = false,
   isOutline = false,
   bg = 'primary',
+  btnSize = 'md',
   textColor,
 }: props) => {
-  const className = `btn transition-transform hover:scale-105 active:scale-95 ${
-    isOutline ? 'btn-outline' : `btn-${bg}`
+  const className = `btn transition-transform hover:scale-105 active:scale-95 pointer-events-auto btn-${btnSize} ${
+    isOutline ? `btn-outline btn-${bg}` : `btn-${bg}`
   } ${textColor && `text-${textColor}`}`;
   return (
     <div className='z-10'>
