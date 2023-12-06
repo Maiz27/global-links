@@ -1,16 +1,26 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Dispatch, SetStateAction, useState } from 'react';
-import SectionHeading from '../sectionHeading/SectionHeading';
-import { TabCategories } from '@/constants';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import SectionHeading from '@/components/sectionHeading/SectionHeading';
+import VehicleSlider from './VehicleSlider';
+import { TabCategories, vehicles } from '@/constants';
 
 const VehicleTabs = () => {
   const [selected, setSelected] = useState(0);
+  const [list, setList] = useState<typeof vehicles>(vehicles);
+
+  useEffect(() => {
+    const selectedCategory = TabCategories[selected];
+    const filteredList = vehicles.filter(
+      (vehicle) => vehicle.category === selectedCategory
+    );
+    setList(filteredList);
+  }, [selected]);
 
   return (
     <section className='my-20'>
       <SectionHeading Tag='h2' text='Explore Vehicles' isCentered={true} />
-      <div className='mx-auto max-w-5xl mt-4'>
+      <div className='flex flex-col items-center mt-4'>
         <Tabs selected={selected} setSelected={setSelected} />
 
         <AnimatePresence mode='wait'>
@@ -21,16 +31,9 @@ const VehicleTabs = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 key={index}
+                className='w-11/12'
               >
-                <div>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aspernatur voluptates laudantium, delectus quod molestiae,
-                  numquam, velit saepe excepturi quae rerum praesentium. Quidem
-                  tempora sequi pariatur eum laborum necessitatibus. Rem libero
-                  voluptate itaque iusto voluptatibus sapiente, dolores
-                  praesentium suscipit corrupti! Expedita eveniet animi a
-                  voluptatibus, dolorem tenetur ab aliquam optio autem.
-                </div>
+                <VehicleSlider list={list} />
               </motion.div>
             ) : undefined;
           })}
@@ -47,14 +50,14 @@ type TabsProps = {
 
 const Tabs = ({ selected, setSelected }: TabsProps) => {
   return (
-    <div className='flex overflow-x-auto justify-center custom-tabs'>
+    <div className='max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
       {TabCategories.map((tab, index) => {
         return (
           <Tab
             key={index}
             setSelected={setSelected}
             selected={selected === index}
-            title={tab.title}
+            title={tab}
             tabNum={index}
           />
         );
