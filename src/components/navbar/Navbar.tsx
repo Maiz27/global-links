@@ -3,7 +3,12 @@ import { useState, useEffect, useRef, Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { routes } from '@/constants';
+import {
+  menuLinkArrowVariants,
+  menuLinkVariants,
+  menuVariants,
+  routes,
+} from '@/constants';
 import { FaXmark, FaBars, FaArrowRight } from 'react-icons/fa6';
 import logo from '/public/imgs/logo/logo.png';
 import toyota from '/public/imgs/toyota.png';
@@ -148,40 +153,3 @@ const MenuLink = ({ name, path }: { name: string; path: string }) => {
 };
 
 export default Navbar;
-
-const menuVariants = {
-  open: {
-    scaleY: 1,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.1,
-    },
-  },
-  closed: {
-    scaleY: 0,
-    transition: {
-      when: 'afterChildren',
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const menuLinkVariants = {
-  open: {
-    y: 0,
-    opacity: 1,
-  },
-  closed: {
-    y: -10,
-    opacity: 0,
-  },
-};
-
-const menuLinkArrowVariants = {
-  open: {
-    x: 0,
-  },
-  closed: {
-    x: -4,
-  },
-};
