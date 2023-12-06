@@ -28,7 +28,7 @@ const config: Config = {
           ...require('daisyui/src/theming/themes')['light'],
           primary: '#2d3394',
           secondary: '#106536',
-          accent: '#ed1b2f',
+          accent: '#e62129',
         },
       },
     ],

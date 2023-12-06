@@ -48,6 +48,7 @@ const ImageSlider = () => {
                 alt={title}
                 width={2400}
                 height={2400}
+                priority={true}
                 className='h-full object-cover object-center'
               />
             </SplideSlide>
