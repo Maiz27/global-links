@@ -12,6 +12,15 @@ import grCorolla from '/public/imgs/vehicles/grCorolla24.jpg';
 import camry24 from '/public/imgs/vehicles/camry24.jpg';
 import grSupra from '/public/imgs/vehicles/grSupra.jpg';
 
+import { TbBrandToyota } from 'react-icons/tb';
+import {
+  FaCartShopping,
+  FaPaintRoller,
+  FaToolbox,
+  FaUserGear,
+  FaHandshake,
+} from 'react-icons/fa6';
+
 export const routes = [
   {
     name: 'Vehicles',
@@ -32,6 +41,45 @@ export const routes = [
   {
     name: 'Blog',
     href: '/blog',
+  },
+];
+
+export const whatWeDoList = [
+  {
+    title: 'Authorized Toyota Service',
+    paragraph:
+      'As an authorized Toyota service station, we provide top-notch maintenance and repair services for your Toyota vehicle, ensuring it performs at its best',
+    icon: TbBrandToyota,
+  },
+  {
+    title: 'Toyota Vehicle Sales',
+    paragraph:
+      "Explore our showroom filled with a wide selection of brand-new Toyota vehicles, each representing Toyota's hallmark quality, innovation, and reliability",
+    icon: FaCartShopping,
+  },
+  {
+    title: 'Painting and Washing',
+    paragraph:
+      'Our state-of-the-art facility boasts 12 bays dedicated to painting and washing, ensuring your vehicle maintains its pristine appearance.',
+    icon: FaPaintRoller,
+  },
+  {
+    title: 'Quality Parts and Accessories',
+    paragraph:
+      'We offer genuine Toyota parts and accessories, ensuring your vehicle receives only the best components for optimal performance.',
+    icon: FaToolbox,
+  },
+  {
+    title: 'Customer-Centric Approach',
+    paragraph:
+      'We prioritize your needs and satisfaction, delivering a personalized experience that goes beyond just selling cars or servicing vehicles.',
+    icon: FaUserGear,
+  },
+  {
+    title: 'Community Engagement',
+    paragraph:
+      'We are actively involved in community projects and initiatives, making a positive impact on the lives of those we serve.',
+    icon: FaHandshake,
   },
 ];
 
