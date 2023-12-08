@@ -5,7 +5,6 @@ import img from '/public/imgs/hero/1.jpg';
 import img2 from '/public/imgs/hero/6.jpg';
 import img3 from '/public/imgs/hero/3.jpg';
 import img4 from '/public/imgs/hero/7.jpg';
-import img5 from '/public/imgs/hero/2.jpg';
 import img6 from '/public/imgs/hero/4.jpg';
 
 import '@splidejs/react-splide/css';
@@ -29,10 +28,6 @@ const images = [
   },
   {
     title: 'Slide Image 5',
-    image: img5,
-  },
-  {
-    title: 'Slide Image 6',
     image: img6,
   },
 ];

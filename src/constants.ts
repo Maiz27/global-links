@@ -14,8 +14,8 @@ import grSupra from '/public/imgs/vehicles/grSupra.jpg';
 
 import { TbBrandToyota } from 'react-icons/tb';
 import {
-  FaCartShopping,
-  FaPaintRoller,
+  FaTags,
+  FaSprayCanSparkles,
   FaToolbox,
   FaUserGear,
   FaHandshake,
@@ -55,13 +55,13 @@ export const whatWeDoList = [
     title: 'Toyota Vehicle Sales',
     paragraph:
       "Explore our showroom filled with a wide selection of brand-new Toyota vehicles, each representing Toyota's hallmark quality, innovation, and reliability",
-    icon: FaCartShopping,
+    icon: FaTags,
   },
   {
     title: 'Painting and Washing',
     paragraph:
       'Our state-of-the-art facility boasts 12 bays dedicated to painting and washing, ensuring your vehicle maintains its pristine appearance.',
-    icon: FaPaintRoller,
+    icon: FaSprayCanSparkles,
   },
   {
     title: 'Quality Parts and Accessories',
