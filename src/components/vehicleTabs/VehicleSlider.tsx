@@ -31,7 +31,7 @@ const VehicleSlider = ({ list }: props) => {
       >
         <SplideTrack>
           {list.map(({ name, category, year, image }) => (
-            <SplideSlide key={`${name}-${year}`} className='py-2'>
+            <SplideSlide key={`${name}-${year}`} className='pb-1'>
               <VehicleCard
                 name={name}
                 category={category}
@@ -42,12 +42,12 @@ const VehicleSlider = ({ list }: props) => {
           ))}
         </SplideTrack>
 
-        {/* <div className='my-12 w-1/2 lg:w-1/4 xl:w-1/6 mx-auto relative'> */}
-        <div className='splide__arrows' />
+        <div className={`${list.length <= perPage && 'hidden'}`}>
+          <div className='splide__arrows' />
+        </div>
         <div className='hidden'>
           <ul className='splide__pagination'></ul>
         </div>
-        {/* </div> */}
       </Splide>
     </div>
   );
