@@ -10,7 +10,9 @@ export const Hero = () => {
           Your Trusted Toyota Partner in South Sudan
         </h1>
         <p className='mb-6 mt-4 max-w-3xl text-center lg:text-lg font-light text-base-100'>
-          <span className='text-accent font-bold'>Global Links Auto </span>
+          <span className='text-accent font-bold tracking-wide'>
+            Global Links Auto{' '}
+          </span>
           embodies a legacy of excellence, reliability, and unmatched expertise.
           We bring you the assurance of genuine quality and service. Choose
           confidence, choose reliability – choose the official Toyota experience
