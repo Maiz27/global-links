@@ -50,7 +50,7 @@ type TabsProps = {
 
 const Tabs = ({ selected, setSelected }: TabsProps) => {
   return (
-    <div className='max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
+    <div className='w-full max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
       {TabCategories.map((tab, index) => {
         return (
           <Tab
