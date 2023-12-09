@@ -11,9 +11,9 @@ const VehicleTabs = () => {
 
   useEffect(() => {
     const selectedCategory = TabCategories[selected];
-    const filteredList = vehicles.filter(
-      (vehicle) => vehicle.category === selectedCategory
-    );
+    const filteredList = vehicles
+      .filter((vehicle) => vehicle.category === selectedCategory)
+      .sort((a, b) => a.name.localeCompare(b.name));
     setList(filteredList);
   }, [selected]);
 
@@ -50,7 +50,7 @@ type TabsProps = {
 
 const Tabs = ({ selected, setSelected }: TabsProps) => {
   return (
-    <div className='max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
+    <div className='w-full max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
       {TabCategories.map((tab, index) => {
         return (
           <Tab
@@ -91,7 +91,7 @@ const Tab = ({ selected, title, setSelected, tabNum }: TabProps) => {
       {selected && (
         <motion.span
           layoutId='tabs-features-underline'
-          className='absolute bottom-0 left-0 w-[99%] mx-auto rounded-b-3xl right-0 z-10 h-1 bg-neutral '
+          className='absolute bottom-0 left-0 w-[99%] mx-auto rounded-b-3xl right-0 z-10 h-1 bg-accent'
         />
       )}
     </div>

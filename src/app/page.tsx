@@ -1,4 +1,5 @@
-import { Hero } from '@/components/hero/Hero';
+import BasicFAQ from '@/components/FAQ/FAQ';
+import Hero from '@/components/hero/Hero';
 import VehicleTabs from '@/components/vehicleTabs/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 
@@ -11,6 +12,7 @@ export default function Home() {
 
       <VehicleTabs />
 
+      <BasicFAQ />
       <div className='min-h-screen'></div>
     </main>
   );
