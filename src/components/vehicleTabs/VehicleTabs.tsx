@@ -11,9 +11,9 @@ const VehicleTabs = () => {
 
   useEffect(() => {
     const selectedCategory = TabCategories[selected];
-    const filteredList = vehicles.filter(
-      (vehicle) => vehicle.category === selectedCategory
-    );
+    const filteredList = vehicles
+      .filter((vehicle) => vehicle.category === selectedCategory)
+      .sort((a, b) => a.name.localeCompare(b.name));
     setList(filteredList);
   }, [selected]);
 

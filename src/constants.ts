@@ -1,16 +1,11 @@
-import tacoma23 from '/public/imgs/vehicles/Tacoma23.jpg';
-import tundra24 from '/public/imgs/vehicles/tundra24.jpg';
-import tundraForce24 from '/public/imgs/vehicles/tundraForce24.png';
-import highlander24 from '/public/imgs/vehicles/highlander24.jpg';
-import BX24 from '/public/imgs/vehicles/BX24.jpg';
-import RAVA from '/public/imgs/vehicles/RAVA.jpg';
-import runner24 from '/public/imgs/vehicles/4runner24.jpg';
-import Sequoia24 from '/public/imgs/vehicles/Sequoia24.jpg';
-import crown24 from '/public/imgs/vehicles/crown24.jpg';
-import priusPrime24 from '/public/imgs/vehicles/priusPrime24.jpg';
-import grCorolla from '/public/imgs/vehicles/grCorolla24.jpg';
-import camry24 from '/public/imgs/vehicles/camry24.jpg';
-import grSupra from '/public/imgs/vehicles/grSupra.jpg';
+import hilux from '/public/imgs/vehicles/hilux.jpg';
+import lc79 from '/public/imgs/vehicles/79.jpg';
+import lc76 from '/public/imgs/vehicles/76.jpg';
+import v8 from '/public/imgs/vehicles/v8.jpg';
+import lexus from '/public/imgs/vehicles/lexus.jpg';
+import prado from '/public/imgs/vehicles/prado.jpg';
+import fortuner from '/public/imgs/vehicles/fortuner.jpg';
+import hiace from '/public/imgs/vehicles/hiace.jpg';
 
 import { TbBrandToyota } from 'react-icons/tb';
 import {
@@ -83,86 +78,57 @@ export const whatWeDoList = [
   },
 ];
 
-export const TabCategories = ['Cars & Minivan', 'Trucks', 'SUVs'];
+export const TabCategories = ['SUVs', 'Trucks', 'Bus'];
 
 export const vehicles = [
   {
-    name: 'Tacoma',
+    name: 'Hilux',
     year: 2023,
     category: 'Trucks',
-    image: tacoma23,
+    image: hilux,
   },
   {
-    name: 'Tundra',
+    name: 'Land Cruiser 79',
     year: 2024,
     category: 'Trucks',
-    image: tundra24,
+    image: lc79,
   },
   {
-    name: 'Tundra i-FORCE MAX',
-    year: 2024,
-    category: 'Trucks',
-    image: tundraForce24,
-  },
-  {
-    name: 'Highlander',
+    name: 'Land Cruiser 76',
     year: 2024,
     category: 'SUVs',
-    image: highlander24,
+    image: lc76,
   },
   {
-    name: 'bZ4X',
+    name: 'Land Cruiser V8',
     year: 2024,
     category: 'SUVs',
-    image: BX24,
+    image: v8,
   },
   {
-    name: 'RAVA',
+    name: 'Lexus TX',
     year: 2024,
     category: 'SUVs',
-    image: RAVA,
+    image: lexus,
   },
   {
-    name: '4Runner',
+    name: 'Cruiser Prado',
     year: 2024,
     category: 'SUVs',
-    image: runner24,
+    image: prado,
   },
   {
-    name: 'Sequoia',
+    name: 'Fortuner',
     year: 2024,
     category: 'SUVs',
-    image: Sequoia24,
+    image: fortuner,
   },
+
   {
-    name: 'Toyota Crown',
+    name: 'Hiace HighTop',
     year: 2024,
-    category: 'Cars & Minivan',
-    image: crown24,
-  },
-  {
-    name: 'Prius Prime',
-    year: 2024,
-    category: 'Cars & Minivan',
-    image: priusPrime24,
-  },
-  {
-    name: 'GR Corolla',
-    year: 2024,
-    category: 'Cars & Minivan',
-    image: grCorolla,
-  },
-  {
-    name: 'Camry',
-    year: 2024,
-    category: 'Cars & Minivan',
-    image: camry24,
-  },
-  {
-    name: 'GR Supra',
-    year: 2024,
-    category: 'Cars & Minivan',
-    image: grSupra,
+    category: 'Bus',
+    image: hiace,
   },
 ];
 
