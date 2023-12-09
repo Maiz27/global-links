@@ -1,46 +1,15 @@
 'use client';
 import Image from 'next/image';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import img from '/public/imgs/hero/1.jpg';
-import img2 from '/public/imgs/hero/6.jpg';
-import img3 from '/public/imgs/hero/3.jpg';
-import img4 from '/public/imgs/hero/7.jpg';
-import img6 from '/public/imgs/hero/4.jpg';
-import img7 from '/public/imgs/hero/8.jpg';
+import { urlFor } from '@/services/sanity/sanityClient';
+import { heroImages } from '@/types';
 
 import '@splidejs/react-splide/css';
 
-const images = [
-  {
-    title: 'Slide Image 1',
-    image: img,
-  },
-  {
-    title: 'Slide Image 2',
-    image: img2,
-  },
-  {
-    title: 'Slide Image 3',
-    image: img3,
-  },
-  {
-    title: 'Slide Image 4',
-    image: img4,
-  },
-  {
-    title: 'Slide Image 5',
-    image: img6,
-  },
-  {
-    title: 'Slide Image 6',
-    image: img7,
-  },
-];
-const ImageSlider = () => {
+const ImageSlider = ({ images }: heroImages) => {
   const options = {
     type: 'loop',
     autoplay: true,
-    // pauseOnHover: true,
   };
   return (
     <Splide
@@ -51,10 +20,11 @@ const ImageSlider = () => {
     >
       <SplideTrack className='h-full'>
         {images.map(({ title, image }) => {
+          const imgUrl = urlFor(image).url();
           return (
             <SplideSlide key={title}>
               <Image
-                src={image}
+                src={imgUrl}
                 alt={title}
                 width={2400}
                 height={2400}

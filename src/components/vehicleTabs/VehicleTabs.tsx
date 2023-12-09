@@ -3,28 +3,34 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import VehicleSlider from './VehicleSlider';
-import { TabCategories, vehicles } from '@/constants';
+import { vehicle, vehicleType } from '@/types';
 
-const VehicleTabs = () => {
-  const [selected, setSelected] = useState(0);
-  const [list, setList] = useState<typeof vehicles>(vehicles);
+const VehicleTabs = ({
+  vehicles,
+  types,
+}: {
+  vehicles: vehicle[];
+  types: vehicleType[];
+}) => {
+  const [selected, setSelected] = useState(1);
+  const [list, setList] = useState(vehicles);
 
   useEffect(() => {
-    const selectedCategory = TabCategories[selected];
+    const selectedCategory = types[selected].title;
     const filteredList = vehicles
-      .filter((vehicle) => vehicle.category === selectedCategory)
+      .filter((vehicle) => vehicle.type.title === selectedCategory)
       .sort((a, b) => a.name.localeCompare(b.name));
     setList(filteredList);
-  }, [selected]);
+  }, [selected, types, vehicles]);
 
   return (
     <section className='my-20'>
       <SectionHeading Tag='h2' text='Explore Vehicles' isCentered={true} />
       <div className='flex flex-col items-center mt-4'>
-        <Tabs selected={selected} setSelected={setSelected} />
+        <Tabs selected={selected} setSelected={setSelected} types={types} />
 
         <AnimatePresence mode='wait'>
-          {TabCategories.map((tab, index) => {
+          {types.map((tab, index) => {
             return selected === index ? (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -46,18 +52,19 @@ const VehicleTabs = () => {
 type TabsProps = {
   selected: number;
   setSelected: Dispatch<SetStateAction<number>>;
+  types: vehicleType[];
 };
 
-const Tabs = ({ selected, setSelected }: TabsProps) => {
+const Tabs = ({ selected, setSelected, types }: TabsProps) => {
   return (
     <div className='w-full max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
-      {TabCategories.map((tab, index) => {
+      {types.map(({ title }, index) => {
         return (
           <Tab
             key={index}
             setSelected={setSelected}
             selected={selected === index}
-            title={tab}
+            title={title}
             tabNum={index}
           />
         );

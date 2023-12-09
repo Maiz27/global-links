@@ -1,10 +1,10 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import { vehicles } from '@/constants';
 import VehicleCard from '../vehicleCard/VehicleCard';
 import useWindowWidth from '@/hooks/useWindowWidth';
+import { vehicle } from '@/types';
 
 type props = {
-  list: typeof vehicles;
+  list: vehicle[];
 };
 
 const VehicleSlider = ({ list }: props) => {
@@ -30,14 +30,9 @@ const VehicleSlider = ({ list }: props) => {
         aria-labelledby='Vehicles Slider'
       >
         <SplideTrack>
-          {list.map(({ name, category, year, image }) => (
-            <SplideSlide key={`${name}-${year}`} className='pb-1'>
-              <VehicleCard
-                name={name}
-                category={category}
-                year={year}
-                image={image}
-              />
+          {list.map((vehicle) => (
+            <SplideSlide key={`${vehicle.name}`} className='pb-1'>
+              <VehicleCard vehicle={vehicle} />
             </SplideSlide>
           ))}
         </SplideTrack>

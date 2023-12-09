@@ -2,18 +2,36 @@ import BasicFAQ from '@/components/FAQ/FAQ';
 import Hero from '@/components/hero/Hero';
 import VehicleTabs from '@/components/vehicleTabs/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
+import {
+  getAllHeroImages,
+  getAllVehicles,
+  getLatestPosts,
+  getVehicleTypes,
+} from '@/services/sanity/queries';
+import { fetchSanityData } from '@/constants';
+import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 
-export default function Home() {
+export const revalidate = 60; // revalidate every minute
+
+export default async function Home() {
+  const [heroImages, vehicles, types, blogs] = await Promise.all([
+    fetchSanityData(getAllHeroImages),
+    fetchSanityData(getAllVehicles),
+    fetchSanityData(getVehicleTypes),
+    fetchSanityData(getLatestPosts),
+  ]);
+
   return (
     <main>
-      <Hero />
+      <Hero images={heroImages} />
 
       <WhatWeDo />
 
-      <VehicleTabs />
+      <VehicleTabs vehicles={vehicles} types={types} />
 
       <BasicFAQ />
-      <div className='min-h-screen'></div>
+
+      <LatestBlogs blogs={blogs} />
     </main>
   );
 }
