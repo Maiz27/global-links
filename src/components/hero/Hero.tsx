@@ -1,10 +1,11 @@
 import ImageSlider from './ImageSlider';
 import CTA from '../CTA/CTA';
+import { heroImages } from '@/types';
 
-const Hero = () => {
+const Hero = ({ images }: heroImages) => {
   return (
     <div className='h-[92vh] relative'>
-      <ImageSlider />
+      <ImageSlider images={images} />
       <div className='pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8'>
         <h1 className='text-center text-3xl lg:text-4xl font-bold  text-base-100'>
           Your Trusted Toyota Partner in South Sudan
