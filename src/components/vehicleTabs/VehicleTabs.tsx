@@ -12,12 +12,11 @@ const VehicleTabs = ({
   vehicles: vehicle[];
   types: vehicleType[];
 }) => {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(1);
   const [list, setList] = useState(vehicles);
 
   useEffect(() => {
     const selectedCategory = types[selected].title;
-    console.log(vehicles);
     const filteredList = vehicles
       .filter((vehicle) => vehicle.type.title === selectedCategory)
       .sort((a, b) => a.name.localeCompare(b.name));

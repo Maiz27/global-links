@@ -8,6 +8,7 @@ import {
   getVehicleTypes,
 } from '@/services/sanity/queries';
 import { fetchSanityData } from '@/constants';
+import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 
 export const revalidate = 60; // revalidate every minute
 
@@ -26,6 +27,8 @@ export default async function Home() {
       <VehicleTabs vehicles={vehicles} types={types} />
 
       <BasicFAQ />
+
+      <LatestBlogs />
       <div className='min-h-screen'></div>
     </main>
   );
