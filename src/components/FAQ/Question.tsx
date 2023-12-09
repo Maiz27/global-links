@@ -26,13 +26,13 @@ const Question = ({
         <motion.span
           variants={{
             open: {
-              color: 'rgba(3, 6, 23, 0)',
+              color: 'rgb(230 33 41)',
             },
             closed: {
               color: 'rgba(3, 6, 23, 1)',
             },
           }}
-          className='bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-left text-lg font-medium'
+          className='bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-left font-medium'
         >
           {question}
         </motion.span>
@@ -40,7 +40,7 @@ const Question = ({
           variants={{
             open: {
               rotate: '180deg',
-              color: 'rgb(124 58 237)',
+              color: 'rgb(230 33 41)',
             },
             closed: {
               rotate: '0deg',
@@ -59,7 +59,7 @@ const Question = ({
         }}
         className='overflow-hidden text-slate-600'
       >
-        <p>{answer}</p>
+        <p className='text-sm'>{answer}</p>
       </motion.div>
     </motion.div>
   );

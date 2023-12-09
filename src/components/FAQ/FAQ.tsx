@@ -1,22 +1,17 @@
-import team from 'public/imgs/team.jpg';
-import Image from 'next/image';
+import ImageCard from '@/components/imageCard/ImageCard';
+import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import { faqData } from '@/constants';
 import Question from './Question';
+import team from 'public/imgs/team.jpg';
 
 const BasicFAQ = () => {
   return (
-    <section className='bg-base-200 flex flex-col items-center px-8 gap-8 lg:flex-row py-20'>
-      <div className='w-full md:w-4/5 max-w-xl'>
-        <Image
-          src={team}
-          alt='Ride'
-          className='w-full object-cover rounded-2xl '
-        />
+    <section className='flex flex-col items-around px-8 gap-16 lg:flex-row py-20'>
+      <div className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'>
+        <ImageCard image={team} />
       </div>
-      <div className='w-full md:w-4/5 mx-auto max-w-3xl'>
-        <h3 className='mb-4 text-3xl font-semibold'>
-          Frequently asked questions
-        </h3>
+      <div className='w-full md:w-4/5 lg:w-3/5 mx-auto max-w-3xl'>
+        <SectionHeading Tag='h2' text='Frequently asked questions' />
         {faqData.map(({ question, answer }, idx) => {
           return <Question key={idx} question={question} answer={answer} />;
         })}
