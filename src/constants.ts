@@ -5,6 +5,9 @@ import {
   FaToolbox,
   FaUserGear,
   FaHandshake,
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
 } from 'react-icons/fa6';
 import { sanityClient } from './services/sanity/sanityClient';
 
@@ -93,6 +96,24 @@ export const faqData = [
     question: 'What after-sales services does Global Links provide?',
     answer:
       'Global Links is dedicated to providing comprehensive after-sales support. Our services include regular maintenance, genuine Toyota parts replacements, vehicle repairs, and expert technical assistance. Our goal is to ensure that your Toyota vehicle continues to perform optimally throughout its lifespan.',
+  },
+];
+
+export const socials = [
+  {
+    title: 'Instagram',
+    href: 'https://instagram.com/globalautolinkscompanylimites8?igshid=Nmo4amo2c2EwNDhy',
+    icon: FaInstagram,
+  },
+  {
+    title: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=100080486983630&mibextid=ZbWKwL',
+    icon: FaFacebookF,
+  },
+  {
+    title: 'Whatsapp',
+    href: 'https://wa.me/211912301179',
+    icon: FaWhatsapp,
   },
 ];
 

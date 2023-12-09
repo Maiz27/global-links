@@ -32,7 +32,6 @@ export default async function Home() {
       <BasicFAQ />
 
       <LatestBlogs blogs={blogs} />
-      <div className='min-h-screen'></div>
     </main>
   );
 }
