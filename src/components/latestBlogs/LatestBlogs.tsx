@@ -1,8 +1,9 @@
 import React from 'react';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import BlogCard from '../blogComp/BlogCard';
+import { blog } from '@/types';
 
-const LatestBlogs = () => {
+const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
   return (
     <section className='my-20 space-y-10'>
       <div className='mx-auto text-center max-w-2xl'>
@@ -14,9 +15,9 @@ const LatestBlogs = () => {
         </p>
       </div>
       <div className='w-11/12 pb-10 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'>
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        {blogs.map((blog) => {
+          return <BlogCard key={blog.slug.current} blog={blog} />;
+        })}
       </div>
     </section>
   );

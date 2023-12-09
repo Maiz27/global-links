@@ -33,21 +33,14 @@ export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
   }`;
 
 export const getLatestPosts = `*[_type == 'post'] 
-  | order(publishedAt desc)[0..1] {
+  | order(publishedAt desc)[0..2] {
       title,
       slug,
       description,
-      author-> {
-          name,
-          title,
-          image,
-      },
       mainImage,
       categories[]-> {
           title,
       },
-      publishedAt,
-      body,
   }`;
 
 export const getAllHeroImages = `*[_type == 'heroImages'] 

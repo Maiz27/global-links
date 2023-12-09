@@ -5,6 +5,7 @@ import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 import {
   getAllHeroImages,
   getAllVehicles,
+  getLatestPosts,
   getVehicleTypes,
 } from '@/services/sanity/queries';
 import { fetchSanityData } from '@/constants';
@@ -13,11 +14,13 @@ import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 export const revalidate = 60; // revalidate every minute
 
 export default async function Home() {
-  const [heroImages, vehicles, types] = await Promise.all([
+  const [heroImages, vehicles, types, blogs] = await Promise.all([
     fetchSanityData(getAllHeroImages),
     fetchSanityData(getAllVehicles),
     fetchSanityData(getVehicleTypes),
+    fetchSanityData(getLatestPosts),
   ]);
+
   return (
     <main>
       <Hero images={heroImages} />
@@ -28,7 +31,7 @@ export default async function Home() {
 
       <BasicFAQ />
 
-      <LatestBlogs />
+      <LatestBlogs blogs={blogs} />
       <div className='min-h-screen'></div>
     </main>
   );

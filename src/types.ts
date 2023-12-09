@@ -10,7 +10,9 @@ export type heroImages = {
 
 export type blog = {
   index: number;
-  slug: string;
+  slug: {
+    current: string;
+  };
   publishedAt: string;
   title: string;
   description: string;
