@@ -1,20 +1,24 @@
-import Image, { StaticImageData } from 'next/image';
+import { vehicle } from '@/types';
+import Image from 'next/image';
+import { urlFor } from '@/services/sanity/sanityClient';
 import { FaRegCalendarDays, FaBuffer } from 'react-icons/fa6';
 
 type props = {
-  name: string;
-  year: number;
-  category: string;
-  image: StaticImageData | string;
+  vehicle: vehicle;
 };
 
-const VehicleCard = ({ name, category, year, image }: props) => {
+const VehicleCard = ({ vehicle }: props) => {
+  const { name, mainImage, type, slug } = vehicle;
+  const imgUrl = urlFor(mainImage).url();
+
   return (
     <div className='w-full h-full flex flex-col relative rounded-2xl overflow-hidden shadow'>
       <div className='w-full h-5/6'>
         <Image
-          src={image}
+          src={imgUrl}
           alt={name}
+          width={500}
+          height={500}
           className='h-full w-full object-scale-down'
         />
       </div>

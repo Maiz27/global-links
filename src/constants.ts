@@ -1,12 +1,3 @@
-import hilux from '/public/imgs/vehicles/hilux.jpg';
-import lc79 from '/public/imgs/vehicles/79.jpg';
-import lc76 from '/public/imgs/vehicles/76.jpg';
-import v8 from '/public/imgs/vehicles/v8.jpg';
-import lexus from '/public/imgs/vehicles/lexus.jpg';
-import prado from '/public/imgs/vehicles/prado.jpg';
-import fortuner from '/public/imgs/vehicles/fortuner.jpg';
-import hiace from '/public/imgs/vehicles/hiace.jpg';
-
 import { TbBrandToyota } from 'react-icons/tb';
 import {
   FaTags,
@@ -15,6 +6,7 @@ import {
   FaUserGear,
   FaHandshake,
 } from 'react-icons/fa6';
+import { sanityClient } from './services/sanity/sanityClient';
 
 export const routes = [
   {
@@ -78,60 +70,6 @@ export const whatWeDoList = [
   },
 ];
 
-export const TabCategories = ['SUVs', 'Trucks', 'Bus'];
-
-export const vehicles = [
-  {
-    name: 'Hilux',
-    year: 2023,
-    category: 'Trucks',
-    image: hilux,
-  },
-  {
-    name: 'Land Cruiser 79',
-    year: 2024,
-    category: 'Trucks',
-    image: lc79,
-  },
-  {
-    name: 'Land Cruiser 76',
-    year: 2024,
-    category: 'SUVs',
-    image: lc76,
-  },
-  {
-    name: 'Land Cruiser V8',
-    year: 2024,
-    category: 'SUVs',
-    image: v8,
-  },
-  {
-    name: 'Lexus TX',
-    year: 2024,
-    category: 'SUVs',
-    image: lexus,
-  },
-  {
-    name: 'Cruiser Prado',
-    year: 2024,
-    category: 'SUVs',
-    image: prado,
-  },
-  {
-    name: 'Fortuner',
-    year: 2024,
-    category: 'SUVs',
-    image: fortuner,
-  },
-
-  {
-    name: 'Hiace HighTop',
-    year: 2024,
-    category: 'Bus',
-    image: hiace,
-  },
-];
-
 export const faqData = [
   {
     question:
@@ -157,6 +95,17 @@ export const faqData = [
       'Global Links is dedicated to providing comprehensive after-sales support. Our services include regular maintenance, genuine Toyota parts replacements, vehicle repairs, and expert technical assistance. Our goal is to ensure that your Toyota vehicle continues to perform optimally throughout its lifespan.',
   },
 ];
+
+export const fetchSanityData = async (query: string) => {
+  try {
+    const data = await sanityClient.fetch(query);
+    return data;
+  } catch (error) {
+    // Handle errors or add custom error logging
+    console.error('Error fetching data:', error);
+    throw error;
+  }
+};
 
 //Framer motion variables
 export const menuVariants = {

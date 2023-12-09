@@ -34,3 +34,43 @@ export type blogBody = Array<{
     text: string;
   }>;
 }>;
+
+export type vehicleType = {
+  title: string;
+  description?: string;
+};
+
+export type vehicle = {
+  name: string;
+  slug: {
+    current: string;
+  };
+  mainImage: Object;
+  type: {
+    title: string;
+  };
+  engine?: {
+    displacement: number;
+    fuelSystem: 'Direct' | 'Port';
+    fuelType: 'Diesel' | 'Petrol';
+  };
+  dimensions?: {
+    length: number;
+    width: number;
+    height: number;
+    groundClearance: number;
+    wheelbase: number;
+  };
+  transmission?: {
+    gearbox: 'Automatic' | 'Manual';
+    transmission: string;
+  };
+  capacity?: {
+    weight: number;
+    tank: number;
+  };
+  warranty?: {
+    period: number;
+    network: string;
+  };
+};
