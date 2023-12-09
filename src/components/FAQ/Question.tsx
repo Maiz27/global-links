@@ -1,27 +1,25 @@
-'use client';
-import { useState } from 'react';
-import { FiChevronDown } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { FaAngleDown } from 'react-icons/fa6';
 
 const Question = ({
   question,
   answer,
-  defaultOpen = false,
+  isOpen,
+  onToggle,
 }: {
   question: string;
   answer: string;
-  defaultOpen?: boolean;
+  isOpen: boolean;
+  onToggle: () => void;
 }) => {
-  const [open, setOpen] = useState(defaultOpen);
-
   return (
     <motion.div
-      animate={open ? 'open' : 'closed'}
+      animate={isOpen ? 'open' : 'closed'}
       className='border-b-[1px] border-b-slate-300'
     >
       <button
-        onClick={() => setOpen((pv) => !pv)}
-        className='flex w-full items-center justify-between gap-4 py-6'
+        onClick={onToggle}
+        className='flex w-full items-start justify-between gap-4 py-6'
       >
         <motion.span
           variants={{
@@ -32,7 +30,7 @@ const Question = ({
               color: 'rgba(3, 6, 23, 1)',
             },
           }}
-          className='bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-left font-medium'
+          className='bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-left lg:text-lg font-medium'
         >
           {question}
         </motion.span>
@@ -48,18 +46,18 @@ const Question = ({
             },
           }}
         >
-          <FiChevronDown className='text-2xl' />
+          <FaAngleDown className='text-2xl' />
         </motion.span>
       </button>
       <motion.div
         initial={false}
         animate={{
-          height: open ? 'fit-content' : '0px',
-          marginBottom: open ? '24px' : '0px',
+          height: isOpen ? 'fit-content' : '0px',
+          marginBottom: isOpen ? '24px' : '0px',
         }}
         className='overflow-hidden text-slate-600'
       >
-        <p className='text-sm'>{answer}</p>
+        <p className='text-sm xl:text-base'>{answer}</p>
       </motion.div>
     </motion.div>
   );
