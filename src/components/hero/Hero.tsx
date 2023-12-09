@@ -1,7 +1,7 @@
 import ImageSlider from './ImageSlider';
 import CTA from '../CTA/CTA';
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <div className='h-[92vh] relative'>
       <ImageSlider />
@@ -26,3 +26,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;

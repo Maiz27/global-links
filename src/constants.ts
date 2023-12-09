@@ -132,6 +132,32 @@ export const vehicles = [
   },
 ];
 
+export const faqData = [
+  {
+    question:
+      'What makes Global Links the official Toyota company in South Sudan?',
+    answer:
+      "Global Links earned the prestigious title of Toyota's Official company in South Sudan due to our longstanding commitment to excellence, unmatched customer service, and a proven track record in the automotive industry since our inception in November 2007.",
+    defaultOpen: true,
+  },
+  {
+    question: 'What types of vehicles does Global Links offer?',
+    answer:
+      "Global Links offers a diverse range of premium Toyota vehicles, including sedans, SUVs, trucks, and hybrids. Our extensive lineup ensures there's a perfect Toyota vehicle to suit every customer's preferences and requirements.",
+  },
+  {
+    question:
+      'Can I trust the quality of the pre-owned vehicles offered by Global Links?',
+    answer:
+      "Absolutely. At Global Links, we meticulously inspect and certify all our pre-owned vehicles to meet Toyota's high-quality standards. Our commitment to transparency and reliability ensures that you can trust the quality and performance of every pre-owned vehicle we offer.",
+  },
+  {
+    question: 'What after-sales services does Global Links provide?',
+    answer:
+      'Global Links is dedicated to providing comprehensive after-sales support. Our services include regular maintenance, genuine Toyota parts replacements, vehicle repairs, and expert technical assistance. Our goal is to ensure that your Toyota vehicle continues to perform optimally throughout its lifespan.',
+  },
+];
+
 //Framer motion variables
 export const menuVariants = {
   open: {

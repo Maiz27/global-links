@@ -91,7 +91,7 @@ const Tab = ({ selected, title, setSelected, tabNum }: TabProps) => {
       {selected && (
         <motion.span
           layoutId='tabs-features-underline'
-          className='absolute bottom-0 left-0 w-[99%] mx-auto rounded-b-3xl right-0 z-10 h-1 bg-neutral '
+          className='absolute bottom-0 left-0 w-[99%] mx-auto rounded-b-3xl right-0 z-10 h-1 bg-accent'
         />
       )}
     </div>
