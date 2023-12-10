@@ -117,6 +117,13 @@ export const socials = [
   },
 ];
 
+export const pageHeaderData = [
+  {
+    heading: 'Toyota Vehicles',
+    text: 'Discover Your Perfect Ride at Global Links: Explore Our Diverse Fleet of Exceptional Vehicles.',
+  },
+];
+
 export const fetchSanityData = async (query: string) => {
   try {
     const data = await sanityClient.fetch(query);

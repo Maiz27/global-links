@@ -1,7 +1,13 @@
-import React from 'react';
+import PageHeader from '@/components/pageHeader/PageHeader';
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <main>
+      <PageHeader pageIndex={0} />
+
+      <div className='min-h-screen'></div>
+    </main>
+  );
 };
 
 export default page;
