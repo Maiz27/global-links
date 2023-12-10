@@ -2,8 +2,19 @@ import React from 'react';
 
 type props = {
   Tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  size?:
+    | 'xs'
+    | 'sm'
+    | 'base'
+    | 'lg'
+    | 'xl'
+    | '2xl'
+    | '3xl'
+    | '4xl'
+    | '5xl'
+    | '6xl'
+    | '7xl';
   text: string;
-  size?: string;
   isCentered?: boolean;
 };
 
@@ -17,8 +28,8 @@ const SectionHeading = ({
     <Tag
       className={
         isCentered
-          ? `mx-auto text-center w-fit whitespace-normal pb-4 text-${size} font-bold `
-          : `text-center w-fit whitespace-normal pb-4 text-${size} font-bold `
+          ? `mx-auto text-center w-fit whitespace-normal pb-4 text-${size} font-bold`
+          : `text-center w-fit whitespace-normal pb-4 text-${size} font-bold`
       }
     >
       {text}

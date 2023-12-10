@@ -13,7 +13,7 @@ const VehicleCard = ({ vehicle }: props) => {
 
   return (
     <div className='w-full h-full flex flex-col relative rounded-2xl overflow-hidden shadow'>
-      <div className='w-full h-5/6'>
+      <div className='h-52 flex-1'>
         <Image
           src={imgUrl}
           alt={name}
@@ -22,7 +22,7 @@ const VehicleCard = ({ vehicle }: props) => {
           className='h-full w-full object-scale-down'
         />
       </div>
-      <div className='h-1/6 bg-base-100 p-4'>
+      <div className='bg-base-100 p-4'>
         <h3 className='text-xl font-bold'>{name}</h3>
         {/* <div className='w-max gap-4 flex text-xs'>
           <div className='flex items-center gap-1'>
