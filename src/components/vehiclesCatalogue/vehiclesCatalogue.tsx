@@ -41,7 +41,7 @@ const VehiclesGrid = ({ vehicles }: { vehicles: vehicle[] }) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className='h-full'
+              className='h-full w-full'
             >
               <VehicleCard vehicle={vehicle} />
             </motion.div>

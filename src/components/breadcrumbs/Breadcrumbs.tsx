@@ -16,7 +16,7 @@ const Breadcrumbs = () => {
     return breadcrumb;
   });
   return (
-    <div className='text-sm breadcrumbs h-1/6 flex items-end pl-4 lg:pl-6'>
+    <div className='text-sm breadcrumbs h-1/6 flex items-end mt-4 pl-4 lg:pl-6'>
       <ul>
         <Crumb label='Home' link='/' isActive={false} />
         {breadcrumbs.map(({ link, label, isActive }) => (

@@ -15,7 +15,6 @@ const page = async () => {
       <PageHeader pageIndex={0} />
 
       <VehiclesCatalogue types={types} vehicles={vehicles} />
-      <div className='min-h-screen'></div>
     </main>
   );
 };

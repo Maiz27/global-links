@@ -74,4 +74,4 @@ export const getVehicleBySlug = `*[_type == 'vehicle' && slug.current == $slug] 
   transmission,
   capacity,
   warranty,
-}`;
+}[0]`;

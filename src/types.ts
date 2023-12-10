@@ -51,6 +51,7 @@ export type vehicle = {
   type: {
     title: string;
   };
+  description?: string;
   engine?: {
     displacement: number;
     fuelSystem: 'Direct' | 'Port';
