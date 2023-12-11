@@ -51,10 +51,11 @@ export type vehicle = {
   type: {
     title: string;
   };
+  description?: string;
   engine?: {
     displacement: number;
     fuelSystem: 'Direct' | 'Port';
-    fuelType: 'Diesel' | 'Petrol';
+    fuelType: string[];
   };
   dimensions?: {
     length: number;
@@ -64,7 +65,7 @@ export type vehicle = {
     wheelbase: number;
   };
   transmission?: {
-    gearbox: 'Automatic' | 'Manual';
+    gearbox: string[];
     transmission: string;
   };
   capacity?: {

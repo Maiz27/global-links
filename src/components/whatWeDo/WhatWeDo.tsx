@@ -6,7 +6,7 @@ const WhatWeDo = () => {
   return (
     <section className='my-20 space-y-4'>
       <div className='mx-auto text-center max-w-xl'>
-        <SectionHeading Tag='h2' text='What We Do' isCentered={true} />
+        <SectionHeading Tag='h2' text='What We Do' />
         <p>
           At Global Links, we are your premier destination for all things Toyota
           in South Sudan. Our comprehensive range of services includes:

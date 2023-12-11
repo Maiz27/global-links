@@ -1,5 +1,5 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import VehicleCard from '../vehicleCard/VehicleCard';
+import VehicleCard from './VehicleCard';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import { vehicle } from '@/types';
 
@@ -18,7 +18,7 @@ const VehicleSlider = ({ list }: props) => {
   }
 
   return (
-    <div className='wrapper my-10'>
+    <div className='my-10'>
       <Splide
         hasTrack={false}
         options={{
@@ -31,7 +31,7 @@ const VehicleSlider = ({ list }: props) => {
       >
         <SplideTrack>
           {list.map((vehicle) => (
-            <SplideSlide key={`${vehicle.name}`} className='pb-1'>
+            <SplideSlide key={`${vehicle.name}`} className='pb-1 h-full'>
               <VehicleCard vehicle={vehicle} />
             </SplideSlide>
           ))}
