@@ -17,7 +17,6 @@ const PageHeader = ({ pageIndex, heading, paragraph }: props) => {
           <SectionHeading
             Tag='h1'
             text={heading ? heading : pageHeaderData[pageIndex!].heading}
-            isCentered={true}
           />
           <p
             className={`px-2 text-center ${

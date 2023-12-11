@@ -1,5 +1,5 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import VehicleCard from '../vehicleCard/VehicleCard';
+import VehicleCard from './VehicleCard';
 import useWindowWidth from '@/hooks/useWindowWidth';
 import { vehicle } from '@/types';
 

@@ -1,6 +1,6 @@
 import BasicFAQ from '@/components/FAQ/FAQ';
 import Hero from '@/components/hero/Hero';
-import VehicleTabs from '@/components/vehicleTabs/VehicleTabs';
+import VehicleTabs from '@/components/vehicleComp/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 import {
   getAllHeroImages,

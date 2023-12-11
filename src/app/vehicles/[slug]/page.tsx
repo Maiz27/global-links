@@ -1,7 +1,8 @@
+import { getVehicleBySlug } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { fetchSanityData } from '@/constants';
-import { getVehicleBySlug } from '@/services/sanity/queries';
 import { vehicle } from '@/types';
+import VehicleSpecs from '@/components/vehicleComp/VehicleSpecs';
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const vehicle: vehicle = await fetchSanityData(getVehicleBySlug, {
@@ -12,6 +13,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
     <main>
       <PageHeader heading={vehicle.name} paragraph={vehicle.description} />
 
+      <VehicleSpecs vehicle={vehicle} />
       <div className='min-h-screen'></div>
     </main>
   );

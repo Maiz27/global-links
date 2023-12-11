@@ -20,7 +20,7 @@ const VehicleTabs = ({
 
   return (
     <section className='my-20'>
-      <SectionHeading Tag='h2' text='Explore Vehicles' isCentered={true} />
+      <SectionHeading Tag='h2' text='Explore Vehicles' />
       <div className='flex flex-col items-center mt-4'>
         <Tabs
           selectedTypes={selectedTypes}

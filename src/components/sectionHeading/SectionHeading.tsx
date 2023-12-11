@@ -22,7 +22,7 @@ const SectionHeading = ({
   Tag,
   text,
   size = '4xl',
-  isCentered = false,
+  isCentered = true,
 }: props) => {
   return (
     <Tag

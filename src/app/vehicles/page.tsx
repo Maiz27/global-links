@@ -1,6 +1,6 @@
 import { getAllVehicles, getVehicleTypes } from '@/services/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import VehiclesCatalogue from '@/components/vehiclesCatalogue/vehiclesCatalogue';
+import VehiclesCatalogue from '@/components/vehicleComp/vehiclesCatalogue';
 import { fetchSanityData } from '@/constants';
 
 export const revalidate = 60; // revalidate every minute
