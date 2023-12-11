@@ -12,27 +12,25 @@ import { vehicle } from '@/types';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const { engine, dimensions, transmission, capacity, warranty } = vehicle;
+
   const engineDetails = {
     'Displacement (cc)': engine?.displacement,
     'Fuel System': engine?.fuelSystem,
-    'Fuel type': engine?.fuelType,
+    'Fuel type': engine?.fuelType?.join(', '),
   };
   const dimensionDetails = {
     'Dimensions (Lxwxh) (mm)': `${dimensions?.length} x ${dimensions?.width} x ${dimensions?.height}`,
     'Ground clearance (mm)': dimensions?.groundClearance,
     'Wheelbase (mm)': dimensions?.wheelbase,
   };
-
   const transmissionDetails = {
-    Gearbox: transmission?.gearbox,
+    Gearbox: transmission?.gearbox.join(', '),
     Transmission: transmission?.transmission,
   };
-
   const capacityDetails = {
     'Curb weight (kg)': capacity?.weight,
     'Fuel tank capacity (L)': capacity?.tank,
   };
-
   const warrantyDetails = {
     'Manufacturer Warranty': warranty?.period,
     'Retail Network': warranty?.network,
@@ -44,7 +42,6 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
     { title: 'Transmission', details: transmissionDetails, icon: FaSitemap },
     { title: 'Capacity', details: capacityDetails, icon: FaWeightHanging },
     { title: 'Warranty', details: warrantyDetails, icon: FaUserShield },
-    // Add more details as needed
   ];
 
   return (
