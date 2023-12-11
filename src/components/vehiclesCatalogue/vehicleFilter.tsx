@@ -44,12 +44,17 @@ const TypesSelector = ({
   setSelected,
 }: typesSelectorProps) => {
   const handleChange = (title: string) => {
-    if (selected.includes(title)) {
-      setSelected(selected.filter((item) => item !== title));
-    } else {
-      setSelected([...selected, title]);
-    }
+    setSelected((prevSelected) => {
+      const newSelected = new Set(prevSelected);
+      if (newSelected.has(title)) {
+        newSelected.delete(title);
+      } else {
+        newSelected.add(title);
+      }
+      return Array.from(newSelected);
+    });
   };
+
   return (
     <div className='collapse collapse-plus -mt-4'>
       <input type='checkbox' />

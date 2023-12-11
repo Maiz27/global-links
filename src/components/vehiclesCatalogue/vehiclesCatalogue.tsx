@@ -1,5 +1,4 @@
 'use client';
-import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import useFilterVehicles from '@/hooks/useFilterVehicles';
 import VehicleCard from '../vehicleCard/VehicleCard';
@@ -13,8 +12,8 @@ const VehiclesCatalogue = ({
   vehicles: vehicle[];
   types: vehicleType[];
 }) => {
-  const [selectedTypes, setSelectedType] = useState<string[]>([]);
-  const { filteredList } = useFilterVehicles(vehicles, selectedTypes);
+  const { filteredList, selectedTypes, setSelectedType } =
+    useFilterVehicles(vehicles);
   return (
     <div className='my-10 w-11/12 2xl:w-4/5 mx-auto flex flex-col xl:flex-row'>
       <VehiclesFilter

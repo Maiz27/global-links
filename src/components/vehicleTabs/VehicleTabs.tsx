@@ -1,7 +1,8 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
+import useFilterVehicles from '@/hooks/useFilterVehicles';
 import VehicleSlider from './VehicleSlider';
 import { vehicle, vehicleType } from '@/types';
 
@@ -12,26 +13,24 @@ const VehicleTabs = ({
   vehicles: vehicle[];
   types: vehicleType[];
 }) => {
-  const [selected, setSelected] = useState(1);
-  const [list, setList] = useState(vehicles);
-
-  useEffect(() => {
-    const selectedCategory = types[selected].title;
-    const filteredList = vehicles
-      .filter((vehicle) => vehicle.type.title === selectedCategory)
-      .sort((a, b) => a.name.localeCompare(b.name));
-    setList(filteredList);
-  }, [selected, types, vehicles]);
+  const { filteredList, selectedTypes, setSelectedType } = useFilterVehicles(
+    vehicles,
+    [types[1].title]
+  );
 
   return (
     <section className='my-20'>
       <SectionHeading Tag='h2' text='Explore Vehicles' isCentered={true} />
       <div className='flex flex-col items-center mt-4'>
-        <Tabs selected={selected} setSelected={setSelected} types={types} />
+        <Tabs
+          selectedTypes={selectedTypes}
+          setSelectedType={setSelectedType}
+          types={types}
+        />
 
         <AnimatePresence mode='wait'>
-          {types.map((tab, index) => {
-            return selected === index ? (
+          {types.map(({ title }, index) => {
+            return selectedTypes.includes(title) ? (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -39,7 +38,7 @@ const VehicleTabs = ({
                 key={index}
                 className='w-11/12'
               >
-                <VehicleSlider list={list} />
+                <VehicleSlider list={filteredList} />
               </motion.div>
             ) : undefined;
           })}
@@ -50,20 +49,20 @@ const VehicleTabs = ({
 };
 
 type TabsProps = {
-  selected: number;
-  setSelected: Dispatch<SetStateAction<number>>;
+  selectedTypes: string[];
+  setSelectedType: Dispatch<SetStateAction<string[]>>;
   types: vehicleType[];
 };
 
-const Tabs = ({ selected, setSelected, types }: TabsProps) => {
+const Tabs = ({ selectedTypes, setSelectedType, types }: TabsProps) => {
   return (
     <div className='w-full max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
       {types.map(({ title }, index) => {
         return (
           <Tab
             key={index}
-            setSelected={setSelected}
-            selected={selected === index}
+            setSelected={setSelectedType}
+            selected={selectedTypes.includes(title)}
             title={title}
             tabNum={index}
           />
@@ -84,7 +83,7 @@ const Tab = ({ selected, title, setSelected, tabNum }: TabProps) => {
   return (
     <div className='relative w-full min-w-[150px] max-w-[200px]'>
       <button
-        onClick={() => setSelected(tabNum)}
+        onClick={() => setSelected([title])}
         className='btn btn-ghost w-full h-full border-b-4 border-b-slate-200'
       >
         <span

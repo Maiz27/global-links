@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { vehicle } from '@/types';
 
-const useFilterVehicles = (vehicles: vehicle[], selectedTypes: string[]) => {
+const useFilterVehicles = (vehicles: vehicle[], selected?: string[]) => {
+  const [selectedTypes, setSelectedType] = useState<string[]>(
+    selected ? selected : []
+  );
   const [filteredList, setFilteredList] = useState(vehicles);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ const useFilterVehicles = (vehicles: vehicle[], selectedTypes: string[]) => {
     }
   }, [selectedTypes, vehicles]);
 
-  return { filteredList };
+  return { filteredList, selectedTypes, setSelectedType };
 };
 
 export default useFilterVehicles;
