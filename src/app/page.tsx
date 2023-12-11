@@ -3,12 +3,12 @@ import Hero from '@/components/hero/Hero';
 import VehicleTabs from '@/components/vehicleComp/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 import {
+  fetchSanityData,
   getAllHeroImages,
   getAllVehicles,
   getLatestPosts,
   getVehicleTypes,
 } from '@/services/sanity/queries';
-import { fetchSanityData } from '@/constants';
 import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 
 export const revalidate = 60; // revalidate every minute
