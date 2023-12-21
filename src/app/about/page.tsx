@@ -1,10 +1,10 @@
 import IconCard from '@/components/cards/IconCard';
 import ImageCard from '@/components/cards/ImageCard';
+import ImageGallery from '@/components/imageGallery/ImageGallery';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import { aboutGlobalLinks } from '@/constants';
+import { aboutGlobalLinks, gallery } from '@/constants';
 import team from 'public/imgs/team2.jpg';
-import { IconBaseProps } from 'react-icons';
 
 const page = () => {
   const { about, mission, vision, values } = aboutGlobalLinks;
@@ -39,7 +39,11 @@ const page = () => {
         </div>
       </section>
 
-      <div className='min-h-screen'></div>
+      <section className='py-20 space-y-2'>
+        <SectionHeading Tag='h2' text='Global Links Gallery' />
+
+        <ImageGallery images={gallery} />
+      </section>
     </main>
   );
 };
