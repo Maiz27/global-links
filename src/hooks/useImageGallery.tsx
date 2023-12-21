@@ -29,15 +29,24 @@ const useImageGallery = (imagesCount: number) => {
     setSlideNumber((prev) => (prev + 1 === imagesCount ? 0 : prev + 1));
   };
 
-  useEffect(() => {
-    const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        handleCloseModal();
-      }
-    };
+  const handleEscKey = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      handleCloseModal();
+    }
+  };
 
+  const handleArrowKey = (event: KeyboardEvent) => {
+    if (event.key === 'ArrowLeft') {
+      prevSlide();
+    } else if (event.key === 'ArrowRight') {
+      nextSlide();
+    }
+  };
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       handleEscKey(event);
+      handleArrowKey(event);
     };
 
     document.addEventListener('keydown', handleKeyDown);
