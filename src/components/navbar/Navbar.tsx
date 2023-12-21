@@ -1,8 +1,9 @@
 'use client';
-import { useState, useEffect, useRef, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import useNavbar from '@/hooks/useNavbar';
 import {
   menuLinkArrowVariants,
   menuLinkVariants,
@@ -14,22 +15,7 @@ import logo from '/public/imgs/logo/logo.png';
 import toyota from '/public/imgs/toyota.png';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const node = useRef<HTMLElement | null>(null);
-
-  const handleClickOutside = (event: { target: any }) => {
-    if (node.current?.contains(event.target)) {
-      return;
-    }
-    setIsOpen(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
+  const { isOpen, setIsOpen, node } = useNavbar();
 
   return (
     <nav

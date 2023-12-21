@@ -8,8 +8,21 @@ import {
   FaFacebookF,
   FaInstagram,
   FaWhatsapp,
+  FaScaleBalanced,
+  FaLeaf,
 } from 'react-icons/fa6';
-import { sanityClient } from './services/sanity/sanityClient';
+
+import team from 'public/imgs/team.jpg';
+import team2 from 'public/imgs/team2.jpg';
+import paint from 'public/imgs/paint.jpg';
+import img1 from 'public/imgs/1.jpg';
+import img2 from 'public/imgs/2.jpg';
+import img3 from 'public/imgs/3.jpg';
+import img4 from 'public/imgs/4.jpg';
+import img5 from 'public/imgs/5.jpg';
+import img6 from 'public/imgs/6.jpg';
+import img7 from 'public/imgs/7.jpg';
+import img8 from 'public/imgs/8.jpg';
 
 export const routes = [
   {
@@ -121,6 +134,95 @@ export const pageHeaderData = [
   {
     heading: 'Toyota Vehicles',
     text: 'Discover Your Perfect Ride at Global Links: Explore Our Diverse Fleet of Exceptional Vehicles.',
+  },
+  {
+    heading: 'About Global Links',
+    text: "Discover Global Links Auto, South Sudan's undisputed leader in the automotive landscape. Embodying a legacy of excellence, reliability, and unmatched expertise.",
+  },
+];
+
+export const aboutGlobalLinks = {
+  about: {
+    title: 'About Us',
+    paragraph:
+      "Since our inception in November 2007, Global Links has been at the forefront of the automotive industry in South Sudan. With operations commencing in August 2008, we've established ourselves as a trusted name. With 40 dedicated employees and a sprawling 3,250 Sqm service center and showroom, we offer 12 bays for painting and washing. At Global Links, we're not just about cars; we're about a commitment to excellence that drives us every day. Our journey is fueled by our passion for automobiles and our unwavering dedication to providing unmatched service and quality. We invite you to experience the Global Links difference today.",
+  },
+  mission: {
+    title: 'Our Mission',
+    paragraph:
+      "At Global Links, our mission is clear and unwavering: to be the driving force behind South Sudan's automotive industry. We are committed to delivering exceptional Toyota vehicles and top-tier automotive services, setting the highest standards of quality, innovation, and customer satisfaction. We aim to enrich the lives of our customers by providing safe, reliable, and eco-conscious transportation solutions, all while contributing positively to the communities we serve. With integrity, dedication, and a customer-centric approach, we are on a mission to redefine the automotive experience in Juba and beyond.",
+  },
+  vision: {
+    title: 'Our Vision',
+    paragraph:
+      "Our vision at Global Links is to become the undisputed leader in South Sudan's automotive landscape, synonymous with excellence, innovation, and sustainability. We aspire to continually raise the bar by offering a comprehensive range of cutting-edge Toyota vehicles and services, setting new industry benchmarks. We envision a future where every individual can rely on us for their automotive needs, where our operations contribute to a greener and more prosperous South Sudan, and where our unwavering commitment to integrity and customer satisfaction remains the cornerstone of our success. Our journey is driven by this vision, inspiring us to go above and beyond in shaping the future of mobility in our region.",
+  },
+  values: [
+    {
+      icon: FaScaleBalanced,
+      title: 'Integrity',
+      paragraph:
+        'We uphold the highest ethical standards in all our actions, fostering trust and transparency in every relationship we build.',
+    },
+    {
+      icon: FaUserGear,
+      title: 'Customer-Centric',
+      paragraph:
+        'We put our customers at the heart of our business, consistently exceeding their expectations and delivering a personalized experience.',
+    },
+    {
+      icon: FaLeaf,
+      title: 'Environmental Responsibility',
+      paragraph:
+        'We take our environmental responsibilities seriously, promoting sustainable practices and eco-conscious solutions.',
+    },
+  ],
+};
+
+export const gallery = [
+  {
+    title: 'Image 1',
+    src: img1,
+  },
+  {
+    title: 'Image 2',
+    src: img2,
+  },
+  {
+    title: 'Image 3',
+    src: team,
+  },
+  {
+    title: 'Image 4',
+    src: img3,
+  },
+  {
+    title: 'Image 5',
+    src: img4,
+  },
+  {
+    title: 'Image 6',
+    src: team2,
+  },
+  {
+    title: 'Image 7',
+    src: img5,
+  },
+  {
+    title: 'Image 8',
+    src: img6,
+  },
+  {
+    title: 'Image 9',
+    src: paint,
+  },
+  {
+    title: 'Image 10',
+    src: img7,
+  },
+  {
+    title: 'Image 11',
+    src: img8,
   },
 ];
 
