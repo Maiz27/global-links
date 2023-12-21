@@ -1,5 +1,5 @@
 'use client';
-import ImageCard from '@/components/imageCard/ImageCard';
+import ImageCard from '@/components/cards/ImageCard';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import { faqData } from '@/constants';
 import Question from './Question';
