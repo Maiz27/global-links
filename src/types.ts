@@ -16,9 +16,7 @@ export type blog = {
   publishedAt: string;
   title: string;
   description: string;
-  categories: Array<{
-    title: string;
-  }>;
+  categories: Array<postCategory>;
   mainImage: string | StaticImageData;
   author: {
     name: string;
@@ -26,6 +24,11 @@ export type blog = {
     image: Object;
   };
   body: blogBody;
+};
+
+export type postCategory = {
+  title: string;
+  description?: string;
 };
 
 export type blogBody = Array<{

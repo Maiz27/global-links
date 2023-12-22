@@ -152,6 +152,10 @@ export const pageHeaderData = [
     heading: 'Contact Us',
     text: "Connect with Global Links: Your Gateway to Exceptional Service and Support. Reach out to Us for Inquiries, Assistance, and a Seamless Experience. We're here to Ensure Your Journey with Global Links is as Smooth and Enjoyable as Your Drive in Our Exceptional Vehicles.",
   },
+  {
+    heading: 'Our Blog',
+    text: "Discover the World of Global Links through our Insightful Blog. Stay Informed with the Latest in Automotive Trends, Maintenance Tips, and Exciting Toyota Updates. Our Blogs are Your Gateway to Knowledge, Connecting You with the Pulse of the Road and the Heart of Global Links' Expertise.",
+  },
 ];
 
 export const aboutGlobalLinks = {
@@ -281,6 +285,36 @@ export const contactFormFields = [
     required: true,
   },
 ];
+
+//functions
+export const getStringDate = (StringDate: string, isRelative = false) => {
+  const currentDate = new Date();
+  const inputDate = new Date(StringDate);
+  const timeDifference = Math.abs(currentDate.getTime() - inputDate.getTime());
+  const minutesDifference = Math.floor(timeDifference / (1000 * 60));
+  const hoursDifference = Math.floor(minutesDifference / 60);
+  const daysDifference = Math.floor(hoursDifference / 24);
+
+  if (isRelative) {
+    if (daysDifference >= 1) {
+      return `${daysDifference} day${daysDifference !== 1 ? 's' : ''} ago`;
+    } else if (hoursDifference >= 1) {
+      return `${hoursDifference} hour${hoursDifference !== 1 ? 's' : ''} ago`;
+    } else {
+      return `${minutesDifference} min${
+        minutesDifference !== 1 ? 's' : ''
+      } ago`;
+    }
+  } else {
+    // By default, display the date in the "weekday, month day, year" format
+    return inputDate.toLocaleString(undefined, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  }
+};
 
 //Framer motion variables
 export const menuVariants = {

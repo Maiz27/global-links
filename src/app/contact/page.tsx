@@ -59,8 +59,6 @@ const page = () => {
           src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Global%20Links%20Auto)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
         />
       </section>
-
-      {/* <div className='min-h-screen'></div> */}
     </main>
   );
 };
