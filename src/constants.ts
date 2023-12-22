@@ -28,6 +28,7 @@ import img5 from 'public/imgs/5.jpg';
 import img6 from 'public/imgs/6.jpg';
 import img7 from 'public/imgs/7.jpg';
 import img8 from 'public/imgs/8.jpg';
+import { blogBody } from './types';
 
 export const routes = [
   {
@@ -314,6 +315,27 @@ export const getStringDate = (StringDate: string, isRelative = false) => {
       day: 'numeric',
     });
   }
+};
+const getWordCount = (blocks: blogBody) => {
+  let wordCount = 0;
+
+  blocks.forEach((block: { _type: string; children: any[] }) => {
+    if (block._type === 'block' && block.children) {
+      block.children.forEach((child) => {
+        if (child._type === 'span' && child.text) {
+          wordCount += child.text.split(' ').length;
+        }
+      });
+    }
+  });
+
+  return wordCount;
+};
+
+export const calculateReadTime = (blocks: blogBody, speed = 200) => {
+  const wordCount = getWordCount(blocks);
+  const readTime = Math.ceil(wordCount / speed);
+  return readTime;
 };
 
 //Framer motion variables

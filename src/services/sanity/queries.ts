@@ -43,7 +43,7 @@ export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     },
     publishedAt,
     body,
-  }`;
+  }[0]`;
 
 export const getLatestPosts = `*[_type == 'post'] 
   | order(publishedAt desc)[0..2] {

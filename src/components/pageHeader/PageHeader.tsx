@@ -1,17 +1,77 @@
-import { pageHeaderData } from '@/constants';
-import SectionHeading from '../sectionHeading/SectionHeading';
-import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
+import Image from 'next/image';
+import SectionHeading from '@/components/sectionHeading/SectionHeading';
+import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs';
+import { urlFor } from '@/services/sanity/sanityClient';
+import { calculateReadTime, getStringDate, pageHeaderData } from '@/constants';
+import { blog } from '@/types';
 
 type props = {
   pageIndex?: number;
   heading?: string;
   paragraph?: string;
   background?: string;
+  blog?: blog;
 };
 
-const PageHeader = ({ pageIndex, heading, paragraph }: props) => {
+const PageHeader = ({ pageIndex, heading, paragraph, blog }: props) => {
+  if (blog) {
+    console.log(blog);
+    const { title, publishedAt, author, mainImage, categories, body } = blog;
+    const imgUrl = urlFor(mainImage).url();
+
+    return (
+      <section className='relative'>
+        <div className='w-full h-[35rem] relative'>
+          <Image
+            src={imgUrl}
+            width={2400}
+            height={2400}
+            alt='hero image'
+            loading='eager'
+            className='w-full h-full object-cover object-center'
+            priority={true}
+          />
+          <div className='absolute inset-0 bg-black opacity-60'></div>
+        </div>
+        <div className='h-3/4 w-10/12 mt-2 flex flex-col justify-center text-white absolute inset-0 z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+          <SectionHeading text={title} Tag='h1' isCentered={true} />
+
+          <div className='flex flex-col lg:justify-evenly gap-4 mt-4 lg:mt-10 text-xs xl:text-base lg:w-3/5 lg:mx-auto tracking-wider leading-5'>
+            <ul className='w-full flex flex-wrap lg:justify-evenly gap-2'>
+              {categories.map(({ title }) => {
+                return (
+                  <li
+                    key={title}
+                    className='badge badge-xs bg-base-200 text-neutral badge-outline py-2'
+                  >
+                    {title}
+                  </li>
+                );
+              })}
+            </ul>
+            <div className='w-full flex flex-col lg:flex-row lg:justify-evenly gap-1 pl-2'>
+              <span className='flex items-center gap-2'>
+                {/* <FaUserPen className='text-primary' /> */}
+                {author.name}
+              </span>
+              <time className='flex items-center gap-2'>
+                {/* <MdDateRange className='text-primary' />{' '} */}
+                {getStringDate(publishedAt)}
+              </time>
+              <span className='flex items-center gap-2'>
+                {/* <MdTimer className='text-primary' /> */}
+                {calculateReadTime(body)} mins read
+              </span>
+            </div>
+          </div>
+        </div>
+        <Breadcrumbs />
+      </section>
+    );
+  }
+
   return (
-    <section className='min-h-[30vh] flex flex-col bg-gradient-to-r from-gray-900 to-black text-base-100'>
+    <section className='min-h-[40vh] flex flex-col bg-gradient-to-r from-gray-900 to-black text-base-100'>
       <div className='h-5/6 grid place-items-center grow py-10'>
         <div className='space-y-2'>
           <SectionHeading
