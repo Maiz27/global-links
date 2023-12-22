@@ -10,6 +10,11 @@ import {
   FaWhatsapp,
   FaScaleBalanced,
   FaLeaf,
+  FaCircleUser,
+  FaEnvelope,
+  FaPhone,
+  FaEnvelopeOpenText,
+  FaComment,
 } from 'react-icons/fa6';
 
 import team from 'public/imgs/team.jpg';
@@ -133,11 +138,19 @@ export const socials = [
 export const pageHeaderData = [
   {
     heading: 'Toyota Vehicles',
-    text: 'Discover Your Perfect Ride at Global Links: Explore Our Diverse Fleet of Exceptional Vehicles.',
+    text: 'Uncover the Perfect Match for Your Driving Needs, from Stylish Sedans to Robust SUVs. Every Vehicle Embodies Quality, Performance, and the Distinctive Global Links Touch. Start Your Journey Towards Driving Perfection Today.',
   },
   {
     heading: 'About Global Links',
+    text: "Immerse Yourself in Our Commitment to Quality, Global Connections, and Customer Satisfaction. Learn About the Passion that Drives Us to Elevate Your Experience with Every Interaction. At Global Links, We Don't Just Sell Cars; We Craft Experiences That Last a Lifetime.",
+  },
+  {
+    heading: 'After Sales',
     text: "Discover Global Links Auto, South Sudan's undisputed leader in the automotive landscape. Embodying a legacy of excellence, reliability, and unmatched expertise.",
+  },
+  {
+    heading: 'Contact Us',
+    text: "Connect with Global Links: Your Gateway to Exceptional Service and Support. Reach out to Us for Inquiries, Assistance, and a Seamless Experience. We're here to Ensure Your Journey with Global Links is as Smooth and Enjoyable as Your Drive in Our Exceptional Vehicles.",
   },
 ];
 
@@ -226,6 +239,48 @@ export const gallery = [
   },
 ];
 
+export const contactFormFields = [
+  {
+    name: 'name',
+    label: 'Name',
+    icon: FaCircleUser,
+    type: 'text',
+    placeholder: 'John Doe',
+    required: true,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    icon: FaEnvelope,
+    type: 'email',
+    placeholder: 'username@site.com',
+    required: true,
+  },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: FaPhone,
+    type: 'tel',
+    placeholder: '+211 (Optional)',
+    required: false,
+  },
+  {
+    name: 'subject',
+    label: 'Message Subject',
+    icon: FaEnvelopeOpenText,
+    type: 'text',
+    placeholder: 'Type here (Optional)',
+    required: false,
+  },
+  {
+    name: 'message',
+    label: 'Message',
+    icon: FaComment,
+    type: 'textarea',
+    placeholder: 'Type here',
+    required: true,
+  },
+];
 //Framer motion variables
 export const menuVariants = {
   open: {
