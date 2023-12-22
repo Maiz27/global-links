@@ -10,6 +10,11 @@ import {
   FaWhatsapp,
   FaScaleBalanced,
   FaLeaf,
+  FaCircleUser,
+  FaEnvelope,
+  FaPhone,
+  FaEnvelopeOpenText,
+  FaComment,
 } from 'react-icons/fa6';
 
 import team from 'public/imgs/team.jpg';
@@ -23,6 +28,7 @@ import img5 from 'public/imgs/5.jpg';
 import img6 from 'public/imgs/6.jpg';
 import img7 from 'public/imgs/7.jpg';
 import img8 from 'public/imgs/8.jpg';
+import { blogBody } from './types';
 
 export const routes = [
   {
@@ -133,11 +139,23 @@ export const socials = [
 export const pageHeaderData = [
   {
     heading: 'Toyota Vehicles',
-    text: 'Discover Your Perfect Ride at Global Links: Explore Our Diverse Fleet of Exceptional Vehicles.',
+    text: 'Uncover the Perfect Match for Your Driving Needs, from Stylish Sedans to Robust SUVs. Every Vehicle Embodies Quality, Performance, and the Distinctive Global Links Touch. Start Your Journey Towards Driving Perfection Today.',
   },
   {
     heading: 'About Global Links',
+    text: "Immerse Yourself in Our Commitment to Quality, Global Connections, and Customer Satisfaction. Learn About the Passion that Drives Us to Elevate Your Experience with Every Interaction. At Global Links, We Don't Just Sell Cars; We Craft Experiences That Last a Lifetime.",
+  },
+  {
+    heading: 'After Sales',
     text: "Discover Global Links Auto, South Sudan's undisputed leader in the automotive landscape. Embodying a legacy of excellence, reliability, and unmatched expertise.",
+  },
+  {
+    heading: 'Contact Us',
+    text: "Connect with Global Links: Your Gateway to Exceptional Service and Support. Reach out to Us for Inquiries, Assistance, and a Seamless Experience. We're here to Ensure Your Journey with Global Links is as Smooth and Enjoyable as Your Drive in Our Exceptional Vehicles.",
+  },
+  {
+    heading: 'Our Blog',
+    text: "Discover the World of Global Links through our Insightful Blog. Stay Informed with the Latest in Automotive Trends, Maintenance Tips, and Exciting Toyota Updates. Our Blogs are Your Gateway to Knowledge, Connecting You with the Pulse of the Road and the Heart of Global Links' Expertise.",
   },
 ];
 
@@ -225,6 +243,100 @@ export const gallery = [
     src: img8,
   },
 ];
+
+export const contactFormFields = [
+  {
+    name: 'name',
+    label: 'Name',
+    icon: FaCircleUser,
+    type: 'text',
+    placeholder: 'John Doe',
+    required: true,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    icon: FaEnvelope,
+    type: 'email',
+    placeholder: 'username@site.com',
+    required: true,
+  },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: FaPhone,
+    type: 'tel',
+    placeholder: '+211 (Optional)',
+    required: false,
+  },
+  {
+    name: 'subject',
+    label: 'Message Subject',
+    icon: FaEnvelopeOpenText,
+    type: 'text',
+    placeholder: 'Type here (Optional)',
+    required: false,
+  },
+  {
+    name: 'message',
+    label: 'Message',
+    icon: FaComment,
+    type: 'textarea',
+    placeholder: 'Type here',
+    required: true,
+  },
+];
+
+//functions
+export const getStringDate = (StringDate: string, isRelative = false) => {
+  const currentDate = new Date();
+  const inputDate = new Date(StringDate);
+  const timeDifference = Math.abs(currentDate.getTime() - inputDate.getTime());
+  const minutesDifference = Math.floor(timeDifference / (1000 * 60));
+  const hoursDifference = Math.floor(minutesDifference / 60);
+  const daysDifference = Math.floor(hoursDifference / 24);
+
+  if (isRelative) {
+    if (daysDifference >= 1) {
+      return `${daysDifference} day${daysDifference !== 1 ? 's' : ''} ago`;
+    } else if (hoursDifference >= 1) {
+      return `${hoursDifference} hour${hoursDifference !== 1 ? 's' : ''} ago`;
+    } else {
+      return `${minutesDifference} min${
+        minutesDifference !== 1 ? 's' : ''
+      } ago`;
+    }
+  } else {
+    // By default, display the date in the "weekday, month day, year" format
+    return inputDate.toLocaleString(undefined, {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  }
+};
+const getWordCount = (blocks: blogBody) => {
+  let wordCount = 0;
+
+  blocks.forEach((block: { _type: string; children: any[] }) => {
+    if (block._type === 'block' && block.children) {
+      block.children.forEach((child) => {
+        if (child._type === 'span' && child.text) {
+          wordCount += child.text.split(' ').length;
+        }
+      });
+    }
+  });
+
+  return wordCount;
+};
+
+export const calculateReadTime = (blocks: blogBody, speed = 200) => {
+  const wordCount = getWordCount(blocks);
+  const readTime = Math.ceil(wordCount / speed);
+  return readTime;
+};
 
 //Framer motion variables
 export const menuVariants = {

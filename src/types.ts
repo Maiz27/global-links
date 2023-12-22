@@ -1,5 +1,3 @@
-import { StaticImageData } from 'next/image';
-
 export type heroImages = {
   images: Array<{
     title: string;
@@ -16,16 +14,19 @@ export type blog = {
   publishedAt: string;
   title: string;
   description: string;
-  categories: Array<{
-    title: string;
-  }>;
-  mainImage: string | StaticImageData;
+  categories: Array<postCategory>;
+  mainImage: { asset: Object; _type: 'image' };
   author: {
     name: string;
     title: string;
     image: Object;
   };
   body: blogBody;
+};
+
+export type postCategory = {
+  title: string;
+  description?: string;
 };
 
 export type blogBody = Array<{

@@ -24,7 +24,7 @@ const Navbar = () => {
     >
       <NavLeft />
       <NavRight setIsOpen={setIsOpen} isOpen={isOpen} />
-      <NavMenu isOpen={isOpen} />
+      <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </nav>
   );
 };
@@ -104,7 +104,13 @@ const NavRight = ({
   );
 };
 
-const NavMenu = ({ isOpen }: { isOpen: boolean }) => {
+const NavMenu = ({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <motion.div
       variants={menuVariants}
@@ -113,13 +119,23 @@ const NavMenu = ({ isOpen }: { isOpen: boolean }) => {
       className='absolute p-4 bg-base-100 shadow-lg left-0 right-0 top-full origin-top flex flex-col gap-4'
     >
       {routes.map(({ name, href: path }) => {
-        return <MenuLink key={path} name={name} path={path} />;
+        return (
+          <MenuLink key={path} name={name} path={path} setIsOpen={setIsOpen} />
+        );
       })}
     </motion.div>
   );
 };
 
-const MenuLink = ({ name, path }: { name: string; path: string }) => {
+const MenuLink = ({
+  name,
+  path,
+  setIsOpen,
+}: {
+  name: string;
+  path: string;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <motion.div
       variants={menuLinkVariants}
@@ -128,12 +144,14 @@ const MenuLink = ({ name, path }: { name: string; path: string }) => {
       <motion.span variants={menuLinkArrowVariants}>
         <FaArrowRight className='h-[30px] text-sm' />
       </motion.span>
-      <div className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'>
+      <Link
+        href={path}
+        onClick={() => setIsOpen(false)}
+        className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'
+      >
         <span className='flex items-center h-[30px]'>{name}</span>
-        <Link href={path} className='flex items-center h-[30px] text-primary'>
-          {name}
-        </Link>
-      </div>
+        <span className='flex items-center h-[30px] text-accent'>{name}</span>
+      </Link>
     </motion.div>
   );
 };
