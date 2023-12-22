@@ -6,7 +6,6 @@ const page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });
   const { body } = post;
 
-  //   console.log(post);
   return (
     <article>
       <PageHeader blog={post} />

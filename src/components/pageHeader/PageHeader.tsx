@@ -3,6 +3,7 @@ import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs';
 import { urlFor } from '@/services/sanity/sanityClient';
 import { calculateReadTime, getStringDate, pageHeaderData } from '@/constants';
+import { FaUserPen, FaCalendarDays, FaStopwatch } from 'react-icons/fa6';
 import { blog } from '@/types';
 
 type props = {
@@ -15,7 +16,6 @@ type props = {
 
 const PageHeader = ({ pageIndex, heading, paragraph, blog }: props) => {
   if (blog) {
-    console.log(blog);
     const { title, publishedAt, author, mainImage, categories, body } = blog;
     const imgUrl = urlFor(mainImage).url();
 
@@ -51,15 +51,15 @@ const PageHeader = ({ pageIndex, heading, paragraph, blog }: props) => {
             </ul>
             <div className='w-full flex flex-col lg:flex-row lg:justify-evenly gap-1 pl-2'>
               <span className='flex items-center gap-2'>
-                {/* <FaUserPen className='text-primary' /> */}
+                <FaUserPen className='text-' />
                 {author.name}
               </span>
               <time className='flex items-center gap-2'>
-                {/* <MdDateRange className='text-primary' />{' '} */}
+                <FaCalendarDays className='text-' />
                 {getStringDate(publishedAt)}
               </time>
               <span className='flex items-center gap-2'>
-                {/* <MdTimer className='text-primary' /> */}
+                <FaStopwatch className='text-' />
                 {calculateReadTime(body)} mins read
               </span>
             </div>
