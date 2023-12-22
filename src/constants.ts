@@ -281,6 +281,7 @@ export const contactFormFields = [
     required: true,
   },
 ];
+
 //Framer motion variables
 export const menuVariants = {
   open: {

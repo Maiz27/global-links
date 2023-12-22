@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import ContactForm from '@/components/forms/ContactForm';
@@ -54,7 +53,14 @@ const page = () => {
         <ContactForm />
       </section>
 
-      <div className='min-h-screen'></div>
+      <section className='h-[40rem]'>
+        <iframe
+          className='w-full h-full sepia-[0.1] saturate-[1.5]'
+          src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Global%20Links%20Auto)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+        />
+      </section>
+
+      {/* <div className='min-h-screen'></div> */}
     </main>
   );
 };
