@@ -12,7 +12,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <main>
-      <PageHeader heading={vehicle.name} paragraph={vehicle.description} />
+      <PageHeader heading={vehicle.name} paragraph={vehicle.description!} />
 
       <VehicleSpecs vehicle={vehicle} />
       <div className='min-h-screen'></div>
