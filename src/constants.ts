@@ -28,6 +28,7 @@ import img5 from 'public/imgs/5.jpg';
 import img6 from 'public/imgs/6.jpg';
 import img7 from 'public/imgs/7.jpg';
 import img8 from 'public/imgs/8.jpg';
+import img9 from 'public/imgs/9.jpg';
 import { blogBody } from './types';
 
 export const routes = [
@@ -143,7 +144,7 @@ export const pageHeaderData = [
   },
   {
     heading: 'About Global Links',
-    text: "Immerse Yourself in Our Commitment to Quality, Global Connections, and Customer Satisfaction. Learn About the Passion that Drives Us to Elevate Your Experience with Every Interaction. At Global Links, We Don't Just Sell Cars; We Craft Experiences That Last a Lifetime.",
+    text: "At Global Link Auto Company Limited, our passion for cars is matched only by our dedication to the people who drive them. We understand that a car is not just a vehicle; it's a companion on life's many roads – a witness to stories of joy, adventure, and sometimes, the mundane yet significant daily commutes. This understanding drives us to ensure that every vehicle we offer isn't just a machine, but a reliable partner in the journey of life.",
   },
   {
     heading: 'After Sales',
@@ -163,38 +164,23 @@ export const aboutGlobalLinks = {
   about: {
     title: 'About Us',
     paragraph:
-      "Since our inception in November 2007, Global Links has been at the forefront of the automotive industry in South Sudan. With operations commencing in August 2008, we've established ourselves as a trusted name. With 40 dedicated employees and a sprawling 3,250 Sqm service center and showroom, we offer 12 bays for painting and washing. At Global Links, we're not just about cars; we're about a commitment to excellence that drives us every day. Our journey is fueled by our passion for automobiles and our unwavering dedication to providing unmatched service and quality. We invite you to experience the Global Links difference today.",
+      'Founded in the vibrant heart of Juba in November 2007, Global Link Auto Company Limited embarked on its journey to redefine automotive excellence in South Sudan. As an authorized Toyota dealer, we commenced operations in August 2008, committing ourselves to delivering not just cars, but a legacy of trust and unparalleled service. Our commitment goes beyond the showroom. It extends to the long-lasting relationships we build with our customers, the comprehensive care we provide for every car, and the personalized experience each client receives. We are more than just a car dealership; we are a team of enthusiasts, professionals, and friends who believe in delivering nothing but the best. Join us at Global Link Auto Company Limited, where your automotive journey is not just about reaching a destination, but about enjoying every mile of the journey, securely and stylishly.',
   },
   mission: {
     title: 'Our Mission',
     paragraph:
-      "At Global Links, our mission is clear and unwavering: to be the driving force behind South Sudan's automotive industry. We are committed to delivering exceptional Toyota vehicles and top-tier automotive services, setting the highest standards of quality, innovation, and customer satisfaction. We aim to enrich the lives of our customers by providing safe, reliable, and eco-conscious transportation solutions, all while contributing positively to the communities we serve. With integrity, dedication, and a customer-centric approach, we are on a mission to redefine the automotive experience in Juba and beyond.",
+      'Our mission at Global Link Auto Company Limited is to provide the people of South Sudan with unparalleled automotive products and services. We are dedicated to offering a diverse range of high-quality Toyota vehicles that meet the varied needs and preferences of our customers. Our commitment extends beyond sales, as we aim to deliver exceptional after-sales support, maintenance, and genuine parts, ensuring every vehicle’s longevity and performance.',
   },
   vision: {
     title: 'Our Vision',
     paragraph:
-      "Our vision at Global Links is to become the undisputed leader in South Sudan's automotive landscape, synonymous with excellence, innovation, and sustainability. We aspire to continually raise the bar by offering a comprehensive range of cutting-edge Toyota vehicles and services, setting new industry benchmarks. We envision a future where every individual can rely on us for their automotive needs, where our operations contribute to a greener and more prosperous South Sudan, and where our unwavering commitment to integrity and customer satisfaction remains the cornerstone of our success. Our journey is driven by this vision, inspiring us to go above and beyond in shaping the future of mobility in our region.",
+      'At Global Link Auto Company Limited, our vision is to be the leading automotive force in South Sudan, setting the benchmark for excellence in the industry. We aspire to revolutionize the automotive experience by blending innovative solutions with unwavering commitment to quality and sustainability. Our goal is to not only meet but exceed the expectations of our customers, providing vehicles and services that enhance lives and contribute positively to our community.',
   },
-  values: [
-    {
-      icon: FaScaleBalanced,
-      title: 'Integrity',
-      paragraph:
-        'We uphold the highest ethical standards in all our actions, fostering trust and transparency in every relationship we build.',
-    },
-    {
-      icon: FaUserGear,
-      title: 'Customer-Centric',
-      paragraph:
-        'We put our customers at the heart of our business, consistently exceeding their expectations and delivering a personalized experience.',
-    },
-    {
-      icon: FaLeaf,
-      title: 'Environmental Responsibility',
-      paragraph:
-        'We take our environmental responsibilities seriously, promoting sustainable practices and eco-conscious solutions.',
-    },
-  ],
+  leadership: {
+    title: 'Global Links Leadership',
+    paragraph:
+      'At Global Link Auto Company Limited, our leadership is the driving force behind our success. Comprising seasoned professionals with a passion for the automotive industry, our team combines decades of experience with a forward-thinking approach. Guided by principles of innovation, integrity, and customer-centricity, they are committed to steering the company towards new heights of excellence and market leadership. Each leader brings a unique blend of skills and vision, ensuring that we remain at the forefront of automotive solutions and customer satisfaction.',
+  },
 };
 
 export const gallery = [
@@ -241,6 +227,10 @@ export const gallery = [
   {
     title: 'Image 11',
     src: img8,
+  },
+  {
+    title: 'Image 12',
+    src: img9,
   },
 ];
 

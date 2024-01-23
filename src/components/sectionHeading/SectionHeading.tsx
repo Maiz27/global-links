@@ -19,6 +19,7 @@ type props = {
     | '7xl';
   text: string;
   isCentered?: boolean;
+  hasGraphic?: boolean;
   altGraphics?: boolean;
 };
 
@@ -28,6 +29,7 @@ const SectionHeading = ({
   size = '4xl',
   isCentered = true,
   altGraphics = false,
+  hasGraphic = true,
 }: props) => {
   return (
     <Tag
@@ -36,13 +38,15 @@ const SectionHeading = ({
       `}
     >
       {text}
-      <div className='absolute left-0 -top-6 h-6 w-16'>
-        <Image
-          src={altGraphics ? graphicAlt : graphic}
-          alt='Triangle Graphics'
-          className='h-full object-contain'
-        />
-      </div>
+      {hasGraphic && (
+        <div className='absolute left-0 -top-6 h-6 w-16'>
+          <Image
+            src={altGraphics ? graphicAlt : graphic}
+            alt='Triangle Graphics'
+            className='h-full object-contain'
+          />
+        </div>
+      )}
     </Tag>
   );
 };

@@ -34,7 +34,7 @@ const PageHeader = ({
   heading,
   paragraph,
   blog,
-  altGraphic = false,
+  altGraphic = true,
 }: Props) => {
   if (blog) {
     const { title, publishedAt, author, mainImage, categories, body } = blog;
