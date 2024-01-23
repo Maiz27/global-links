@@ -25,9 +25,9 @@ export default async function Home() {
     <main>
       <Hero images={heroImages} />
 
-      <WhatWeDo />
-
       <VehicleTabs vehicles={vehicles} types={types} />
+
+      <WhatWeDo />
 
       <BasicFAQ />
 

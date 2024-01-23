@@ -6,15 +6,36 @@ import { calculateReadTime, getStringDate, pageHeaderData } from '@/constants';
 import { FaUserPen, FaCalendarDays, FaStopwatch } from 'react-icons/fa6';
 import { blog } from '@/types';
 
-type props = {
-  pageIndex?: number;
-  heading?: string;
-  paragraph?: string;
-  background?: string;
-  blog?: blog;
-};
+type Props =
+  | {
+      pageIndex: number;
+      altGraphic?: boolean;
+      heading?: never;
+      paragraph?: never;
+      blog?: never;
+    }
+  | {
+      heading: string;
+      paragraph: string;
+      altGraphic?: boolean;
+      pageIndex?: never;
+      blog?: never;
+    }
+  | {
+      blog: blog;
+      altGraphic?: boolean;
+      pageIndex?: never;
+      heading?: never;
+      paragraph?: never;
+    };
 
-const PageHeader = ({ pageIndex, heading, paragraph, blog }: props) => {
+const PageHeader = ({
+  pageIndex,
+  heading,
+  paragraph,
+  blog,
+  altGraphic = false,
+}: Props) => {
   if (blog) {
     const { title, publishedAt, author, mainImage, categories, body } = blog;
     const imgUrl = urlFor(mainImage).url();
@@ -71,12 +92,13 @@ const PageHeader = ({ pageIndex, heading, paragraph, blog }: props) => {
   }
 
   return (
-    <section className='min-h-[40vh] flex flex-col bg-gradient-to-r from-gray-900 to-black text-base-100'>
+    <section className='min-h-[50vh] flex flex-col bg-triangle-pattern bg-cover bg-bottom text-base-100'>
       <div className='h-5/6 grid place-items-center grow py-10'>
         <div className='space-y-2'>
           <SectionHeading
             Tag='h1'
             text={heading ? heading : pageHeaderData[pageIndex!].heading}
+            altGraphics={altGraphic}
           />
           <p
             className={`px-2 text-center w-11/12 mx-auto max-w-6xl ${

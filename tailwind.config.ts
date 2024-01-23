@@ -7,7 +7,11 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'triangle-pattern': "url('/imgs/backgrounds/1.png')",
+      },
+    },
   },
   safelist: [
     {
@@ -28,7 +32,7 @@ const config: Config = {
           ...require('daisyui/src/theming/themes')['light'],
           primary: '#2d3394',
           secondary: '#106536',
-          accent: '#e62129',
+          accent: '#de0f3f',
         },
       },
     ],
