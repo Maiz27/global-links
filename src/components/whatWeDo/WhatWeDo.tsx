@@ -4,7 +4,7 @@ import { whatWeDoList } from '@/constants';
 
 const WhatWeDo = () => {
   return (
-    <section className='min-h-screen py-20 grid place-items-center space-y-4 bg-triangle-pattern bg-cover bg-right-bottom text-base-100'>
+    <section className='min-h-screen py-20 grid place-items-center space-y-4 bg-triangle-pattern bg-cover bg-right-bottom bg-fixed text-base-100'>
       <div className='mx-auto text-center max-w-xl'>
         <SectionHeading Tag='h2' text='What We Do' />
         <p>

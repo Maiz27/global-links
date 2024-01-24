@@ -25,7 +25,7 @@ const VehicleCard = ({ vehicle }: props) => {
           alt={name}
           width={500}
           height={500}
-          className='h-full w-full object-scale-down'
+          className='h-full w-full object-contain'
         />
       </div>
       <div className='bg-base-100 p-4'>

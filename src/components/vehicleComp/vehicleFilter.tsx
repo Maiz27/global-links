@@ -15,7 +15,13 @@ const VehiclesFilter = ({ types, selected, count }: props) => {
   return (
     <aside className='w-full h-fit xl:w-1/5 card bg-base-200/60 p-4'>
       <div className='flex justify-between '>
-        <SectionHeading Tag='h2' text='Filters' size='xl' isCentered={false} />
+        <SectionHeading
+          Tag='h2'
+          text='Filters'
+          size='xl'
+          isCentered={false}
+          hasGraphic={false}
+        />
         <p className='text-lg'>
           <span className='font-semibold'>{count}</span> Matches
         </p>

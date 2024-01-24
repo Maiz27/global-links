@@ -5,7 +5,7 @@ import { blog } from '@/types';
 
 const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
   return (
-    <section className='my-20 space-y-10'>
+    <section className='py-20 space-y-10 bg-base-200/60'>
       <div className='mx-auto text-center max-w-2xl'>
         <SectionHeading Tag='h2' text='Featured Blogs' />
         <p className='px-1'>

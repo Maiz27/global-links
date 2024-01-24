@@ -15,7 +15,7 @@ const VehicleTabs = ({
 }) => {
   const { filteredList, selectedTypes, setSelectedType } = useFilterVehicles(
     vehicles,
-    [types[1].title]
+    [types[0].title]
   );
 
   return (
@@ -56,7 +56,7 @@ type TabsProps = {
 
 const Tabs = ({ selectedTypes, setSelectedType, types }: TabsProps) => {
   return (
-    <div className='w-full max-w-5xl flex overflow-x-auto justify-center custom-tabs'>
+    <div className='w-11/12 max-w-5xl flex overflow-auto justify-center custom-tabs'>
       {types.map(({ title }, index) => {
         return (
           <Tab
@@ -81,7 +81,7 @@ type TabProps = {
 
 const Tab = ({ selected, title, setSelected, tabNum }: TabProps) => {
   return (
-    <div className='relative w-full min-w-[150px] max-w-[200px]'>
+    <div className='relative w-full min-w-fit md:min-w-[150px] max-w-[200px]'>
       <button
         onClick={() => setSelected([title])}
         className='btn btn-ghost w-full h-full border-b-4 border-b-slate-200'

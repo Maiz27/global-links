@@ -63,7 +63,7 @@ const PageHeader = ({
                 return (
                   <li
                     key={title}
-                    className='badge badge-xs bg-base-200 text-neutral badge-outline py-2'
+                    className='badge badge-xs text-neutral badge-outline py-2'
                   >
                     {title}
                   </li>
