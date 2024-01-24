@@ -24,7 +24,23 @@ const config: Config = {
       pattern: /text-\w+/,
     },
   ],
-  plugins: [require('daisyui')],
+  plugins: [
+    require('daisyui'),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.clip-triangle-down': {
+          clipPath: 'polygon(0 0, 100% 0, 50% 100%)',
+        },
+        '.clip-triangle-left': {
+          clipPath: 'polygon(100% 0, 0 50%, 100% 100%)',
+        },
+        '.clip-triangle-right': {
+          clipPath: 'polygon(0 0, 100% 50%, 0 100%)',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
   daisyui: {
     themes: [
       {

@@ -17,8 +17,8 @@ import {
   FaComment,
 } from 'react-icons/fa6';
 
-import team from 'public/imgs/team.jpg';
-import team2 from 'public/imgs/team2.jpg';
+import teamPic from 'public/imgs/team.jpg';
+import teamPic2 from 'public/imgs/team2.jpg';
 import paint from 'public/imgs/paint.jpg';
 import img1 from 'public/imgs/1.jpg';
 import img2 from 'public/imgs/2.jpg';
@@ -29,6 +29,13 @@ import img6 from 'public/imgs/6.jpg';
 import img7 from 'public/imgs/7.jpg';
 import img8 from 'public/imgs/8.jpg';
 import img9 from 'public/imgs/9.jpg';
+
+import one from 'public/imgs/team/1.jpg';
+import two from 'public/imgs/team/2.jpg';
+import three from 'public/imgs/team/3.jpg';
+import four from 'public/imgs/team/4.jpg';
+import five from 'public/imgs/team/5.jpg';
+import six from 'public/imgs/team/6.jpg';
 import { blogBody } from './types';
 
 export const routes = [
@@ -147,6 +154,10 @@ export const pageHeaderData = [
     text: "At Global Link Auto Company Limited, our passion for cars is matched only by our dedication to the people who drive them. We understand that a car is not just a vehicle; it's a companion on life's many roads – a witness to stories of joy, adventure, and sometimes, the mundane yet significant daily commutes. This understanding drives us to ensure that every vehicle we offer isn't just a machine, but a reliable partner in the journey of life.",
   },
   {
+    heading: 'Leadership',
+    text: 'At Global Link Auto Company Limited, our leadership is the driving force behind our success. Comprising seasoned professionals with a passion for the automotive industry, our team combines decades of experience with a forward-thinking approach. Guided by principles of innovation, integrity, and customer-centricity, they are committed to steering the company towards new heights of excellence and market leadership. Each leader brings a unique blend of skills and vision, ensuring that we remain at the forefront of automotive solutions and customer satisfaction.',
+  },
+  {
     heading: 'After Sales',
     text: "Discover Global Links Auto, South Sudan's undisputed leader in the automotive landscape. Embodying a legacy of excellence, reliability, and unmatched expertise.",
   },
@@ -194,7 +205,7 @@ export const gallery = [
   },
   {
     title: 'Image 3',
-    src: team,
+    src: teamPic,
   },
   {
     title: 'Image 4',
@@ -206,7 +217,7 @@ export const gallery = [
   },
   {
     title: 'Image 6',
-    src: team2,
+    src: teamPic2,
   },
   {
     title: 'Image 7',
@@ -274,6 +285,57 @@ export const contactFormFields = [
     type: 'textarea',
     placeholder: 'Type here',
     required: true,
+  },
+];
+
+export const team = [
+  {
+    img: one,
+    position: 'left',
+    name: 'Victor Gore',
+    title: 'General Manager',
+    paragraph:
+      'As the General Manager at Global Link Auto Company Limited, Victor Gore brings over a decade of industry expertise, exemplifying a blend of strategic leadership and a deep passion for automotive excellence.',
+  },
+  {
+    img: two,
+    position: 'right',
+    name: 'Mary Ngugi',
+    title: 'Sales & Marketing',
+    paragraph:
+      "As the Head of Sales and Marketing at Global Link Auto Company Limited, Mary Ngugi stands out for her exceptional skills in customer engagement and market strategy. She's a dynamic leader",
+  },
+  {
+    img: three,
+    position: 'right',
+    name: 'Name',
+    title: 'Title',
+    paragraph:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
+  },
+  {
+    img: four,
+    position: 'left',
+    name: 'Name',
+    title: 'Title',
+    paragraph:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
+  },
+  {
+    img: five,
+    position: 'left',
+    name: 'Name',
+    title: 'Title',
+    paragraph:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
+  },
+  {
+    img: six,
+    position: 'right',
+    name: 'Name',
+    title: 'Title',
+    paragraph:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
   },
 ];
 

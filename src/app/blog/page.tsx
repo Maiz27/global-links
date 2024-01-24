@@ -14,7 +14,7 @@ const page = async () => {
 
   return (
     <main>
-      <PageHeader pageIndex={4} />
+      <PageHeader pageIndex={5} />
 
       <BlogsGrid blogs={blogs} categories={categories} />
 
