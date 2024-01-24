@@ -14,13 +14,13 @@ const BlogCard = ({ blog }: { blog: blog }) => {
     'before:content-[""] before:absolute before:inset-[1px] before:bg-transparent group-hover:before:bg-black/40 before:transition-colors before:duration-500';
   return (
     <div className='card w-full h-[30rem] bg-base-100 shadow-xl relative group'>
-      <figure className={`absolute inset-0 rounded-xl ${before} ${after}`}>
+      <figure className={`absolute inset-0 card ${before} ${after}`}>
         <Image
           src={imgUrl}
           width={1920}
           height={1080}
           alt='blog'
-          className='h-full object-cover rounded-xl'
+          className='h-full object-cover'
         />
       </figure>
       <div className='card-body justify-end z-10 text-base-100'>

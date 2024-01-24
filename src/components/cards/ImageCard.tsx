@@ -15,7 +15,7 @@ const ImageCard = ({ image }: props) => {
       <Image
         src={image}
         alt='Ride'
-        className='w-full object-cover rounded-2xl z-1'
+        className='w-full object-cover rounded-tl-xl rounded-br-xl z-1'
       />
     </div>
   );

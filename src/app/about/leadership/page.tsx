@@ -53,7 +53,7 @@ const TeamCard = ({
   return (
     <div className='w-full h-full grid place-items-center gap-1 grid-cols-1 lg:grid-cols-2'>
       <div
-        className={`w-full h-full flex flex-col justify-center space-y-2 bg-accent relative p-4 text-base-100 ${
+        className={`w-full h-full flex flex-col justify-center space-y-2 bg-accent relative p-4 text-base-100 card ${
           position !== 'right' ? 'lg:order-last' : ''
         }`}
       >
@@ -63,7 +63,7 @@ const TeamCard = ({
           {paragraph}
         </p>
         <div
-          className={`absolute ${trianglePositionClasses['down']} ${trianglePositionClasses[position]} w-8 aspect-square bg-accent ${combinedTriangleClasses}`}
+          className={`absolute card ${trianglePositionClasses['down']} ${trianglePositionClasses[position]} w-8 aspect-square bg-accent ${combinedTriangleClasses}`}
         />
       </div>
       <div className='w-full h-full bg-accent'>

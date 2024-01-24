@@ -65,7 +65,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
         {images &&
           images.map(({ title, src }, index) => (
             <div
-              className='w-full cursor-pointer rounded-l-2xl rounded-br-2xl overflow-hidden'
+              className='w-full cursor-pointer rounded-tl-xl rounded-br-xl overflow-hidden'
               key={index}
               onClick={() => handleOpenModal(index)}
             >

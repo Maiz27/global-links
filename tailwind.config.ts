@@ -26,7 +26,7 @@ const config: Config = {
   ],
   plugins: [
     require('daisyui'),
-    function ({ addUtilities }) {
+    function ({ addUtilities }: { addUtilities: any }) {
       const newUtilities = {
         '.clip-triangle-down': {
           clipPath: 'polygon(0 0, 100% 0, 50% 100%)',
@@ -45,7 +45,7 @@ const config: Config = {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['light'],
+          ...require('daisyui/src/theming/themes')['wireframe'],
           primary: '#2d3394',
           secondary: '#106536',
           accent: '#de0f3f',
