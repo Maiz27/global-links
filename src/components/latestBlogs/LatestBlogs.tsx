@@ -15,7 +15,7 @@ const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
           dynamic world of Global Links—where knowledge meets the road.
         </p>
 
-        <CTA text='Explore Blogs' path='/blog' />
+        <CTA text='Browse Blogs' path='/blog' />
       </div>
       <div className='w-11/12 pb-10 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'>
         {blogs.map((blog) => {

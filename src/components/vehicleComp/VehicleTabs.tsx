@@ -29,7 +29,7 @@ const VehicleTabs = ({
           reliability, and innovation. Our product line includes a variety of
           models to suit every need and lifestyle
         </p>
-        <CTA path='/vehicles' text='Explore Vehicles' />
+        <CTA path='/vehicles' text='Browse Vehicles' />
       </div>
       <div className='w-full xl:w-4/5 flex flex-col items-center'>
         <Tabs
