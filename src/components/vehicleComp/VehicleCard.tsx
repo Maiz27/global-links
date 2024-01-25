@@ -24,7 +24,7 @@ const VehicleCard = ({ vehicle }: props) => {
   return (
     <Link
       href={`/vehicles/${current}`}
-      className='w-full min-h-[15rem] flex flex-col relative card shadow bg-base-100 text-base-content group'
+      className='w-full h-full min-h-[15rem] flex flex-col relative card shadow bg-base-100 text-base-content group'
     >
       <figure className={`absolute inset-0 ${after}`}>
         <Image
@@ -35,7 +35,7 @@ const VehicleCard = ({ vehicle }: props) => {
           className='h-full object-contain'
         />
 
-        <div className='absolute top-0 right-0 z-10'>
+        <div className='absolute -top-1 right-0 z-10'>
           <Image
             src={graphic}
             alt='Triangle pattern'

@@ -4,51 +4,56 @@ import { IconType } from 'react-icons';
 import {
   FaGears,
   FaArrowsToCircle,
-  FaSitemap,
+  FaCircleDot,
   FaWeightHanging,
-  FaUserShield,
+  FaCircleInfo,
 } from 'react-icons/fa6';
 import { vehicle } from '@/types';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
-  const { engine, dimensions, transmission, capacity, warranty } = vehicle;
+  const { engine, dimensions, overview, capacity, tyres } = vehicle;
 
+  const overviewDetails = {
+    'Model Code': overview?.model,
+    Transmission: overview?.transmission,
+    'Speed (Gears Number)': overview?.speed,
+    Drive: overview?.drive,
+  };
   const engineDetails = {
+    'Engine Model': engine?.model,
     'Displacement (cc)': engine?.displacement,
-    'Fuel System': engine?.fuelSystem,
-    'Fuel type': engine?.fuelType?.join(', '),
+    'Fuel Type': engine?.fuelType?.join(', '),
+    'Maximum Power (kw/rpm)': engine?.power,
   };
   const dimensionDetails = {
-    'Dimensions (Lxwxh) (mm)': `${dimensions?.length} x ${dimensions?.width} x ${dimensions?.height}`,
-    'Ground clearance (mm)': dimensions?.groundClearance,
+    'Lxwxh (mm)': `${dimensions?.length} x ${dimensions?.width} x ${dimensions?.height}`,
+    'Ground Clearance (mm)': dimensions?.groundClearance,
     'Wheelbase (mm)': dimensions?.wheelbase,
   };
-  const transmissionDetails = {
-    Gearbox: transmission?.gearbox.join(', '),
-    Transmission: transmission?.transmission,
-  };
   const capacityDetails = {
-    'Curb weight (kg)': capacity?.weight,
-    'Fuel tank capacity (L)': capacity?.tank,
+    'Curb Weight (kg)': capacity?.weight,
+    'Number of Seats': capacity?.seats,
+    'Tank capacity (L)': capacity?.tank,
   };
-  const warrantyDetails = {
-    'Manufacturer Warranty': warranty?.period,
-    'Retail Network': warranty?.network,
+  const tyresDetails = {
+    Type: tyres?.type,
+    Front: tyres?.front,
+    Rear: tyres?.rear,
   };
 
   const detailsArray = [
+    { title: 'Overview', details: overviewDetails, icon: FaCircleInfo },
     { title: 'Engine', details: engineDetails, icon: FaGears },
     { title: 'Dimensions', details: dimensionDetails, icon: FaArrowsToCircle },
-    { title: 'Transmission', details: transmissionDetails, icon: FaSitemap },
     { title: 'Capacity', details: capacityDetails, icon: FaWeightHanging },
-    { title: 'Warranty', details: warrantyDetails, icon: FaUserShield },
+    { title: 'Tyres', details: tyresDetails, icon: FaCircleDot },
   ];
 
   return (
     <section className='my-20 space-y-4'>
-      <SectionHeading Tag='h2' text='Technical Specifications' />
+      <SectionHeading Tag='h2' text='Vehicle Specifications' />
 
-      <div className='w-11/12 xl:w-4/5 mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='w-11/12 xl:w-4/5 max-w-7xl mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {detailsArray.map(({ title, details, icon }, index) => (
           <Card key={index} title={title} details={details} icon={icon} />
         ))}

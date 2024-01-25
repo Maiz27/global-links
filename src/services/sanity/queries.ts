@@ -97,9 +97,32 @@ export const getVehicleBySlug = `*[_type == 'vehicle' && slug.current == $slug] 
   description,
   type->{title},
   mainImage,
-  engine,
+  overview {
+    model,
+    drive,
+    transmission,
+    speed,
+  },
+  engine {
+    model,
+    displacement,
+    power,
+    fuelType,
+  },
   dimensions,
-  transmission,
   capacity,
-  warranty,
+  tyres,
+}[0]`;
+
+export const getVehicleGalleryBySlug = `*[_type == 'vehicle' && slug.current == $slug] {
+  gallery {
+    images
+  }
+}[0]`;
+
+export const getVehicleAdditionalDetails = `*[_type == 'vehicle' && slug.current == $slug] {
+  overview,
+  engine,
+  interior,
+  exterior,
 }[0]`;
