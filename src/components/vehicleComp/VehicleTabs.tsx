@@ -15,7 +15,7 @@ const VehicleTabs = ({
 }) => {
   const { filteredList, selectedTypes, setSelectedType } = useFilterVehicles(
     vehicles,
-    [types[0].title]
+    [types[1].title]
   );
 
   return (

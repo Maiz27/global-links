@@ -31,7 +31,7 @@ export default VehiclesCatalogue;
 
 const VehiclesGrid = ({ vehicles }: { vehicles: vehicle[] }) => {
   return (
-    <div className='w-full xl:w-4/5 grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
+    <div className='w-full min-h-[80vh] xl:w-4/5 grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
       <AnimatePresence>
         {vehicles.map((vehicle) => {
           return (

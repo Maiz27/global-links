@@ -8,8 +8,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaWhatsapp,
-  FaScaleBalanced,
-  FaLeaf,
+  FaMedal,
   FaCircleUser,
   FaEnvelope,
   FaPhone,
@@ -58,6 +57,33 @@ export const routes = [
   {
     name: 'Blog',
     href: '/blog',
+  },
+];
+
+export const whyChooseUs = [
+  {
+    title: 'Authorized Toyota Dealer',
+    paragraph:
+      'As the official representative of Toyota in South Sudan, we offer a wide range of vehicles, from rugged SUVs to sleek sedans, all backed by Toyota’s legendary reliability.',
+    icon: TbBrandToyota,
+  },
+  {
+    title: 'Expertise and Experience',
+    paragraph:
+      'With over 15 years in the automotive industry, our skilled professionals offer unmatched expertise in vehicle selection, maintenance, and care.',
+    icon: FaMedal,
+  },
+  {
+    title: 'Customer-Centric Approach',
+    paragraph:
+      'Your satisfaction is our priority. We provide personalized services, ensuring each client receives attention tailored to their unique needs.',
+    icon: FaUserGear,
+  },
+  {
+    title: 'Unwavering Commitment to Quality',
+    paragraph:
+      'Every vehicle and service offered meets stringent quality standards, ensuring peace of mind with every purchase.',
+    icon: FaHandshake,
   },
 ];
 

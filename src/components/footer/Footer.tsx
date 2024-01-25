@@ -2,9 +2,11 @@ import { routes, socials } from '@/constants';
 import Link from 'next/link';
 import React from 'react';
 
+// black gradient
+// bg-gradient-to-r from-gray-900 to-black
 const Footer = () => {
   return (
-    <footer className='footer h-96 footer-center p-10 bg-gradient-to-r from-gray-900 to-black text-base-100 rounded'>
+    <footer className='footer h-96 footer-center p-10 bg-triangle-pattern bg-cover bg-right-bottom text-base-100 rounded'>
       <nav className='grid grid-flow-col gap-4'>
         {routes.map(({ name, href }) => {
           return (
