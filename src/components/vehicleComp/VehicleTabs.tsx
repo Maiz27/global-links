@@ -98,7 +98,7 @@ const Tab = ({ selected, title, setSelected, tabNum }: TabProps) => {
       >
         <span
           className={`transition-opacity md:text-center ${
-            selected ? 'opacity-100 text-accent' : 'opacity-50'
+            selected ? 'opacity-100 text-primary' : 'opacity-50'
           }`}
         >
           {title}
@@ -107,7 +107,7 @@ const Tab = ({ selected, title, setSelected, tabNum }: TabProps) => {
       {selected && (
         <motion.span
           layoutId='tabs-features-underline'
-          className='absolute bottom-0 left-0 w-[99%] mx-auto rounded-b-3xl right-0 z-10 h-[5px] bg-accent'
+          className='absolute bottom-0 left-0 w-[99%] mx-auto rounded-b-3xl right-0 z-10 h-[5px] bg-primary'
         />
       )}
     </div>

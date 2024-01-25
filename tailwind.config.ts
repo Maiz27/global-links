@@ -46,9 +46,9 @@ const config: Config = {
       {
         light: {
           ...require('daisyui/src/theming/themes')['wireframe'],
-          primary: '#2d3394',
+          primary: '#de0f3f',
           secondary: '#106536',
-          accent: '#de0f3f',
+          accent: '#ffffff',
         },
       },
     ],

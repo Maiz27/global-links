@@ -34,7 +34,6 @@ const BlogCard = ({ blog }: { blog: blog }) => {
         <div className='card-actions justify-end'>
           <CTA
             text='Learn More'
-            bg='accent'
             textColor='base-100'
             path={`/blog/${slug.current}`}
           />

@@ -9,6 +9,7 @@ import {
   FaCircleInfo,
 } from 'react-icons/fa6';
 import { vehicle } from '@/lib/types';
+import VehicleSpecModal from '../modals/VehicleSpecModal';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const { engine, dimensions, overview, capacity, tyres } = vehicle;
@@ -57,6 +58,9 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
         {detailsArray.map(({ title, details, icon }, index) => (
           <Card key={index} title={title} details={details} icon={icon} />
         ))}
+        <div className='w-full h-full card bg-primary text-base-100 shadow p-6 text-center gap-4 grid place-items-center'>
+          <VehicleSpecModal />
+        </div>
       </div>
     </section>
   );
@@ -74,7 +78,7 @@ const Card = ({ title, details, icon }: props) => {
   const Icon = icon;
   return (
     <div className='w-full h-full card bg-base-100 shadow p-6 text-center gap-4'>
-      <span className='w-fit shadow bg-base-100 rounded-md p-2 text-3xl text-accent mx-auto'>
+      <span className='w-fit shadow bg-base-100 rounded-md p-2 text-3xl text-primary mx-auto'>
         <Icon />
       </span>
 

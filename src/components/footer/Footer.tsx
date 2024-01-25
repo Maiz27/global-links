@@ -26,7 +26,7 @@ const Footer = () => {
                 href={href}
                 target='_blank'
                 title={title}
-                className='text-4xl transition-all hover:text-accent hover:scale-110 active:scale-95'
+                className='text-4xl transition-all hover:text-primary hover:scale-110 active:scale-95'
               >
                 <Icon />
               </a>
@@ -44,7 +44,7 @@ const Footer = () => {
           <a
             href='https://nilotik.tech'
             target='_blank'
-            className='text-accent font-bold pl-2 link'
+            className='text-primary font-bold pl-2 link'
           >
             Nilotik
           </a>

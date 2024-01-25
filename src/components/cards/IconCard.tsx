@@ -9,8 +9,8 @@ type props = {
 const IconCard = ({ title, paragraph, icon }: props) => {
   const Icon = icon;
   return (
-    <div className='h-full card bg-accent text-accent-content shadow p-6 text-center gap-4'>
-      <span className='w-fit shadow bg-accent rounded-md p-2 text-2xl text-accent-content mx-auto'>
+    <div className='h-full card bg-primary text-primary-content shadow p-6 text-center gap-4'>
+      <span className='w-fit shadow bg-primary rounded-md p-2 text-2xl text-primary-content mx-auto'>
         <Icon />
       </span>
 

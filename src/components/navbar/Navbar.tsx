@@ -71,7 +71,7 @@ const NavLink = ({ name, path }: { name: string; path: string }) => {
     >
       <div className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'>
         <span className='flex items-center h-[30px]'>{name}</span>
-        <span className='flex items-center h-[30px] text-accent'>{name}</span>
+        <span className='flex items-center h-[30px] text-primary'>{name}</span>
       </div>
     </Link>
   );
@@ -152,7 +152,7 @@ const MenuLink = ({
         className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'
       >
         <span className='flex items-center h-[30px]'>{name}</span>
-        <span className='flex items-center h-[30px] text-accent'>{name}</span>
+        <span className='flex items-center h-[30px] text-primary'>{name}</span>
       </Link>
     </motion.div>
   );

@@ -6,7 +6,7 @@ type props = {
 
 const ImageCard = ({ image }: props) => {
   const before =
-    'before:content-[""] before:absolute before:card before:-top-4 before:-left-4 before:w-3/5 before:aspect-square before:bg-accent/90 before:z-0';
+    'before:content-[""] before:absolute before:card before:-top-4 before:-left-4 before:w-3/5 before:aspect-square before:bg-primary/90 before:z-0';
   const after =
     'after:content-[""] after:absolute after:card after:-bottom-4 after:-right-4 after:w-3/5 after:aspect-square after:bg-secondary/90 after:z-0';
 

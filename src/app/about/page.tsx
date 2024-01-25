@@ -39,7 +39,7 @@ const page = () => {
             <p>{vision.paragraph}</p>
           </div>
 
-          <div className='grid place-items-center bg-accent text-accent-content p-6 card max-w-md'>
+          <div className='grid place-items-center bg-primary text-primary-content p-6 card max-w-md'>
             <p>
               We aim to be more than a dealership; we strive to be a trusted
               partner in every journey, driving towards a future where every

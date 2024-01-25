@@ -19,7 +19,7 @@ const CTA = ({
   btnType = 'button',
   isBtn = false,
   isOutline = false,
-  bg = 'accent',
+  bg = 'primary',
   btnSize = 'md',
   textColor,
 }: props) => {
