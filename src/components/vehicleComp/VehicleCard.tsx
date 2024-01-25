@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import graphic from '/public/imgs/graphics/triangles-3.png';
 import graphic2 from '/public/imgs/graphics/triangles-4.png';
-import { urlFor } from '@/services/sanity/sanityClient';
-import { vehicle } from '@/types';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import { vehicle } from '@/lib/types';
 
 type props = {
   vehicle: vehicle;
@@ -32,12 +32,14 @@ const VehicleCard = ({ vehicle }: props) => {
           alt={name}
           width={500}
           height={500}
+          loading='lazy'
           className='h-full object-contain'
         />
 
         <div className='absolute -top-1 right-0 z-10'>
           <Image
             src={graphic}
+            loading='lazy'
             alt='Triangle pattern'
             className='w-14 aspect-square object-cover'
           />
@@ -45,6 +47,7 @@ const VehicleCard = ({ vehicle }: props) => {
         <div className='absolute -bottom-[1px] left-0 z-10'>
           <Image
             src={graphic2}
+            loading='lazy'
             alt='Triangle pattern'
             className='w-14 aspect-square object-cover'
           />

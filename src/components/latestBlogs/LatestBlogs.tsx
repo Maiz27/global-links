@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import BlogCard from '../blogComp/BlogCard';
-import { blog } from '@/types';
+import { blog } from '@/lib/types';
 import CTA from '../CTA/CTA';
 
 const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {

@@ -9,7 +9,7 @@ import {
   getAllVehicles,
   getLatestPosts,
   getVehicleTypes,
-} from '@/services/sanity/queries';
+} from '@/lib/sanity/queries';
 import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 
 export const revalidate = 60; // revalidate every minute

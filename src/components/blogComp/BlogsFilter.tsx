@@ -1,4 +1,4 @@
-import { blogCategory } from '@/types';
+import { blogCategory } from '@/lib/types';
 
 type props = {
   categories: blogCategory[];

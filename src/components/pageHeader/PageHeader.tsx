@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs';
-import { urlFor } from '@/services/sanity/sanityClient';
-import { calculateReadTime, getStringDate, pageHeaderData } from '@/constants';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import {
+  calculateReadTime,
+  getStringDate,
+  pageHeaderData,
+} from '@/lib/constants';
 import { FaUserPen, FaCalendarDays, FaStopwatch } from 'react-icons/fa6';
-import { blog } from '@/types';
+import { blog } from '@/lib/types';
 
 type Props =
   | {

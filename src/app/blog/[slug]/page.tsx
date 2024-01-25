@@ -2,7 +2,7 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
 import Recommendations from '@/components/blogComp/Recommendations';
 import BlogShare from '@/components/blogComp/BlogShare';
-import { fetchSanityData, getPostBySlug } from '@/services/sanity/queries';
+import { fetchSanityData, getPostBySlug } from '@/lib/sanity/queries';
 
 const page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });

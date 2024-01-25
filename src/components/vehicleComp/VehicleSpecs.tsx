@@ -8,7 +8,7 @@ import {
   FaWeightHanging,
   FaCircleInfo,
 } from 'react-icons/fa6';
-import { vehicle } from '@/types';
+import { vehicle } from '@/lib/types';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const { engine, dimensions, overview, capacity, tyres } = vehicle;
@@ -74,7 +74,7 @@ const Card = ({ title, details, icon }: props) => {
   const Icon = icon;
   return (
     <div className='w-full h-full card bg-base-100 shadow p-6 text-center gap-4'>
-      <span className='w-fit shadow bg-base-100 rounded-md p-2 text-3xl text-secondary mx-auto'>
+      <span className='w-fit shadow bg-base-100 rounded-md p-2 text-3xl text-accent mx-auto'>
         <Icon />
       </span>
 

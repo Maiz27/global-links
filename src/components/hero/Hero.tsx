@@ -1,6 +1,6 @@
 import ImageSlider from './ImageSlider';
 import CTA from '../CTA/CTA';
-import { heroImages } from '@/types';
+import { heroImages } from '@/lib/types';
 
 const Hero = ({ images }: heroImages) => {
   return (

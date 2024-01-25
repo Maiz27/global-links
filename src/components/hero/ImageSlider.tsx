@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
-import { urlFor } from '@/services/sanity/sanityClient';
-import { heroImages } from '@/types';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import { heroImages } from '@/lib/types';
 
 import '@splidejs/react-splide/css';
 

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import CTA from '@/components/CTA/CTA';
-import { contactFormFields } from '@/constants';
+import { contactFormFields } from '@/lib/constants';
 
 const ContactForm = () => {
   const initialState = {

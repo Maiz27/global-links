@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { blog } from '@/types';
+import { blog } from '@/lib/types';
 
 const useFilterBlogs = (blogs: blog[], selected?: string[]) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>(

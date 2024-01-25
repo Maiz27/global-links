@@ -14,6 +14,7 @@ const ImageCard = ({ image }: props) => {
     <div className={`w-full max-w-xl relative ${before} ${after}`}>
       <Image
         src={image}
+        loading='lazy'
         alt='Ride'
         className='w-full object-cover rounded-tl-xl rounded-br-xl z-10 relative'
       />

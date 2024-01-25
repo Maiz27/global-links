@@ -4,7 +4,7 @@ import ImageCard from '@/components/cards/ImageCard';
 import ImageGallery from '@/components/imageGallery/ImageGallery';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import { aboutGlobalLinks, gallery } from '@/constants';
+import { aboutGlobalLinks, gallery } from '@/lib/constants';
 import team from 'public/imgs/team.jpg';
 import team2 from 'public/imgs/team2.jpg';
 

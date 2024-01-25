@@ -1,9 +1,9 @@
 'use client';
 import ImageCard from '@/components/cards/ImageCard';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import { faqData } from '@/constants';
+import { faqData } from '@/lib/constants';
 import Question from './Question';
-import useAccordion from '@/hooks/useAccordion';
+import useAccordion from '@/lib/hooks/useAccordion';
 import team from 'public/imgs/10.jpg';
 
 const BasicFAQ = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { team } from '@/constants';
+import { team } from '@/lib/constants';
 
 const page = () => {
   return (
@@ -67,7 +67,12 @@ const TeamCard = ({
         />
       </div>
       <div className='w-full h-full bg-accent'>
-        <Image src={img} alt='' className='h-full object-cover' />
+        <Image
+          src={img}
+          alt=''
+          className='h-full object-cover'
+          loading='lazy'
+        />
       </div>
     </div>
   );

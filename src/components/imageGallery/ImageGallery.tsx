@@ -1,7 +1,7 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
 import React, { memo } from 'react';
-import useImageGallery from '@/hooks/useImageGallery';
+import useImageGallery from '@/lib/hooks/useImageGallery';
 import { FaCircleXmark, FaCircleLeft, FaCircleRight } from 'react-icons/fa6';
 import graphic from '/public/imgs/graphics/triangles-3.png';
 

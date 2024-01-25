@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeading from '../sectionHeading/SectionHeading';
-import { vehicleType } from '@/types';
+import { vehicleType } from '@/lib/types';
 
 type props = {
   types: vehicleType[];

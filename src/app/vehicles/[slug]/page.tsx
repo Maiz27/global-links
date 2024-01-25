@@ -1,6 +1,6 @@
-import { fetchSanityData, getVehicleBySlug } from '@/services/sanity/queries';
+import { fetchSanityData, getVehicleBySlug } from '@/lib/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { vehicle } from '@/types';
+import { vehicle } from '@/lib/types';
 import VehicleSpecs from '@/components/vehicleComp/VehicleSpecs';
 
 export const revalidate = 60;

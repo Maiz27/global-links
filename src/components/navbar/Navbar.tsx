@@ -3,13 +3,13 @@ import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import useNavbar from '@/hooks/useNavbar';
+import useNavbar from '@/lib/hooks/useNavbar';
 import {
   menuLinkArrowVariants,
   menuLinkVariants,
   menuVariants,
   routes,
-} from '@/constants';
+} from '@/lib/constants';
 import { FaXmark, FaBars, FaArrowRight } from 'react-icons/fa6';
 import logo from '/public/imgs/logo/logo.png';
 import toyota from '/public/imgs/toyota.png';
@@ -35,12 +35,14 @@ const Logo = () => {
       <Link href='/' className='w-1/2'>
         <Image
           src={logo}
+          loading='eager'
           alt='Global Links'
           className='h-full object-scale-down'
         />
       </Link>
       <Image
         src={toyota}
+        loading='lazy'
         alt='Toyota Logo'
         className='h-full object-scale-down w-1/2'
       />

@@ -3,9 +3,9 @@ import { Dispatch, SetStateAction } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import CTA from '@/components/CTA/CTA';
-import useFilterVehicles from '@/hooks/useFilterVehicles';
+import useFilterVehicles from '@/lib/hooks/useFilterVehicles';
 import VehicleSlider from './VehicleSlider';
-import { vehicle, vehicleType } from '@/types';
+import { vehicle, vehicleType } from '@/lib/types';
 
 const VehicleTabs = ({
   vehicles,

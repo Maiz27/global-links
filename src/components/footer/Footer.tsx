@@ -1,4 +1,4 @@
-import { routes, socials } from '@/constants';
+import { routes, socials } from '@/lib/constants';
 import Link from 'next/link';
 import React from 'react';
 

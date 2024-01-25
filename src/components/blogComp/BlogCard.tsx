@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import CTA from '../CTA/CTA';
-import { blog } from '@/types';
-import { urlFor } from '@/services/sanity/sanityClient';
+import { blog } from '@/lib/types';
+import { urlFor } from '@/lib/sanity/sanityClient';
 
 const BlogCard = ({ blog }: { blog: blog }) => {
   const { title, slug, description, mainImage, categories } = blog;
@@ -19,6 +19,7 @@ const BlogCard = ({ blog }: { blog: blog }) => {
           src={imgUrl}
           width={1920}
           height={1080}
+          loading='lazy'
           alt='blog'
           className='h-full object-cover'
         />

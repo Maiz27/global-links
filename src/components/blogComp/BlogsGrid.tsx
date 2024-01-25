@@ -1,8 +1,8 @@
 'use client';
 import BlogCard from './BlogCard';
 import BlogsFilter from './BlogsFilter';
-import useFilterBlogs from '@/hooks/useFilterBlogs';
-import { blog, blogCategory } from '@/types';
+import useFilterBlogs from '@/lib/hooks/useFilterBlogs';
+import { blog, blogCategory } from '@/lib/types';
 
 type props = {
   blogs: blog[];

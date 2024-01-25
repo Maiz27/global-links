@@ -1,11 +1,8 @@
 import Image from 'next/image';
 import CTA from '../CTA/CTA';
-import {
-  fetchSanityData,
-  getRecommendedPosts,
-} from '@/services/sanity/queries';
-import { urlFor } from '@/services/sanity/sanityClient';
-import { blog, blogCategory } from '@/types';
+import { fetchSanityData, getRecommendedPosts } from '@/lib/sanity/queries';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import { blog, blogCategory } from '@/lib/types';
 
 type props = {
   slug: string;
@@ -49,6 +46,7 @@ const RecommendationCard = ({ post }: { post: blog }) => {
           src={imgUrl}
           width={1920}
           height={1080}
+          loading='lazy'
           alt='blog'
           className='h-full object-cover rounded-xl'
         />

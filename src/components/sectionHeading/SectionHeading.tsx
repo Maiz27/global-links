@@ -42,6 +42,7 @@ const SectionHeading = ({
         <div className='absolute left-0 -top-6 h-6 w-16'>
           <Image
             src={altGraphics ? graphicAlt : graphic}
+            loading='lazy'
             alt='Triangle Graphics'
             className='h-full object-contain'
           />

@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionHeading from '../sectionHeading/SectionHeading';
 import IconCard from '../cards/IconCard';
-import { whyChooseUs } from '@/constants';
+import { whyChooseUs } from '@/lib/constants';
 import CTA from '../CTA/CTA';
 
 const WhyChooseUs = () => {

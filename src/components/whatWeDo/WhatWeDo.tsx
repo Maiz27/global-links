@@ -1,6 +1,6 @@
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import IconCard from '../cards/IconCard';
-import { whatWeDoList } from '@/constants';
+import { whatWeDoList } from '@/lib/constants';
 
 const WhatWeDo = () => {
   return (

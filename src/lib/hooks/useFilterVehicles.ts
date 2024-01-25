@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { vehicle } from '@/types';
+import { vehicle } from '@/lib/types';
 
 const useFilterVehicles = (vehicles: vehicle[], selected?: string[]) => {
   const [selectedTypes, setSelectedType] = useState<string[]>(

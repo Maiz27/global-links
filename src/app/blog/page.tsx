@@ -4,7 +4,7 @@ import {
   fetchSanityData,
   getAllPosts,
   getPostCategories,
-} from '@/services/sanity/queries';
+} from '@/lib/sanity/queries';
 
 const page = async () => {
   const [blogs, categories] = await Promise.all([
