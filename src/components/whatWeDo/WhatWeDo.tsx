@@ -4,8 +4,8 @@ import { whatWeDoList } from '@/constants';
 
 const WhatWeDo = () => {
   return (
-    <section className='min-h-screen py-20 grid place-items-center space-y-4 bg-triangle-pattern bg-cover bg-right-bottom bg-fixed text-base-100'>
-      <div className='mx-auto text-center max-w-xl'>
+    <section className='min-h-screen py-20 grid place-items-center space-y-4 '>
+      <div className='mx-auto text-center max-w-2xl'>
         <SectionHeading Tag='h2' text='What We Do' />
         <p>
           At Global Links, we are your premier destination for all things Toyota

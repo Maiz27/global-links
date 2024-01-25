@@ -15,7 +15,7 @@ const VehiclesCatalogue = ({
   const { filteredList, selectedTypes, setSelectedType } =
     useFilterVehicles(vehicles);
   return (
-    <div className='my-10 w-11/12 2xl:w-4/5 mx-auto flex flex-col xl:flex-row'>
+    <div className='my-10 w-11/12 mx-auto flex flex-col xl:flex-row'>
       <VehiclesFilter
         types={types}
         count={filteredList.length}

@@ -6,7 +6,7 @@ import { whyChooseUs } from '@/constants';
 const WhyChooseUs = () => {
   return (
     <section className='min-h-[80vh] flex flex-col items-center py-20 gap-6'>
-      <div className='mx-auto text-center max-w-xl'>
+      <div className='mx-auto text-center max-w-2xl'>
         <SectionHeading Tag='h2' text='Why Choose Us' />
 
         <p>
