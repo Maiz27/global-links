@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import Image from 'next/image';
 import { PortableText, PortableTextReactComponents } from '@portabletext/react';
-import { blogBody } from '@/types';
+import { blogBody } from '@/lib/types';
 
 type props = {
   body: blogBody;
@@ -10,7 +10,14 @@ type props = {
 const BlogBody = memo(({ body }: props) => {
   const myPortableTextComponents: PortableTextReactComponents = {
     types: {
-      image: ({ value }) => <Image src={value.imageUrl} alt='' />,
+      image: ({ value }) => (
+        <Image
+          loading='lazy'
+          src={value.imageUrl}
+          alt=''
+          className='w-4/5 mx-auto'
+        />
+      ),
       callToAction: ({ value, isInline }) =>
         isInline ? (
           <a href={value.url}>{value.text}</a>

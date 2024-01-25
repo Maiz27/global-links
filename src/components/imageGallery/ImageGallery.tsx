@@ -1,8 +1,9 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
 import React, { memo } from 'react';
+import useImageGallery from '@/lib/hooks/useImageGallery';
 import { FaCircleXmark, FaCircleLeft, FaCircleRight } from 'react-icons/fa6';
-import useImageGallery from '@/hooks/useImageGallery';
+import graphic from '/public/imgs/graphics/triangles-3.png';
 
 interface ImageGalleryProps {
   images: Array<{
@@ -64,7 +65,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
         {images &&
           images.map(({ title, src }, index) => (
             <div
-              className='w-full cursor-pointer rounded-2xl overflow-hidden'
+              className='w-full cursor-pointer rounded-tl-xl rounded-br-xl overflow-hidden'
               key={index}
               onClick={() => handleOpenModal(index)}
             >
@@ -83,14 +84,27 @@ const MemoizedImage: React.FC<{
   withHoverEffect?: boolean;
 }> = memo(
   ({ src, title, withHoverEffect = true }) => (
-    <Image
-      src={src}
-      alt={title}
-      className={`max-w-full rounded-2xl ${
-        withHoverEffect && 'hover:scale-110 transition-transform duration-300'
-      }`}
-      loading='lazy'
-    />
+    <div className='relative'>
+      <Image
+        src={src}
+        alt={title}
+        className={`max-w-full ${
+          withHoverEffect
+            ? 'hover:scale-110 transition-transform duration-300 '
+            : 'rounded-2xl'
+        }`}
+        loading='lazy'
+      />
+      {withHoverEffect && (
+        <div className='absolute top-0 right-0 '>
+          <Image
+            src={graphic}
+            alt='Triangle pattern'
+            className='w-10 aspect-square object-cover'
+          />
+        </div>
+      )}
+    </div>
   ),
   (prevProps, nextProps) => prevProps.src === nextProps.src
 );

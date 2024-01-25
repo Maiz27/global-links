@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import CTA from '@/components/CTA/CTA';
-import { contactFormFields } from '@/constants';
+import { contactFormFields } from '@/lib/constants';
 
 const ContactForm = () => {
   const initialState = {
@@ -72,7 +72,7 @@ const ContactForm = () => {
             <div
               // delay={idx * 0.2}
               key={name}
-              className='form-control w-full max-w-sm focus-within:text-accent transition-colors mt-2'
+              className='form-control w-full max-w-sm focus-within:text-primary transition-colors mt-2'
             >
               <label className='label justify-start gap-2'>
                 <Icon />
@@ -85,7 +85,7 @@ const ContactForm = () => {
                   value={formData[name]}
                   onChange={handleChange}
                   required={required}
-                  className='input input-bordered focus-visible:outline-accent transition-colors w-full max-w-sm h-40'
+                  className='input input-bordered focus-visible:outline-primary transition-colors w-full max-w-sm h-40'
                 />
               ) : (
                 <input
@@ -95,7 +95,7 @@ const ContactForm = () => {
                   value={formData[name]}
                   onChange={handleChange}
                   required={required}
-                  className='input input-bordered focus-visible:outline-accent transition-colors w-full max-w-sm'
+                  className='input input-bordered focus-visible:outline-primary transition-colors w-full max-w-sm'
                 />
               )}
             </div>
@@ -110,7 +110,7 @@ const ContactForm = () => {
           text='Send Message'
           isBtn={true}
           btnType='submit'
-          bg='accent'
+          bg='primary'
           textColor='base-100'
           // loading={isLoading}
         />

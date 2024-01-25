@@ -1,7 +1,7 @@
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import VehicleCard from './VehicleCard';
-import useWindowWidth from '@/hooks/useWindowWidth';
-import { vehicle } from '@/types';
+import useWindowWidth from '@/lib/hooks/useWindowWidth';
+import { vehicle } from '@/lib/types';
 
 type props = {
   list: vehicle[];
@@ -18,7 +18,7 @@ const VehicleSlider = ({ list }: props) => {
   }
 
   return (
-    <div className='my-10'>
+    <>
       <Splide
         hasTrack={false}
         options={{
@@ -28,6 +28,7 @@ const VehicleSlider = ({ list }: props) => {
           gap: '2rem',
         }}
         aria-labelledby='Vehicles Slider'
+        className='my-10'
       >
         <SplideTrack>
           {list.map((vehicle) => (
@@ -44,7 +45,7 @@ const VehicleSlider = ({ list }: props) => {
           <ul className='splide__pagination'></ul>
         </div>
       </Splide>
-    </div>
+    </>
   );
 };
 

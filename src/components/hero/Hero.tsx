@@ -1,6 +1,6 @@
 import ImageSlider from './ImageSlider';
 import CTA from '../CTA/CTA';
-import { heroImages } from '@/types';
+import { heroImages } from '@/lib/types';
 
 const Hero = ({ images }: heroImages) => {
   return (
@@ -11,7 +11,7 @@ const Hero = ({ images }: heroImages) => {
           Your Trusted Toyota Partner in South Sudan
         </h1>
         <p className='mb-6 mt-4 max-w-3xl text-center lg:text-lg font-light text-base-100'>
-          <span className='text-accent font-bold tracking-wide'>
+          <span className='text-primary font-bold tracking-wide'>
             Global Links Auto{' '}
           </span>
           embodies a legacy of excellence, reliability, and unmatched expertise.
@@ -20,18 +20,8 @@ const Hero = ({ images }: heroImages) => {
           with us.
         </p>
         <div className='w-3/4 max-w-sm flex justify-around'>
-          <CTA
-            text='Contact Us'
-            bg='accent'
-            textColor='base-100'
-            path='/contact'
-          />
-          <CTA
-            text='Browse Vehicles'
-            bg='accent'
-            isOutline={true}
-            path='/vehicles'
-          />
+          <CTA text='Contact Us' path='/contact' />
+          <CTA text='Browse Vehicles' isOutline={true} path='/vehicles' />
         </div>
       </div>
     </div>

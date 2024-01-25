@@ -2,7 +2,7 @@ import {
   fetchSanityData,
   getAllVehicles,
   getVehicleTypes,
-} from '@/services/sanity/queries';
+} from '@/lib/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import VehiclesCatalogue from '@/components/vehicleComp/vehiclesCatalogue';
 

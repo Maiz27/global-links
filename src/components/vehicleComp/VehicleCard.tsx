@@ -1,8 +1,9 @@
-import { vehicle } from '@/types';
 import Image from 'next/image';
-import { urlFor } from '@/services/sanity/sanityClient';
-import { FaRegCalendarDays, FaBuffer } from 'react-icons/fa6';
 import Link from 'next/link';
+import graphic from '/public/imgs/graphics/triangles-3.png';
+import graphic2 from '/public/imgs/graphics/triangles-4.png';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import { vehicle } from '@/lib/types';
 
 type props = {
   vehicle: vehicle;
@@ -17,37 +18,47 @@ const VehicleCard = ({ vehicle }: props) => {
   } = vehicle;
   const imgUrl = urlFor(mainImage).url();
 
+  const after =
+    'after:content-[""] after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-black/20 after:to-black/60';
+
   return (
-    <div className='w-full h-full flex flex-col relative rounded-2xl overflow-hidden shadow'>
-      <div className='h-52 flex-1'>
+    <Link
+      href={`/vehicles/${current}`}
+      className='w-full h-full min-h-[15rem] flex flex-col relative card shadow bg-base-100 text-base-content group'
+    >
+      <figure className={`absolute inset-0 ${after}`}>
         <Image
           src={imgUrl}
           alt={name}
           width={500}
           height={500}
-          className='h-full w-full object-scale-down'
+          loading='lazy'
+          className='h-full object-contain'
         />
+
+        <div className='absolute -top-1 right-0 z-10'>
+          <Image
+            src={graphic}
+            loading='lazy'
+            alt='Triangle pattern'
+            className='w-14 aspect-square object-cover'
+          />
+        </div>
+        <div className='absolute -bottom-[1px] left-0 z-10'>
+          <Image
+            src={graphic2}
+            loading='lazy'
+            alt='Triangle pattern'
+            className='w-14 aspect-square object-cover'
+          />
+        </div>
+      </figure>
+      <div className='card-body p-0 py-4 justify-end items-center z-10 text-base-100'>
+        <div className='badge badge-outline'>{type.title}</div>
+
+        <h3 className='card-title text-xl'>{name}</h3>
       </div>
-      <div className='bg-base-100 p-4'>
-        <h3 className='text-xl font-bold'>
-          <Link href={`/vehicles/${current}`}>{name}</Link>
-        </h3>
-        {/* <div className='w-max gap-4 flex text-xs'>
-          <div className='flex items-center gap-1'>
-            <span className='shadow bg-white rounded-md p-2'>
-              <FaBuffer />
-            </span>
-            <p>{category}</p>
-          </div>
-          <div className='flex items-center gap-1'>
-            <span className='shadow bg-white rounded-md p-2'>
-              <FaRegCalendarDays />
-            </span>
-            <p>{year}</p>
-          </div>
-        </div> */}
-      </div>
-    </div>
+    </Link>
   );
 };
 

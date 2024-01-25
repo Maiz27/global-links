@@ -1,7 +1,7 @@
-import { postCategory } from '@/types';
+import { blogCategory } from '@/lib/types';
 
 type props = {
-  categories: postCategory[];
+  categories: blogCategory[];
   count: number;
   selected: {
     value: string[];
@@ -32,7 +32,7 @@ const BlogsFilter = ({ categories, selected, count }: props) => {
 export default BlogsFilter;
 
 type typesSelectorProps = {
-  categories: postCategory[];
+  categories: blogCategory[];
   selected: string[];
   setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 };

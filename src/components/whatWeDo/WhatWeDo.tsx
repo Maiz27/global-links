@@ -1,11 +1,11 @@
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import IconCard from '../cards/IconCard';
-import { whatWeDoList } from '@/constants';
+import { whatWeDoList } from '@/lib/constants';
 
 const WhatWeDo = () => {
   return (
-    <section className='my-20 space-y-4'>
-      <div className='mx-auto text-center max-w-xl'>
+    <section className='min-h-screen py-20 grid place-items-center space-y-4 '>
+      <div className='mx-auto text-center max-w-2xl'>
         <SectionHeading Tag='h2' text='What We Do' />
         <p>
           At Global Links, we are your premier destination for all things Toyota

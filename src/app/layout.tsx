@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/footer/Footer';
 import { IsClientCtxProvider } from '@/context/IsClientContext';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -26,6 +28,17 @@ export default function RootLayout({
         <IsClientCtxProvider>
           <Navbar />
           {children}
+          <ToastContainer
+            position='bottom-center'
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme='light'
+          />
           <Footer />
         </IsClientCtxProvider>
       </body>

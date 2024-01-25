@@ -1,6 +1,6 @@
-import { fetchSanityData, getVehicleBySlug } from '@/services/sanity/queries';
+import { fetchSanityData, getVehicleBySlug } from '@/lib/sanity/queries';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { vehicle } from '@/types';
+import { vehicle } from '@/lib/types';
 import VehicleSpecs from '@/components/vehicleComp/VehicleSpecs';
 
 export const revalidate = 60;
@@ -12,9 +12,10 @@ const page = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <main>
-      <PageHeader heading={vehicle.name} paragraph={vehicle.description} />
+      <PageHeader heading={vehicle.name} paragraph={vehicle.description!} />
 
       <VehicleSpecs vehicle={vehicle} />
+
       <div className='min-h-screen'></div>
     </main>
   );

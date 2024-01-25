@@ -4,7 +4,7 @@ import {
   fetchSanityData,
   getAllPosts,
   getPostCategories,
-} from '@/services/sanity/queries';
+} from '@/lib/sanity/queries';
 
 const page = async () => {
   const [blogs, categories] = await Promise.all([
@@ -14,7 +14,7 @@ const page = async () => {
 
   return (
     <main>
-      <PageHeader pageIndex={4} />
+      <PageHeader pageIndex={5} />
 
       <BlogsGrid blogs={blogs} categories={categories} />
 

@@ -6,7 +6,7 @@ import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 const page = () => {
   return (
     <main>
-      <PageHeader pageIndex={3} />
+      <PageHeader pageIndex={4} />
 
       <section className='my-20 flex w-full flex-col lg:flex-row justify-evenly items-center lg:items-start space-y-12 lg:space-y-0'>
         <div className='w-4/5 lg:w-2/6 flex flex-col justify-center items-center space-y-8'>
@@ -25,11 +25,11 @@ const page = () => {
             <div className='flex w-full items-center md:justify-start gap-4 group '>
               <FaPhone className='text-2xl' />
               <div className='flex flex-col md:flex-row'>
-                <a href='tel:+211912301173' className='hover:text-accent '>
+                <a href='tel:+211912301173' className='hover:text-primary '>
                   +211-912-301-173
                 </a>
                 <div className='divider divider-vertical md:divider-horizontal -my-1' />
-                <a href='tel:+211922007117' className='hover:text-accent'>
+                <a href='tel:+211922007117' className='hover:text-primary'>
                   +211-922-007-117
                 </a>
               </div>
@@ -38,7 +38,7 @@ const page = () => {
               <FaEnvelope className='text-2xl' />
               <a
                 href='mailto:info@globalinksauto.com'
-                className='hover:text-accent'
+                className='hover:text-primary'
               >
                 info@globalinksauto.com
               </a>
