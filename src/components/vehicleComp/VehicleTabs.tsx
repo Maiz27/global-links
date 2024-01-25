@@ -1,7 +1,8 @@
 'use client';
-import { AnimatePresence, motion } from 'framer-motion';
 import { Dispatch, SetStateAction } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
+import CTA from '@/components/CTA/CTA';
 import useFilterVehicles from '@/hooks/useFilterVehicles';
 import VehicleSlider from './VehicleSlider';
 import { vehicle, vehicleType } from '@/types';
@@ -20,7 +21,7 @@ const VehicleTabs = ({
 
   return (
     <section className='min-h-screen grid place-items-center bg-triangle-pattern bg-cover bg-right-bottom bg-fixed text-base-100'>
-      <div className='mx-auto text-center max-w-2xl'>
+      <div className='mx-auto text-center max-w-2xl space-y-2'>
         <SectionHeading Tag='h2' text='Explore Vehicles' />
         <p>
           At Global Link Auto Company Limited, we take pride in offering a
@@ -28,6 +29,7 @@ const VehicleTabs = ({
           reliability, and innovation. Our product line includes a variety of
           models to suit every need and lifestyle
         </p>
+        <CTA path='/vehicles' text='All Vehicles' />
       </div>
       <div className='w-full xl:w-4/5 flex flex-col items-center'>
         <Tabs
@@ -44,7 +46,7 @@ const VehicleTabs = ({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 key={index}
-                className='w-11/12'
+                className='w-11/12 min-h-[40vh]'
               >
                 <VehicleSlider list={filteredList} />
               </motion.div>
