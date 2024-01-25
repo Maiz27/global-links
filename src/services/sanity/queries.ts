@@ -56,6 +56,16 @@ export const getLatestPosts = `*[_type == 'post']
       },
   }`;
 
+export const getRecommendedPosts = `*[_type == "post" && $category in categories[]->title && slug.current != $currentSlug]
+  | order(publishedAt desc)[0..1] {
+    title,
+    slug,
+    categories[]-> {
+      title,
+    },
+    mainImage,
+  }`;
+
 export const getPostCategories = `*[_type == 'postCategory'] 
 | order(title asc) {
     title,

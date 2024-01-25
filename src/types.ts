@@ -14,7 +14,7 @@ export type blog = {
   publishedAt: string;
   title: string;
   description: string;
-  categories: Array<postCategory>;
+  categories: Array<blogCategory>;
   mainImage: { asset: Object; _type: 'image' };
   author: {
     name: string;
@@ -24,7 +24,7 @@ export type blog = {
   body: blogBody;
 };
 
-export type postCategory = {
+export type blogCategory = {
   title: string;
   description?: string;
 };
