@@ -6,7 +6,7 @@ import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 const page = () => {
   return (
     <main>
-      <PageHeader pageIndex={4} />
+      <PageHeader pageIndex={5} />
 
       <section className='my-20 flex w-full flex-col lg:flex-row justify-evenly items-center lg:items-start space-y-12 lg:space-y-0'>
         <div className='w-4/5 lg:w-2/6 flex flex-col justify-center items-center space-y-8'>

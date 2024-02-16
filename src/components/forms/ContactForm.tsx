@@ -1,42 +1,30 @@
 'use client';
 import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '@/components/CTA/CTA';
+import { RegisterInput, RegisterTextField } from './fields/Input';
+import { ContactFormData, contactFormSchema } from '@/lib/zodSchemas';
 import { contactFormFields } from '@/lib/constants';
 
 const ContactForm = () => {
-  const initialState = {
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-  };
-  const [formData, setFormData] = useState<Record<string, string>>({
-    ...initialState,
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
   });
+
   const [result, setResult] = useState<string | null>(null);
   // const [isLoading, setIsLoading] = useState(false);
-
-  const handleChange = (e: { target: { name: any; value: any } }) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
 
   // const validEmailRegex =
   //   '[a-zA-Z0-9_\\.\\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+';
 
-  const sendEmail = async (e: { preventDefault: () => void }) => {
-    // e.preventDefault();
-    // setResult(null);
-    // const { name, email, message } = formData;
-    // if (!name || !email || !message) {
-    //   setResult('Please fill out all form inputs');
-    //   return;
-    // }
-    // if (!email.match(validEmailRegex)) {
-    //   setResult('Invalid Email!');
-    //   return;
-    // }
+  const sendEmail: SubmitHandler<ContactFormData> = async (data) => {
+    const validatedInput = contactFormSchema.parse(data);
+
     // try {
     //   setIsLoading(true);
     //   const response = await fetch('/api/send', {
@@ -62,7 +50,7 @@ const ContactForm = () => {
 
   return (
     <form
-      onSubmit={sendEmail}
+      onSubmit={handleSubmit(sendEmail)}
       className='w-4/5 lg:w-2/5 flex flex-col items-center'
     >
       {contactFormFields.map(
@@ -76,26 +64,23 @@ const ContactForm = () => {
             >
               <label className='label justify-start gap-2'>
                 <Icon />
-                <span className='label-text text-inherit'>{label}</span>
+                <span className='label-text text-inherit'>
+                  {label} {required && '*'}
+                </span>
               </label>
               {type === 'textarea' ? (
-                <textarea
+                <RegisterTextField
                   placeholder={placeholder}
                   name={name}
-                  value={formData[name]}
-                  onChange={handleChange}
-                  required={required}
-                  className='input input-bordered focus-visible:outline-primary transition-colors w-full max-w-sm h-40'
+                  errors={errors}
+                  register={register}
                 />
               ) : (
-                <input
-                  type={type}
+                <RegisterInput
                   placeholder={placeholder}
                   name={name}
-                  value={formData[name]}
-                  onChange={handleChange}
-                  required={required}
-                  className='input input-bordered focus-visible:outline-primary transition-colors w-full max-w-sm'
+                  errors={errors}
+                  register={register}
                 />
               )}
             </div>

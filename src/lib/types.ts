@@ -1,3 +1,11 @@
+import {
+  DeepMap,
+  FieldError,
+  FieldValues,
+  Path,
+  UseFormRegister,
+} from 'react-hook-form';
+
 export type heroImages = {
   images: Array<{
     title: string;
@@ -122,4 +130,14 @@ export type vehicleExterior = {
 
 export type vehicleGallery = {
   images: Object[];
+};
+
+export type FormErrors = DeepMap<FieldValues, FieldError>;
+
+export type BaseInputProps<T extends FieldValues> = {
+  label?: string;
+  name: Path<T>;
+  errors: FormErrors;
+  defaultValue?: string | number;
+  register: UseFormRegister<T>;
 };

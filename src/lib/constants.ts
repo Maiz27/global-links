@@ -63,6 +63,10 @@ export const routes = [
     href: '/services',
   },
   {
+    name: 'After-Sale',
+    href: '/after-sale',
+  },
+  {
     name: 'Contact',
     href: '/contact',
   },
@@ -198,6 +202,10 @@ export const pageHeaderData = [
   {
     heading: 'Comprehensive Car Services',
     text: "Entrust Your Vehicle to Global Links Auto's Expert Care in South Sudan. From Routine Maintenance to Advanced Repairs, Our Comprehensive Services Ensure Your Toyota Runs at Peak Performance. Embrace the Peace of Mind that Comes with Our Unmatched Automotive Expertise and Exceptional Customer Service.",
+  },
+  {
+    heading: 'After-Sale Excellence at Global Links Auto',
+    text: 'Experience the commitment to satisfaction that extends beyond the sale with Global Links Auto in South Sudan. Benefit from our comprehensive warranty support, access to genuine Toyota parts, and exceptional customer care. Our periodic vehicle health checks and personalized setup services ensure your Toyota remains a joy to drive, mile after mile.',
   },
   {
     heading: 'Get in Touch with Global Links Auto',
@@ -358,7 +366,7 @@ export const contactFormFields = [
     label: 'Phone Number',
     icon: FaPhone,
     type: 'tel',
-    placeholder: '+211 (Optional)',
+    placeholder: '+211 / 09',
     required: false,
   },
   {
@@ -366,7 +374,7 @@ export const contactFormFields = [
     label: 'Message Subject',
     icon: FaEnvelopeOpenText,
     type: 'text',
-    placeholder: 'Type here (Optional)',
+    placeholder: 'Type here',
     required: false,
   },
   {

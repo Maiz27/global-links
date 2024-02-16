@@ -19,7 +19,10 @@ const WhatWeDo = () => {
           {`At Global Links Auto, we offer a full spectrum of automotive services designed to keep your Toyota in pristine condition. From routine check-ups to complex repairs, our expert technicians ensure your vehicle delivers peak performance and reliability.`}
         </p>
 
-        <CTA path='/services' text='Browse Services' />
+        <div className='flex items-center gap-4'>
+          <CTA path='/services' text='Explore Services' />
+          <CTA path='/after-sale' text='After Sale' isOutline />
+        </div>
       </div>
     </section>
   );

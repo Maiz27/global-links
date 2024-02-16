@@ -22,7 +22,7 @@ const Hero = ({ images }: heroImages) => {
         </p>
         <div className='w-3/4 max-w-sm flex justify-around'>
           <CTA text='Contact Us' path='/contact' />
-          <CTA text='Browse Vehicles' isOutline={true} path='/vehicles' />
+          <CTA text='Explore Vehicles' isOutline={true} path='/vehicles' />
         </div>
       </div>
     </div>

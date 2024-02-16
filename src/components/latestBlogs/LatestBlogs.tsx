@@ -16,7 +16,7 @@ const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
           {`Delve into the world of Toyota through our featured blogs, where you'll find a trove of insights on the latest automotive trends, maintenance tips, and thrilling road adventures. Stay connected with Global Links Auto, where every story is crafted with the driver in mind.`}
         </p>
 
-        <CTA text='Browse Blogs' path='/blog' />
+        <CTA text='Explore Blogs' path='/blog' />
       </div>
       <div className='w-11/12 pb-10 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'>
         {blogs.map((blog) => {
