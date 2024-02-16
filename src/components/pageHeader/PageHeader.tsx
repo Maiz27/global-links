@@ -97,7 +97,7 @@ const PageHeader = ({
 
   return (
     <section className='min-h-[50vh] flex flex-col bg-triangle-pattern bg-cover bg-bottom text-base-100'>
-      <div className='h-5/6 grid place-items-center grow py-10'>
+      <div className='h-5/6 w-11/12 mx-auto grid place-items-center grow py-10'>
         <div className='space-y-2'>
           <SectionHeading
             Tag='h1'

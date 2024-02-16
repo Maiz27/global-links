@@ -20,12 +20,18 @@ import {
   FaSmog,
   FaRegCalendarCheck,
   FaOilCan,
+  FaScrewdriverWrench,
+  FaHeadset,
 } from 'react-icons/fa6';
 import {
   FaTools,
   FaDotCircle,
   FaHandPaper,
   FaGripHorizontal,
+  FaCogs,
+  FaHeartbeat,
+  FaShieldAlt,
+  FaUserCog,
 } from 'react-icons/fa';
 
 import teamPic from 'public/imgs/team.jpg';
@@ -367,7 +373,7 @@ export const contactFormFields = [
     icon: FaPhone,
     type: 'tel',
     placeholder: '+211 / 09',
-    required: false,
+    required: true,
   },
   {
     name: 'subject',
@@ -376,6 +382,93 @@ export const contactFormFields = [
     type: 'text',
     placeholder: 'Type here',
     required: false,
+  },
+  {
+    name: 'message',
+    label: 'Message',
+    icon: FaComment,
+    type: 'textarea',
+    placeholder: 'Type here',
+    required: true,
+  },
+];
+
+export const afterSaleServices = [
+  {
+    name: 'Warranty Support',
+    text: 'Enjoy peace of mind with our comprehensive warranty support tailored to protect your investment and ensure hassle-free ownership.',
+    icon: FaShieldAlt,
+  },
+  {
+    name: 'Genuine Parts Supply',
+    text: 'We provide a full inventory of genuine Toyota parts to maintain your vehicle’s performance and longevity with quality you can trust.',
+    icon: FaCogs,
+  },
+  {
+    name: 'Customer Care & Support',
+    text: 'Our dedicated customer service team is committed to providing you with the assistance and information you need, whenever you need it.',
+    icon: FaHeadset,
+  },
+  {
+    name: 'Vehicle Health Checks',
+    text: 'Benefit from our thorough vehicle health checks to ensure your Toyota is always in optimal condition, delivering performance and safety on the road.',
+    icon: FaHeartbeat,
+  },
+  {
+    name: 'Personalized Vehicle Set-Up',
+    text: 'Experience a tailored set-up for your new Toyota, adjusted to your personal preferences and driving style for an unparalleled driving experience.',
+    icon: FaUserCog,
+  },
+];
+
+export const afterSaleFormFields = [
+  {
+    name: 'name',
+    label: 'Name',
+    icon: FaCircleUser,
+    type: 'text',
+    placeholder: 'John Doe',
+    required: true,
+  },
+  {
+    name: 'company',
+    label: 'Company',
+    icon: FaCircleUser,
+    type: 'text',
+    placeholder: 'Company Name',
+    required: false,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    icon: FaEnvelope,
+    type: 'email',
+    placeholder: 'username@site.com',
+    required: true,
+  },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: FaPhone,
+    type: 'tel',
+    placeholder: '+211 / 09',
+    required: true,
+  },
+  {
+    name: 'model',
+    label: 'Vehicle Modal',
+    icon: FaPhone,
+    type: 'text',
+    placeholder: '',
+    required: true,
+  },
+  {
+    name: 'services',
+    label: 'Available Services',
+    icon: FaTools,
+    type: 'checkbox',
+    placeholder: '',
+    required: true,
   },
   {
     name: 'message',

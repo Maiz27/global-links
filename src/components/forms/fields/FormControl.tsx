@@ -26,7 +26,7 @@ export const FormControl: FC<FormControlProps> = ({
   withLabel = true,
 }) => {
   return (
-    <div className='form-control w-full'>
+    <div className='form-control'>
       {withLabel && label && (
         <label className='label'>
           <span className='label-text font-medium'>{label}</span>

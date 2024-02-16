@@ -7,7 +7,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className='footer h-96 footer-center p-10 bg-triangle-pattern bg-cover bg-right-bottom text-base-100 rounded'>
-      <nav className='grid grid-flow-col gap-4'>
+      <nav className='flex flex-wrap'>
         {routes.map(({ name, href }) => {
           return (
             <Link key={href} href={href} className='link link-hover'>

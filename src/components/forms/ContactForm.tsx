@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '@/components/CTA/CTA';
@@ -15,12 +14,6 @@ const ContactForm = () => {
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
-
-  const [result, setResult] = useState<string | null>(null);
-  // const [isLoading, setIsLoading] = useState(false);
-
-  // const validEmailRegex =
-  //   '[a-zA-Z0-9_\\.\\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+';
 
   const sendEmail: SubmitHandler<ContactFormData> = async (data) => {
     const validatedInput = contactFormSchema.parse(data);
@@ -87,8 +80,6 @@ const ContactForm = () => {
           );
         }
       )}
-
-      {result && <p className='p-4'>{result}</p>}
 
       <div className='mt-4'>
         <CTA

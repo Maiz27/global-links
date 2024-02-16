@@ -140,4 +140,5 @@ export type BaseInputProps<T extends FieldValues> = {
   errors: FormErrors;
   defaultValue?: string | number;
   register: UseFormRegister<T>;
+  className?: string;
 };
