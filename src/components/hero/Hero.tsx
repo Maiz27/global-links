@@ -8,16 +8,17 @@ const Hero = ({ images }: heroImages) => {
       <ImageSlider images={images} />
       <div className='pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8'>
         <h1 className='text-center text-3xl lg:text-4xl font-bold  text-base-100'>
-          Your Trusted Toyota Partner in South Sudan
+          Drive Excellence with Toyota in South Sudan
         </h1>
         <p className='mb-6 mt-4 max-w-3xl text-center lg:text-lg font-light text-base-100'>
+          Embark on a journey of automotive distinction with{' '}
           <span className='text-primary font-bold tracking-wide'>
-            Global Links Auto{' '}
+            Global Links Auto
           </span>
-          embodies a legacy of excellence, reliability, and unmatched expertise.
-          We bring you the assurance of genuine quality and service. Choose
-          confidence, choose reliability – choose the official Toyota experience
-          with us.
+          , your premier Toyota partner in South Sudan. We deliver more than
+          just vehicles; we offer a gateway to a superior driving experience,
+          backed by Toyota’s legendary durability and our commitment to
+          excellence.
         </p>
         <div className='w-3/4 max-w-sm flex justify-around'>
           <CTA text='Contact Us' path='/contact' />

@@ -1,7 +1,9 @@
-import React from 'react';
+'use client';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import graphic from '/public/imgs/graphics/triangles.png';
 import graphicAlt from '/public/imgs/graphics/triangles-2.png';
+import useWindowWidth from '@/lib/hooks/useWindowWidth';
 
 type props = {
   Tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -31,15 +33,40 @@ const SectionHeading = ({
   altGraphics = false,
   hasGraphic = true,
 }: props) => {
+  const tagRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
+  const [textWidth, setTextWidth] = useState(0);
+  const [tagWidth, setTagWidth] = useState(0);
+  const width = useWindowWidth();
+
+  const calculateWidths = useCallback(() => {
+    if (textRef.current) {
+      setTextWidth(textRef.current.offsetWidth);
+    }
+    if (tagRef.current) {
+      setTagWidth(tagRef.current.offsetWidth);
+    }
+  }, []);
+
+  useEffect(() => {
+    calculateWidths();
+  }, [text, width, calculateWidths]);
+
   return (
     <Tag
-      className={`text-center w-fit whitespace-normal pb-4 text-${size} font-bold relative
-        ${isCentered && `mx-auto `}
+      ref={tagRef}
+      className={`whitespace-normal pb-4 text-${size} font-bold relative
+        ${isCentered ? `text-center` : ''}
       `}
     >
-      {text}
+      <span ref={textRef}>{text}</span>
       {hasGraphic && (
-        <div className='absolute left-0 -top-6 h-6 w-16'>
+        <div
+          className='absolute -top-6 h-6 w-16'
+          style={{
+            left: isCentered ? `${(tagWidth - textWidth) / 32}rem` : '0',
+          }}
+        >
           <Image
             src={altGraphics ? graphicAlt : graphic}
             loading='lazy'
@@ -52,4 +79,4 @@ const SectionHeading = ({
   );
 };
 
-export default SectionHeading;
+export default React.memo(SectionHeading);

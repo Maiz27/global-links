@@ -16,7 +16,7 @@ const BasicFAQ = () => {
       <div className='w-full md:w-4/5 lg:w-3/5 m-auto max-w-3xl'>
         <SectionHeading
           Tag='h2'
-          text='Frequently asked questions'
+          text='Get Answers to Your Toyota Queries'
           isCentered={false}
         />
         {faqData.map(({ question, answer }, idx) => {

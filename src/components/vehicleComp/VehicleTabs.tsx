@@ -21,13 +21,10 @@ const VehicleTabs = ({
 
   return (
     <section className='min-h-screen grid place-items-center bg-triangle-pattern bg-cover bg-right-bottom bg-fixed text-base-100'>
-      <div className='mx-auto text-center max-w-2xl space-y-2'>
-        <SectionHeading Tag='h2' text='Explore Vehicles' />
-        <p>
-          At Global Link Auto Company Limited, we take pride in offering a
-          comprehensive range of Toyota vehicles, renowned for their quality,
-          reliability, and innovation. Our product line includes a variety of
-          models to suit every need and lifestyle
+      <div className='w-full md:w-4/5 mx-auto text-center max-w-3xl space-y-2'>
+        <SectionHeading Tag='h2' text='Select Your Perfect Toyota Companion' />
+        <p className=' text-center'>
+          {`Explore our diverse range of Toyota vehicles, each meticulously crafted to meet the demands of South Sudan's landscapes and your lifestyle. Whether it's the ruggedness for off-road adventures or the sleekness for city elegance, we have the perfect Toyota for you.`}
         </p>
         <CTA path='/vehicles' text='Browse Vehicles' />
       </div>

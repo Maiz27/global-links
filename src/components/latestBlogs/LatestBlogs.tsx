@@ -7,12 +7,13 @@ import CTA from '../CTA/CTA';
 const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
   return (
     <section className='my-20 space-y-10'>
-      <div className='mx-auto text-center max-w-2xl space-y-2'>
-        <SectionHeading Tag='h2' text='Featured Blogs' />
+      <div className='mx-auto text-center max-w-3xl space-y-2'>
+        <SectionHeading
+          Tag='h2'
+          text='Insights and Inspirations from Our Road Experts'
+        />
         <p className='px-1'>
-          Dive into our featured blogs for the latest in automotive trends,
-          maintenance tips, and exciting Toyota updates. Stay connected with the
-          dynamic world of Global Links—where knowledge meets the road.
+          {`Delve into the world of Toyota through our featured blogs, where you'll find a trove of insights on the latest automotive trends, maintenance tips, and thrilling road adventures. Stay connected with Global Links Auto, where every story is crafted with the driver in mind.`}
         </p>
 
         <CTA text='Browse Blogs' path='/blog' />

@@ -7,13 +7,14 @@ import CTA from '../CTA/CTA';
 const WhyChooseUs = () => {
   return (
     <section className='min-h-[80vh] flex flex-col items-center py-20 gap-6'>
-      <div className='mx-auto text-center max-w-2xl space-y-2'>
-        <SectionHeading Tag='h2' text='Why Choose Us' />
+      <div className='mx-auto text-center max-w-3xl space-y-2'>
+        <SectionHeading
+          Tag='h2'
+          text='Experience the Global Links Difference'
+        />
 
         <p>
-          At the heart of our mission lies a deep seated dedication to customer
-          satisfaction, achieved through personalized service, transparency, and
-          a relentless pursuit of excellence
+          {`Choose Global Links Auto for a car buying experience that's rooted in satisfaction. With our deep commitment to transparency, service, and excellence, we're dedicated to not just meeting, but exceeding your automotive expectations.`}
         </p>
 
         <CTA text='Learn More' path='/about' />

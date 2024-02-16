@@ -2,9 +2,10 @@ import Image, { StaticImageData } from 'next/image';
 
 type props = {
   image: StaticImageData | string;
+  title?: string;
 };
 
-const ImageCard = ({ image }: props) => {
+const ImageCard = ({ image, title = 'Image' }: props) => {
   const before =
     'before:content-[""] before:absolute before:card before:-top-4 before:-left-4 before:w-3/5 before:aspect-square before:bg-primary/90 before:z-0';
   const after =
@@ -15,7 +16,8 @@ const ImageCard = ({ image }: props) => {
       <Image
         src={image}
         loading='lazy'
-        alt='Ride'
+        alt={title}
+        title={title}
         className='w-full object-cover rounded-tl-xl rounded-br-xl z-10 relative'
       />
     </div>
