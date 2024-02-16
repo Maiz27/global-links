@@ -14,7 +14,19 @@ import {
   FaPhone,
   FaEnvelopeOpenText,
   FaComment,
+  FaChargingStation,
+  FaCarBattery,
+  FaSnowflake,
+  FaSmog,
+  FaRegCalendarCheck,
+  FaOilCan,
 } from 'react-icons/fa6';
+import {
+  FaTools,
+  FaDotCircle,
+  FaHandPaper,
+  FaGripHorizontal,
+} from 'react-icons/fa';
 
 import teamPic from 'public/imgs/team.jpg';
 import teamPic2 from 'public/imgs/team2.jpg';
@@ -47,8 +59,8 @@ export const routes = [
     href: '/about',
   },
   {
-    name: 'After Sales',
-    href: '/after-sales',
+    name: 'Services',
+    href: '/services',
   },
   {
     name: 'Contact',
@@ -64,7 +76,7 @@ export const whyChooseUs = [
   {
     title: 'Authorized Toyota Dealer',
     paragraph:
-      'As the official representative of Toyota in South Sudan, we offer a wide range of vehicles, from rugged SUVs to sleek sedans, all backed by Toyota’s legendary reliability.',
+      "As the official representative of Toyota in South Sudan, we offer a wide range of vehicles, from rugged SUVs to sleek sedans, all backed by Toyota's legendary reliability.",
     icon: TbBrandToyota,
   },
   {
@@ -172,28 +184,28 @@ export const socials = [
 
 export const pageHeaderData = [
   {
-    heading: 'Toyota Vehicles',
-    text: 'Uncover the Perfect Match for Your Driving Needs, from Stylish Sedans to Robust SUVs. Every Vehicle Embodies Quality, Performance, and the Distinctive Global Links Touch. Start Your Journey Towards Driving Perfection Today.',
+    heading: 'Toyota Vehicles in South Sudan',
+    text: 'Explore a Premium Selection of Toyota Vehicles Tailored for Every Lifestyle in South Sudan. From Sleek Sedans to Durable SUVs, Experience Unrivaled Quality and Performance with Global Links Auto. Embark on Your Journey to Automotive Excellence Today.',
   },
   {
-    heading: 'About Global Links',
-    text: "At Global Link Auto Company Limited, our passion for cars is matched only by our dedication to the people who drive them. We understand that a car is not just a vehicle; it's a companion on life's many roads – a witness to stories of joy, adventure, and sometimes, the mundane yet significant daily commutes. This understanding drives us to ensure that every vehicle we offer isn't just a machine, but a reliable partner in the journey of life.",
+    heading: 'About Global Links Auto Company',
+    text: "Dive into the World of Global Links Auto Company Limited, South Sudan's Premier Automotive Dealer. Our Heritage is Built on a Profound Passion for Automobiles and a Commitment to Serve the Journeys of Our Esteemed Clients. A Car from Global Links is More Than a Vehicle; It's a Partner for Life, Ready to Create Unforgettable Stories on the Road.",
   },
   {
-    heading: 'Leadership',
-    text: 'At Global Link Auto Company Limited, our leadership is the driving force behind our success. Comprising seasoned professionals with a passion for the automotive industry, our team combines decades of experience with a forward-thinking approach. Guided by principles of innovation, integrity, and customer-centricity, they are committed to steering the company towards new heights of excellence and market leadership. Each leader brings a unique blend of skills and vision, ensuring that we remain at the forefront of automotive solutions and customer satisfaction.',
+    heading: 'Experienced Automotive Leadership',
+    text: 'Meet the Visionaries at Global Links Auto Company Limited, Pioneers Steering the Automotive Industry in South Sudan. Our Leaders Merge Decades of Expertise with an Innovative Mindset, Emphasizing Integrity, Customer Satisfaction, and Market Dominance. Discover the Dynamic Team Driving Our Legacy Forward and Elevating Your Driving Experience.',
   },
   {
-    heading: 'After Sales',
-    text: "Discover Global Links Auto, South Sudan's undisputed leader in the automotive landscape. Embodying a legacy of excellence, reliability, and unmatched expertise.",
+    heading: 'Comprehensive Car Services',
+    text: "Entrust Your Vehicle to Global Links Auto's Expert Care in South Sudan. From Routine Maintenance to Advanced Repairs, Our Comprehensive Services Ensure Your Toyota Runs at Peak Performance. Embrace the Peace of Mind that Comes with Our Unmatched Automotive Expertise and Exceptional Customer Service.",
   },
   {
-    heading: 'Contact Us',
-    text: "Connect with Global Links: Your Gateway to Exceptional Service and Support. Reach out to Us for Inquiries, Assistance, and a Seamless Experience. We're here to Ensure Your Journey with Global Links is as Smooth and Enjoyable as Your Drive in Our Exceptional Vehicles.",
+    heading: 'Get in Touch with Global Links Auto',
+    text: "Your Exceptional Automotive Experience Begins with Global Links Auto in South Sudan. Contact Us for Personalized Service, Professional Assistance, and a Seamless Customer Journey. We're Here to Enhance Every Aspect of Your Vehicle Ownership, Ensuring Your Satisfaction with Every Mile.",
   },
   {
-    heading: 'Our Blog',
-    text: "Discover the World of Global Links through our Insightful Blog. Stay Informed with the Latest in Automotive Trends, Maintenance Tips, and Exciting Toyota Updates. Our Blogs are Your Gateway to Knowledge, Connecting You with the Pulse of the Road and the Heart of Global Links' Expertise.",
+    heading: 'Global Links Auto Blog',
+    text: 'Join the Global Links Auto Community and Keep Abreast with the Latest Automotive Insights. Our Blog is Your Ultimate Resource for Toyota News, Advanced Maintenance Strategies, and the Latest Trends Shaping the Roads of South Sudan. Stay Ahead with Global Links Auto – Your Trusted Source for Automotive Knowledge and Innovation.',
   },
 ];
 
@@ -206,7 +218,7 @@ export const aboutGlobalLinks = {
   mission: {
     title: 'Our Mission',
     paragraph:
-      'Our mission at Global Link Auto Company Limited is to provide the people of South Sudan with unparalleled automotive products and services. We are dedicated to offering a diverse range of high-quality Toyota vehicles that meet the varied needs and preferences of our customers. Our commitment extends beyond sales, as we aim to deliver exceptional after-sales support, maintenance, and genuine parts, ensuring every vehicle’s longevity and performance.',
+      "Our mission at Global Link Auto Company Limited is to provide the people of South Sudan with unparalleled automotive products and services. We are dedicated to offering a diverse range of high-quality Toyota vehicles that meet the varied needs and preferences of our customers. Our commitment extends beyond sales, as we aim to deliver exceptional after-sales support, maintenance, and genuine parts, ensuring every vehicle's longevity and performance.",
   },
   vision: {
     title: 'Our Vision',
@@ -219,6 +231,59 @@ export const aboutGlobalLinks = {
       'At Global Link Auto Company Limited, our leadership is the driving force behind our success. Comprising seasoned professionals with a passion for the automotive industry, our team combines decades of experience with a forward-thinking approach. Guided by principles of innovation, integrity, and customer-centricity, they are committed to steering the company towards new heights of excellence and market leadership. Each leader brings a unique blend of skills and vision, ensuring that we remain at the forefront of automotive solutions and customer satisfaction.',
   },
 };
+
+export const automotiveServices = [
+  {
+    heading: 'Routine Vehicle Maintenance',
+    text: "Keep your car running like new with our comprehensive routine maintenance program. Regular check-ups are the key to ensuring your vehicle's longevity and reliability.",
+    icon: FaRegCalendarCheck,
+  },
+  {
+    heading: 'Fluid and Filter Servicing',
+    text: "Optimize your car's performance with our fluid and filter services. Regular changes are essential for maintaining engine health and vehicle efficiency.",
+    icon: FaOilCan,
+  },
+  {
+    heading: 'Tire Inspection and Services',
+    text: 'Ensure maximum safety and performance with our tire services, including expert inspection, rotation, and replacement tailored to your driving needs.',
+    icon: FaDotCircle,
+  },
+  {
+    heading: 'Brake System Maintenance',
+    text: "Stay safe on the road with our comprehensive brake services, including system inspections, pad replacements, and fluid checks to maintain your car's stopping power.",
+    icon: FaHandPaper,
+  },
+  {
+    heading: 'Battery Testing and Replacement',
+    text: "Never get stranded with our battery services. Regular testing and maintenance will keep your car's electrical systems running smoothly without interruption.",
+    icon: FaCarBattery,
+  },
+  {
+    heading: 'Alignment and Suspension Tuning',
+    text: 'Drive smoothly with precise alignment and suspension services. Proper adjustments ensure stability, comfort, and extend the life of your tires.',
+    icon: FaGripHorizontal,
+  },
+  {
+    heading: 'Exhaust System Maintenance',
+    text: 'Reduce emissions and improve fuel efficiency with our exhaust system inspections and services, ensuring a quieter ride and cleaner performance.',
+    icon: FaSmog,
+  },
+  {
+    heading: 'Air Conditioning Repair and Maintenance',
+    text: 'Stay cool and comfortable all year round with our air conditioning maintenance services, designed for optimal performance in extreme weather conditions.',
+    icon: FaSnowflake,
+  },
+  {
+    heading: 'Electrical System Diagnostics',
+    text: 'Keep every component powered up with our electrical system checks, ensuring all electronics from headlights to onboard computers are functioning perfectly.',
+    icon: FaChargingStation,
+  },
+  {
+    heading: 'Comprehensive Diagnostic and Repair',
+    text: "Trust our expert technicians to diagnose and repair any issues using state-of-the-art tools, restoring your vehicle's performance and reliability.",
+    icon: FaTools,
+  },
+];
 
 export const gallery = [
   {
