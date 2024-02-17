@@ -121,7 +121,9 @@ export type vehicleTyres = {
 // };
 
 export type vehicleGallery = {
-  images: Object[];
+  gallery: {
+    images: Object[];
+  };
 };
 
 export type FormErrors = DeepMap<FieldValues, FieldError>;

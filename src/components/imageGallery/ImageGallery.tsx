@@ -35,6 +35,8 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
               src={images[slideNumber].src}
               title={images[slideNumber].title}
               withHoverEffect={!isOpen}
+              width={1080}
+              height={500}
             />
             <button
               className='z-50 absolute -top-4 lg:-top-6 right-0 lg:-right-6 text-2xl md:text-3xl lg:text-4xl text-base-100'
@@ -82,12 +84,16 @@ const MemoizedImage: React.FC<{
   src: string | StaticImageData;
   title: string;
   withHoverEffect?: boolean;
+  width?: number;
+  height?: number;
 }> = memo(
-  ({ src, title, withHoverEffect = true }) => (
-    <div className='relative'>
+  ({ src, title, withHoverEffect = true, width = 500, height = 500 }) => (
+    <div className='relative w-fit mx-auto'>
       <Image
         src={src}
         alt={title}
+        width={width}
+        height={height}
         className={`max-w-full ${
           withHoverEffect
             ? 'hover:scale-110 transition-transform duration-300 '
@@ -96,7 +102,7 @@ const MemoizedImage: React.FC<{
         loading='lazy'
       />
       {withHoverEffect && (
-        <div className='absolute top-0 right-0 '>
+        <div className='absolute top-0 right-0'>
           <Image
             src={graphic}
             alt='Triangle pattern'
