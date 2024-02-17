@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { team } from '@/lib/constants';
 import PageTransition from '@/components/animationWrappers/PageTransition';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 
 const page = () => {
   return (
@@ -11,11 +12,9 @@ const page = () => {
 
       <div className='w-4/5 md:w-11/12 xl:w-4/5 h-full mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 py-20'>
         {team.map((member, idx) => (
-          <TeamCard
-            key={idx}
-            member={member}
-            position={member.position as Position}
-          />
+          <AnimateInView key={idx} delay={++idx * 0.2} className='h-full'>
+            <TeamCard member={member} position={member.position as Position} />
+          </AnimateInView>
         ))}
       </div>
     </PageTransition>

@@ -3,6 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import React, { memo } from 'react';
 import useImageGallery from '@/lib/hooks/useImageGallery';
 import { FaCircleXmark, FaCircleLeft, FaCircleRight } from 'react-icons/fa6';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 interface ImageGalleryProps {
   images: Array<{
@@ -65,13 +66,14 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
       <div className='w-11/12 mx-auto grid place-items-center gap-4 grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
         {images &&
           images.map(({ title, src }, index) => (
-            <div
-              className='w-full cursor-pointer rounded-tl-xl rounded-br-xl overflow-hidden'
+            <AnimateInView
+              className='w-full h-full cursor-pointer rounded-tl-xl rounded-br-xl overflow-hidden'
               key={index}
+              delay={++index * 0.2}
               onClick={() => handleOpenModal(index)}
             >
               <MemoizedImage src={src} title={title} />
-            </div>
+            </AnimateInView>
           ))}
       </div>
     </div>
