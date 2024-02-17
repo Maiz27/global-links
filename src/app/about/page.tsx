@@ -5,8 +5,6 @@ import ImageGallery from '@/components/imageGallery/ImageGallery';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import { aboutGlobalLinks, gallery } from '@/lib/constants';
-import team from 'public/imgs/team.jpg';
-import team2 from 'public/imgs/team2.jpg';
 
 const page = () => {
   const { about, mission, vision, leadership } = aboutGlobalLinks;
@@ -16,7 +14,7 @@ const page = () => {
 
       <section className='min-h-[80vh] flex flex-col items-around px-8 gap-16 lg:flex-row py-20'>
         <div className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'>
-          <ImageCard image={team2} />
+          <ImageCard image={`/imgs/team2.jpg`} />
         </div>
         <div className='w-full md:w-4/5 lg:w-1/2 mx-auto max-w-2xl flex flex-col justify-center gap-4'>
           <SectionHeading Tag='h2' text={about.title} />
@@ -63,7 +61,7 @@ const page = () => {
 
       <section className='min-h-[80vh] flex flex-col items-around px-8 gap-16 lg:flex-row-reverse py-20'>
         <div className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'>
-          <ImageCard image={team} />
+          <ImageCard image={`/imgs/team.jpg`} />
         </div>
         <div className='w-full md:w-4/5 lg:w-1/2 mx-auto max-w-2xl flex flex-col justify-center items-center gap-4'>
           <SectionHeading Tag='h2' text={leadership.title} />

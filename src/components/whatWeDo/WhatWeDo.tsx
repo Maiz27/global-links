@@ -1,13 +1,12 @@
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import ImageCard from '../cards/ImageCard';
-import img from 'public/imgs/paint.jpg';
 import CTA from '../CTA/CTA';
 
 const WhatWeDo = () => {
   return (
     <section className='min-h-[80vh] flex flex-col items-around px-8 gap-16 lg:flex-row-reverse py-20'>
       <div className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'>
-        <ImageCard image={img} title='Paint Job' />
+        <ImageCard image={`/imgs/paint.jpg`} title='Paint Job' />
       </div>
       <div className='w-full md:w-4/5 lg:w-3/5 m-auto max-w-2xl space-y-4'>
         <SectionHeading

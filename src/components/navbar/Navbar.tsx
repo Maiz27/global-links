@@ -11,8 +11,6 @@ import {
   routes,
 } from '@/lib/constants';
 import { FaXmark, FaBars, FaArrowRight } from 'react-icons/fa6';
-import logo from '/public/imgs/logo/logo.png';
-import toyota from '/public/imgs/toyota.png';
 
 const Navbar = () => {
   const { isOpen, setIsOpen, node } = useNavbar();
@@ -34,15 +32,19 @@ const Logo = () => {
     <div className='flex h-12 w-40 divide-x-2'>
       <Link href='/' className='w-1/2'>
         <Image
-          src={logo}
+          src={`/imgs/logo/logo.png`}
           loading='eager'
+          width={200}
+          height={200}
           alt='Global Links'
           className='h-full object-scale-down'
         />
       </Link>
       <Image
-        src={toyota}
+        src={`/imgs/toyota.png`}
         loading='lazy'
+        width={200}
+        height={200}
         alt='Toyota Logo'
         className='h-full object-scale-down w-1/2'
       />

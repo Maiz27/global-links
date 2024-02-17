@@ -14,7 +14,7 @@ const VehicleImageGallery = async ({ slug }: { slug: string }) => {
   );
 
   const images = gallery?.images.map((img, idx) => {
-    return { title: `Image ${idx + 1}`, src: urlFor(img).url() };
+    return { title: `[GLA] Image ${idx + 1}`, src: urlFor(img).url() };
   });
 
   return (

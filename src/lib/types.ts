@@ -6,12 +6,10 @@ import {
   UseFormRegister,
 } from 'react-hook-form';
 
-export type heroImages = {
-  images: Array<{
-    title: string;
-    index: number;
-    image: Object;
-  }>;
+export type heroImage = {
+  title: string;
+  index: number;
+  image: Object;
 };
 
 export type blog = {

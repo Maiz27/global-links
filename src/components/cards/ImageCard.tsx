@@ -7,7 +7,12 @@ type props = {
   height?: number;
 };
 
-const ImageCard = ({ image, title = 'Image', width, height }: props) => {
+const ImageCard = ({
+  image,
+  title = 'Image',
+  width = 500,
+  height = 300,
+}: props) => {
   const before =
     'before:content-[""] before:absolute before:card before:-top-4 before:-left-4 before:w-3/5 before:aspect-square before:bg-primary/90 before:z-0';
   const after =

@@ -69,7 +69,9 @@ const TeamCard = ({
       <div className='w-full h-full bg-primary'>
         <Image
           src={img}
-          alt=''
+          alt={name}
+          width={500}
+          height={300}
           className='h-full object-cover'
           loading='lazy'
         />

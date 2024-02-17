@@ -20,7 +20,6 @@ import {
   FaSmog,
   FaRegCalendarCheck,
   FaOilCan,
-  FaScrewdriverWrench,
   FaHeadset,
 } from 'react-icons/fa6';
 import {
@@ -34,25 +33,25 @@ import {
   FaUserCog,
 } from 'react-icons/fa';
 
-import teamPic from 'public/imgs/team.jpg';
-import teamPic2 from 'public/imgs/team2.jpg';
-import paint from 'public/imgs/paint.jpg';
-import img1 from 'public/imgs/1.jpg';
-import img2 from 'public/imgs/2.jpg';
-import img3 from 'public/imgs/3.jpg';
-import img4 from 'public/imgs/4.jpg';
-import img5 from 'public/imgs/5.jpg';
-import img6 from 'public/imgs/6.jpg';
-import img7 from 'public/imgs/7.jpg';
-import img8 from 'public/imgs/8.jpg';
-import img9 from 'public/imgs/9.jpg';
+const teamPic = '/imgs/team.jpg';
+const teamPic2 = '/imgs/team2.jpg';
+const paint = '/imgs/paint.jpg';
+const img1 = '/imgs/1.jpg';
+const img2 = '/imgs/2.jpg';
+const img3 = '/imgs/3.jpg';
+const img4 = '/imgs/4.jpg';
+const img5 = '/imgs/5.jpg';
+const img6 = '/imgs/6.jpg';
+const img7 = '/imgs/7.jpg';
+const img8 = '/imgs/8.jpg';
+const img9 = '/imgs/9.jpg';
 
-import one from 'public/imgs/team/1.jpg';
-import two from 'public/imgs/team/2.jpg';
-import three from 'public/imgs/team/3.jpg';
-import four from 'public/imgs/team/4.jpg';
-import five from 'public/imgs/team/5.jpg';
-import six from 'public/imgs/team/6.jpg';
+const one = '/imgs/team/1.jpg';
+const two = '/imgs/team/2.jpg';
+const three = '/imgs/team/3.jpg';
+const four = '/imgs/team/4.jpg';
+const five = '/imgs/team/5.jpg';
+const six = '/imgs/team/6.jpg';
 import { blogBody } from './types';
 
 export const routes = [

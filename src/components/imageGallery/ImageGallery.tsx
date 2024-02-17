@@ -3,7 +3,6 @@ import Image, { StaticImageData } from 'next/image';
 import React, { memo } from 'react';
 import useImageGallery from '@/lib/hooks/useImageGallery';
 import { FaCircleXmark, FaCircleLeft, FaCircleRight } from 'react-icons/fa6';
-import graphic from '/public/imgs/graphics/triangles-3.png';
 
 interface ImageGalleryProps {
   images: Array<{
@@ -87,7 +86,7 @@ const MemoizedImage: React.FC<{
   width?: number;
   height?: number;
 }> = memo(
-  ({ src, title, withHoverEffect = true, width = 500, height = 500 }) => (
+  ({ src, title, withHoverEffect = true, width = 500, height = 300 }) => (
     <div className='relative w-fit mx-auto'>
       <Image
         src={src}
@@ -104,7 +103,9 @@ const MemoizedImage: React.FC<{
       {withHoverEffect && (
         <div className='absolute top-0 right-0'>
           <Image
-            src={graphic}
+            src={`/imgs/graphics/triangles-3.png`}
+            width={500}
+            height={300}
             alt='Triangle pattern'
             className='w-10 aspect-square object-cover'
           />

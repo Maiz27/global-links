@@ -4,7 +4,6 @@ import AfterSaleForm from '@/components/forms/AfterSaleForm';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import { afterSaleServices } from '@/lib/constants';
-import img from 'public/imgs/garage.jpg';
 
 const page = () => {
   return (
@@ -24,7 +23,7 @@ const page = () => {
 
       <section className='min-h-screen w-full flex flex-col items-around px-8 gap-16 xl:flex-row'>
         <div className='w-full md:w-4/5 xl:w-2/5 mx-auto grid place-items-center'>
-          <ImageCard image={img} title='After Sale Garage' />
+          <ImageCard image={`/imgs/garage.jpg`} title='After Sale Garage' />
         </div>
         <div className='w-full md:w-4/5 xl:w-3/5 m-auto max-w-2xl space-y-4 mb-20'>
           <SectionHeading Tag='h2' text='Book an After Sale Service' />

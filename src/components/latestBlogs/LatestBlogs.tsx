@@ -3,8 +3,12 @@ import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import BlogCard from '../blogComp/BlogCard';
 import { blog } from '@/lib/types';
 import CTA from '../CTA/CTA';
+import { fetchSanityData, getLatestPosts } from '@/lib/sanity/queries';
 
-const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
+export const revalidate = 60;
+
+const LatestBlogs = async () => {
+  const blogs: blog[] = await fetchSanityData(getLatestPosts);
   return (
     <section className='my-20 space-y-10'>
       <div className='mx-auto text-center max-w-3xl space-y-2'>

@@ -1,8 +1,6 @@
 'use client';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
-import graphic from '/public/imgs/graphics/triangles.png';
-import graphicAlt from '/public/imgs/graphics/triangles-2.png';
 import useWindowWidth from '@/lib/hooks/useWindowWidth';
 
 type props = {
@@ -68,7 +66,13 @@ const SectionHeading = ({
           }}
         >
           <Image
-            src={altGraphics ? graphicAlt : graphic}
+            src={
+              altGraphics
+                ? `/imgs/graphics/triangles-2.png`
+                : `/imgs/graphics/triangles.png`
+            }
+            width={250}
+            height={250}
             loading='lazy'
             alt='Triangle Graphics'
             className='h-full object-contain'

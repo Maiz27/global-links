@@ -14,3 +14,11 @@
   border-radius: 20px; /* roundness of the scroll thumb */
   border: 0.1rem solid white; /* creates padding around scroll thumb */
 }
+
+.react-loading-skeleton {
+  @apply animate-pulse bg-base-300 !important;
+}
+
+.react-loading-skeleton::after {
+  @apply bg-gradient-to-r from-base-300 to-base-300/70 !important;
+}
