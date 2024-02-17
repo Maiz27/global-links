@@ -2,10 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import { team } from '@/lib/constants';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 const page = () => {
   return (
-    <main>
+    <PageTransition>
       <PageHeader pageIndex={2} />
 
       <div className='w-4/5 md:w-11/12 xl:w-4/5 h-full mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 py-20'>
@@ -17,7 +18,7 @@ const page = () => {
           />
         ))}
       </div>
-    </main>
+    </PageTransition>
   );
 };
 

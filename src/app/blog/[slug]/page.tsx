@@ -3,13 +3,14 @@ import BlogBody from '@/components/blogComp/BlogBody';
 import Recommendations from '@/components/blogComp/Recommendations';
 import BlogShare from '@/components/blogComp/BlogShare';
 import { fetchSanityData, getPostBySlug } from '@/lib/sanity/queries';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 
 const page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });
   const { body, slug: currentSlug, categories } = post;
 
   return (
-    <article>
+    <PageTransition tag='article'>
       <PageHeader blog={post} />
 
       <div className='w-11/12 mx-auto flex flex-col xl:flex-row items-center lg:items-start gap-4 mt-10 mb-20'>
@@ -23,7 +24,7 @@ const page = async ({ params: { slug } }: { params: { slug: string } }) => {
           <Recommendations slug={currentSlug.current} categories={categories} />
         </aside>
       </div>
-    </article>
+    </PageTransition>
   );
 };
 

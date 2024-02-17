@@ -3,14 +3,15 @@ import Hero from '@/components/hero/Hero';
 import VehicleTabs from '@/components/vehicleComp/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 import WhyChooseUs from '@/components/whyChooseUs/WhyChooseUs';
+import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 import {
   fetchSanityData,
   getAllVehicles,
   getVehicleTypes,
 } from '@/lib/sanity/queries';
-import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 
-export const revalidate = 60; // revalidate every minute
+export const revalidate = 60;
 
 export default async function Home() {
   const [vehicles, types] = await Promise.all([
@@ -19,7 +20,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main>
+    <PageTransition>
       <Hero />
 
       <WhyChooseUs />
@@ -31,6 +32,6 @@ export default async function Home() {
       <BasicFAQ />
 
       <LatestBlogs />
-    </main>
+    </PageTransition>
   );
 }

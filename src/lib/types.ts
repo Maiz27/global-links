@@ -134,3 +134,12 @@ export type BaseInputProps<T extends FieldValues> = {
   register: UseFormRegister<T>;
   className?: string;
 };
+
+export type MotionTag =
+  | 'main'
+  | 'div'
+  | 'section'
+  | 'article'
+  | 'ul'
+  | 'span'
+  | 'p';

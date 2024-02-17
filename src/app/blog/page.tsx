@@ -1,3 +1,4 @@
+import PageTransition from '@/components/animationWrappers/PageTransition';
 import BlogsGrid from '@/components/blogComp/BlogsGrid';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import {
@@ -13,13 +14,13 @@ const page = async () => {
   ]);
 
   return (
-    <main>
+    <PageTransition>
       <PageHeader pageIndex={6} />
 
       <BlogsGrid blogs={blogs} categories={categories} />
 
       {/* <div className='min-h-screen'></div> */}
-    </main>
+    </PageTransition>
   );
 };
 

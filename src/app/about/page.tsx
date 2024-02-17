@@ -1,4 +1,5 @@
 import CTA from '@/components/CTA/CTA';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 import IconCard from '@/components/cards/IconCard';
 import ImageCard from '@/components/cards/ImageCard';
 import ImageGallery from '@/components/imageGallery/ImageGallery';
@@ -9,7 +10,7 @@ import { aboutGlobalLinks, gallery } from '@/lib/constants';
 const page = () => {
   const { about, mission, vision, leadership } = aboutGlobalLinks;
   return (
-    <main>
+    <PageTransition>
       <PageHeader pageIndex={1} />
 
       <section className='min-h-[80vh] flex flex-col items-around px-8 gap-16 lg:flex-row py-20'>
@@ -75,7 +76,7 @@ const page = () => {
 
         <ImageGallery images={gallery} />
       </section>
-    </main>
+    </PageTransition>
   );
 };
 

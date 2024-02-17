@@ -1,3 +1,4 @@
+import PageTransition from '@/components/animationWrappers/PageTransition';
 import IconCard from '@/components/cards/IconCard';
 import ImageCard from '@/components/cards/ImageCard';
 import AfterSaleForm from '@/components/forms/AfterSaleForm';
@@ -7,7 +8,7 @@ import { afterSaleServices } from '@/lib/constants';
 
 const page = () => {
   return (
-    <main>
+    <PageTransition>
       <PageHeader pageIndex={4} />
 
       <section className='my-20'>
@@ -30,7 +31,7 @@ const page = () => {
           <AfterSaleForm />
         </div>
       </section>
-    </main>
+    </PageTransition>
   );
 };
 
