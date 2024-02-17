@@ -4,7 +4,44 @@ import ContactForm from '@/components/forms/ContactForm';
 import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
-import { slideRight } from '@/lib/constants';
+import { pagesMetaData, slideRight } from '@/lib/constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+
+export const metadata: Metadata = {
+  title: pagesMetaData[6].title,
+  description: pagesMetaData[6].description,
+  icons: {
+    icon: pagesMetaData[6].icon,
+    shortcut: pagesMetaData[6].icon,
+    apple: pagesMetaData[6].icon,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[6].icon,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[6].type,
+    url: pagesMetaData[6].url,
+    title: pagesMetaData[6].title,
+    description: pagesMetaData[6].description,
+    siteName: pagesMetaData[6].title,
+    images: [
+      {
+        url: pagesMetaData[6].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[6].url,
+    images: [
+      {
+        url: pagesMetaData[6].image,
+      },
+    ],
+  },
+};
 
 const page = () => {
   return (
@@ -62,7 +99,7 @@ const page = () => {
 
       <AnimateInView tag='section' className='h-[40rem]'>
         <iframe
-          className='w-full h-full sepia-[0.1] saturate-[1.5]'
+          className='w-full h-full sepia-[6.1] saturate-[1.5]'
           src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Global%20Links%20Auto)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
         />
       </AnimateInView>

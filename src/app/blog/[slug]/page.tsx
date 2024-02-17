@@ -2,9 +2,67 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
 import Recommendations from '@/components/blogComp/Recommendations';
 import BlogShare from '@/components/blogComp/BlogShare';
-import { fetchSanityData, getPostBySlug } from '@/lib/sanity/queries';
+import {
+  fetchSanityData,
+  getPostBySlug,
+  getPostDataForSEO,
+} from '@/lib/sanity/queries';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
+import { blog } from '@/lib/types';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import { baseURl } from '@/lib/constants';
+
+export const revalidate = 60;
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}) {
+  const post: blog = await fetchSanityData(getPostDataForSEO, { slug });
+  if (post) {
+    const imgUrl = urlFor(post.mainImage).url();
+    const url = `${baseURl}/blog/${post.slug.current}`;
+
+    return {
+      title: `${post.title} - Global Links Auto`,
+      description: post.description,
+      image: imgUrl,
+
+      icons: {
+        icon: '/imgs/logo/favicon.ico',
+        shortcut: '/imgs/logo/favicon.ico',
+        apple: '/imgs/logo/favicon.ico',
+        other: {
+          rel: 'apple-touch-icon-precomposed',
+          url: '/imgs/logo/favicon.ico',
+        },
+      },
+      openGraph: {
+        type: 'article',
+        url: url,
+        title: post.title,
+        description: post.description,
+        siteName: post.title,
+        images: [
+          {
+            url: imgUrl,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: url,
+        images: [
+          {
+            url: imgUrl,
+          },
+        ],
+      },
+    };
+  }
+}
 
 const page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });

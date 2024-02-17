@@ -54,6 +54,8 @@ const five = '/imgs/team/5.jpg';
 const six = '/imgs/team/6.jpg';
 import { blogBody } from './types';
 
+export const baseURl = 'https://globalinksauto.com';
+
 export const routes = [
   {
     name: 'Vehicles',
@@ -217,8 +219,84 @@ export const pageHeaderData = [
     text: "Your Exceptional Automotive Experience Begins with Global Links Auto in South Sudan. Contact Us for Personalized Service, Professional Assistance, and a Seamless Customer Journey. We're Here to Enhance Every Aspect of Your Vehicle Ownership, Ensuring Your Satisfaction with Every Mile.",
   },
   {
-    heading: 'Global Links Auto Blog',
+    heading: 'Insights from Global Links Auto Blog',
     text: 'Join the Global Links Auto Community and Keep Abreast with the Latest Automotive Insights. Our Blog is Your Ultimate Resource for Toyota News, Advanced Maintenance Strategies, and the Latest Trends Shaping the Roads of South Sudan. Stay Ahead with Global Links Auto – Your Trusted Source for Automotive Knowledge and Innovation.',
+  },
+];
+
+export const pagesMetaData = [
+  {
+    title: 'Official Toyota Dealer in South Sudan - Global Links Auto',
+    description:
+      'Global Links Auto, the authorized Toyota dealer in South Sudan, offers a superior selection of vehicles known for durability and excellence. Begin your journey with a trusted name in automotive.',
+    type: 'website',
+    url: `${baseURl}`,
+    image: `${baseURl}/imgs/logo/logo.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title:
+      'Toyota Showroom - Premium Vehicles in South Sudan | Global Links Auto',
+    description:
+      "Step into Global Links Auto's showroom and explore a wide array of Toyota vehicles. Find the perfect match for your driving needs in South Sudan with our expert assistance.",
+    type: 'website',
+    url: `${baseURl}/vehicles`,
+    image: `${baseURl}/imgs/logo/logo.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title: "Our Story - Global Links Auto | South Sudan's Automotive Leader",
+    description:
+      'Discover the rich heritage of Global Links Auto, where we marry automotive passion with service to bring you the best in vehicle dealership across South Sudan.',
+    type: 'website',
+    url: `${baseURl}/about`,
+    image: `${baseURl}/imgs/team2.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title: 'Meet Our Leaders - Driving Excellence at Global Links Auto',
+    description:
+      'The leadership at Global Links Auto brings together years of experience with a progressive vision, leading the automotive industry in South Sudan toward a brighter future.',
+    type: 'website',
+    url: `${baseURl}/leadership`,
+    image: `${baseURl}/imgs/team.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title: 'Expert Toyota Services - Global Links Auto South Sudan',
+    description:
+      "Rely on Global Links Auto for comprehensive Toyota services. Our team ensures your vehicle's longevity and performance with meticulous care and expert knowledge in South Sudan.",
+    type: 'website',
+    url: `${baseURl}/services`,
+    image: `${baseURl}/imgs/paint.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title: 'Dedicated After-Sales Support - Global Links Auto',
+    description:
+      "Global Links Auto's after-sales service guarantees your Toyota's peak condition with unparalleled support and genuine parts in South Sudan.",
+    type: 'website',
+    url: `${baseURl}/after-sales`,
+    image: `${baseURl}/images/after-sales.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title: 'Contact Global Links Auto - Excellence in Customer Care',
+    description:
+      'Connect with Global Links Auto, where our team is ready to provide exceptional service and support, ensuring an outstanding experience for every customer in South Sudan.',
+    type: 'website',
+    url: `${baseURl}/contact`,
+    image: `${baseURl}/imgs/logo/logo.png`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+  {
+    title: "Insider's Look - Global Links Auto Blog | Toyota News & Tips",
+    description:
+      "Stay informed with Global Links Auto's blog, featuring the latest updates, maintenance tips, and insights from the heart of South Sudan's automotive scene.",
+    type: 'website',
+    url: `${baseURl}/blog`,
+    image: `${baseURl}/imgs/blog.png`,
+    icon: '/imgs/logo/favicon.ico',
   },
 ];
 
@@ -419,7 +497,7 @@ export const afterSaleServices = [
   },
   {
     name: 'Genuine Parts Supply',
-    text: 'We provide a full inventory of genuine Toyota parts to maintain your vehicle’s performance and longevity with quality you can trust.',
+    text: "We provide a full inventory of genuine Toyota parts to maintain your vehicle's performance and longevity with quality you can trust.",
     icon: FaCogs,
   },
   {

@@ -8,9 +8,47 @@ import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import {
   aboutGlobalLinks,
   gallery,
+  pagesMetaData,
   slideLeft,
   slideRight,
 } from '@/lib/constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+
+export const metadata: Metadata = {
+  title: pagesMetaData[2].title,
+  description: pagesMetaData[2].description,
+  icons: {
+    icon: pagesMetaData[2].icon,
+    shortcut: pagesMetaData[2].icon,
+    apple: pagesMetaData[2].icon,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[2].icon,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[2].type,
+    url: pagesMetaData[2].url,
+    title: pagesMetaData[2].title,
+    description: pagesMetaData[2].description,
+    siteName: pagesMetaData[2].title,
+    images: [
+      {
+        url: pagesMetaData[2].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[2].url,
+    images: [
+      {
+        url: pagesMetaData[2].image,
+      },
+    ],
+  },
+};
 
 const page = () => {
   const { about, mission, vision, leadership } = aboutGlobalLinks;

@@ -5,7 +5,49 @@ import ImageCard from '@/components/cards/ImageCard';
 import AfterSaleForm from '@/components/forms/AfterSaleForm';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import { afterSaleServices, slideLeft, slideRight } from '@/lib/constants';
+import {
+  afterSaleServices,
+  pagesMetaData,
+  slideLeft,
+  slideRight,
+} from '@/lib/constants';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
+
+export const metadata: Metadata = {
+  title: pagesMetaData[5].title,
+  description: pagesMetaData[5].description,
+  icons: {
+    icon: pagesMetaData[5].icon,
+    shortcut: pagesMetaData[5].icon,
+    apple: pagesMetaData[5].icon,
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: pagesMetaData[5].icon,
+    },
+  },
+  openGraph: {
+    type: pagesMetaData[5].type,
+    url: pagesMetaData[5].url,
+    title: pagesMetaData[5].title,
+    description: pagesMetaData[5].description,
+    siteName: pagesMetaData[5].title,
+    images: [
+      {
+        url: pagesMetaData[5].image,
+      },
+    ],
+  } as OpenGraph,
+  twitter: {
+    card: 'summary_large_image',
+    site: pagesMetaData[5].url,
+    images: [
+      {
+        url: pagesMetaData[5].image,
+      },
+    ],
+  },
+};
 
 const page = () => {
   return (

@@ -45,6 +45,15 @@ export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     body,
   }[0]`;
 
+export const getPostDataForSEO = `*[_type == 'post' && slug.current == $slug] {
+    title,
+    slug,
+    description,
+    mainImage,
+    publishedAt,
+
+  }[0]`;
+
 export const getLatestPosts = `*[_type == 'post'] 
   | order(publishedAt desc)[0..2] {
       title,
@@ -112,6 +121,13 @@ export const getVehicleBySlug = `*[_type == 'vehicle' && slug.current == $slug] 
   dimensions,
   capacity,
   tyres,
+}[0]`;
+
+export const getVehicleDataForSEO = `*[_type == 'vehicle' && slug.current == $slug] {
+  name,
+  slug,
+  description,
+  mainImage,
 }[0]`;
 
 export const getVehicleGalleryBySlug = `*[_type == 'vehicle' && slug.current == $slug] {
