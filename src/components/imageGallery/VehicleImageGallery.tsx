@@ -1,6 +1,5 @@
 import { fetchSanityData, getVehicleGalleryBySlug } from '@/lib/sanity/queries';
 import { vehicleGallery } from '@/lib/types';
-import { title } from 'process';
 import ImageGallery from './ImageGallery';
 import { urlFor } from '@/lib/sanity/sanityClient';
 import SectionHeading from '../sectionHeading/SectionHeading';

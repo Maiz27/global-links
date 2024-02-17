@@ -1,6 +1,7 @@
 import React from 'react';
 import SectionHeading from '../sectionHeading/SectionHeading';
 import { vehicleType } from '@/lib/types';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 type props = {
   types: vehicleType[];
@@ -13,7 +14,10 @@ type props = {
 
 const VehiclesFilter = ({ types, selected, count }: props) => {
   return (
-    <aside className='w-full h-fit xl:w-1/5 card bg-base-200/60 p-4'>
+    <AnimateInView
+      tag='aside'
+      className='w-full h-fit xl:w-1/5 card bg-base-200/60 p-4'
+    >
       <div className='flex justify-between '>
         <SectionHeading
           Tag='h2'
@@ -32,7 +36,7 @@ const VehiclesFilter = ({ types, selected, count }: props) => {
         selected={selected.value}
         setSelected={selected.setter}
       />
-    </aside>
+    </AnimateInView>
   );
 };
 
