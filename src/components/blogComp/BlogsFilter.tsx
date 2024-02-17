@@ -1,4 +1,5 @@
 import { blogCategory } from '@/lib/types';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 type props = {
   categories: blogCategory[];
@@ -11,7 +12,10 @@ type props = {
 
 const BlogsFilter = ({ categories, selected, count }: props) => {
   return (
-    <aside className='w-full h-fit xl:w-1/5 card bg-base-200/60 p-4'>
+    <AnimateInView
+      tag='aside'
+      className='w-full h-fit xl:w-1/5 card bg-base-200/60 p-4'
+    >
       <div className='flex justify-between text-lg'>
         <span>Filter</span>
         <p>
@@ -25,7 +29,7 @@ const BlogsFilter = ({ categories, selected, count }: props) => {
         selected={selected.value}
         setSelected={selected.setter}
       />
-    </aside>
+    </AnimateInView>
   );
 };
 

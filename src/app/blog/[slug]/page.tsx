@@ -4,6 +4,7 @@ import Recommendations from '@/components/blogComp/Recommendations';
 import BlogShare from '@/components/blogComp/BlogShare';
 import { fetchSanityData, getPostBySlug } from '@/lib/sanity/queries';
 import PageTransition from '@/components/animationWrappers/PageTransition';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
 
 const page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });
@@ -18,11 +19,14 @@ const page = async ({ params: { slug } }: { params: { slug: string } }) => {
           <BlogBody body={body} />
         </section>
 
-        <aside className='w-full xl:w-1/3 flex flex-col items-center sticky top-20 gap-8'>
+        <AnimateInView
+          tag='aside'
+          className='w-full xl:w-1/3 flex flex-col items-center sticky top-20 gap-8'
+        >
           <BlogShare />
 
           <Recommendations slug={currentSlug.current} categories={categories} />
-        </aside>
+        </AnimateInView>
       </div>
     </PageTransition>
   );

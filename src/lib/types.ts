@@ -143,6 +143,7 @@ export type MotionTag =
   | 'ul'
   | 'form'
   | 'span'
+  | 'aside'
   | 'p'
   | 'h1'
   | 'h2'

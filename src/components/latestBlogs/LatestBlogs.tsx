@@ -29,7 +29,7 @@ const LatestBlogs = async () => {
             <AnimateInView
               key={blog.slug.current}
               delay={++idx * 0.2}
-              className='h-full'
+              className='h-full w-full'
             >
               <BlogCard blog={blog} />
             </AnimateInView>
