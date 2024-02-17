@@ -1,7 +1,6 @@
 import CTA from '@/components/CTA/CTA';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
 import PageTransition from '@/components/animationWrappers/PageTransition';
-import IconCard from '@/components/cards/IconCard';
 import ImageCard from '@/components/cards/ImageCard';
 import ImageGallery from '@/components/imageGallery/ImageGallery';
 import PageHeader from '@/components/pageHeader/PageHeader';

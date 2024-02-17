@@ -141,6 +141,7 @@ export type MotionTag =
   | 'section'
   | 'article'
   | 'ul'
+  | 'form'
   | 'span'
   | 'p'
   | 'h1'

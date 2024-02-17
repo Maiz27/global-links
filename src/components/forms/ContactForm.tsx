@@ -4,7 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '@/components/CTA/CTA';
 import { RegisterInput, RegisterTextField } from './fields/Input';
 import { ContactFormData, contactFormSchema } from '@/lib/zodSchemas';
-import { contactFormFields } from '@/lib/constants';
+import { contactFormFields, slideLeft } from '@/lib/constants';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const ContactForm = () => {
   const {
@@ -42,7 +43,10 @@ const ContactForm = () => {
   };
 
   return (
-    <form
+    <AnimateInView
+      initial={slideLeft.initial}
+      whileInView={slideLeft.whileInView}
+      tag='form'
       onSubmit={handleSubmit(sendEmail)}
       className='w-4/5 lg:w-2/5 flex flex-col items-center'
     >
@@ -91,7 +95,7 @@ const ContactForm = () => {
           // loading={isLoading}
         />
       </div>
-    </form>
+    </AnimateInView>
   );
 };
 

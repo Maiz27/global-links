@@ -23,13 +23,13 @@ const WhyChooseUs = () => {
       <div className='w-11/12 max-w-3xl mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 gap-4'>
         {whyChooseUs.map(({ title, paragraph, icon }, idx) => {
           return (
-            <AnimateInView
+            <IconCard
               key={title}
-              delay={++idx * 0.4}
-              className='h-full w-full'
-            >
-              <IconCard title={title} paragraph={paragraph} icon={icon} />
-            </AnimateInView>
+              title={title}
+              paragraph={paragraph}
+              icon={icon}
+              index={idx}
+            />
           );
         })}
       </div>
