@@ -350,6 +350,25 @@ export const gallery = [
   },
 ];
 
+export const requestVehicleInfoFields = [
+  {
+    name: 'name',
+    label: 'Name',
+    icon: FaCircleUser,
+    type: 'text',
+    placeholder: 'John Doe',
+    required: true,
+  },
+  {
+    name: 'email',
+    label: 'Email Address',
+    icon: FaEnvelope,
+    type: 'email',
+    placeholder: 'username@site.com',
+    required: true,
+  },
+];
+
 export const contactFormFields = [
   {
     name: 'name',

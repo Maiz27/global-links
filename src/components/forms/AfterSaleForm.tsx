@@ -54,7 +54,7 @@ const AfterSaleForm = () => {
   return (
     <form
       onSubmit={handleSubmit(sendEmail)}
-      className='mx-auto w-11/12 lg:w-2/5 grid grid-flow-row md:grid-cols- gap-2'
+      className='mx-auto w-full grid grid-flow-row gap-2'
     >
       {afterSaleFormFields.map(
         ({ name, icon, label, placeholder, required, type }, idx) => {

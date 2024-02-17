@@ -2,9 +2,7 @@ import { z } from 'zod';
 import { afterSaleServices } from './constants';
 
 export const contactFormSchema = z.object({
-  name: z
-    .string()
-    .min(4, { message: 'Full name must be longer than 4 character' }),
+  name: z.string().min(4, { message: 'Name must be longer than 4 character' }),
   email: z.string().email('Invalid email address'),
   phone: z
     .string()
@@ -33,9 +31,7 @@ export const contactFormSchema = z.object({
 export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const afterSaleFormSchema = z.object({
-  name: z
-    .string()
-    .min(4, { message: 'Full name must be longer than 4 character' }),
+  name: z.string().min(4, { message: 'Name must be longer than 4 character' }),
   company: z
     .string()
     .optional()
@@ -58,9 +54,7 @@ export const afterSaleFormSchema = z.object({
         'Invalid phone number format. Use +<country code><number> or local format like 03323323232',
     }
   ),
-  model: z
-    .string()
-    .min(4, { message: 'Full name must be longer than 4 character' }),
+  model: z.string().min(4, { message: 'Name must be longer than 4 character' }),
   services: z
     .array(z.string())
     .nonempty({ message: 'Select at least one service' })
@@ -73,3 +67,10 @@ export const afterSaleFormSchema = z.object({
 });
 
 export type AfterSaleFormData = z.infer<typeof afterSaleFormSchema>;
+
+export const requestVehicleFormSchema = z.object({
+  name: z.string().min(4, { message: 'Name must be longer than 4 character' }),
+  email: z.string().email('Invalid email address'),
+});
+
+export type RequestVehicleFormData = z.infer<typeof afterSaleFormSchema>;

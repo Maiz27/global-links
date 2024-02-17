@@ -66,8 +66,8 @@ export type vehicle = {
   dimensions: vehicleDimensions;
   capacity: vehicleCapacity;
   tyres: vehicleTyres;
-  interior?: vehicleInterior;
-  exterior?: vehicleExterior;
+  // interior?: vehicleInterior;
+  // exterior?: vehicleExterior;
   gallery?: vehicleGallery;
 };
 
@@ -76,11 +76,6 @@ export type VehicleOverview = {
   drive: string;
   transmission: string[];
   speed: number;
-  frontSuspension?: string;
-  rearSuspension?: string;
-  frontBrakes?: string;
-  rearBrakes?: string;
-  doors?: number;
 };
 
 export type vehicleEngine = {
@@ -88,10 +83,6 @@ export type vehicleEngine = {
   displacement: number;
   power: string;
   fuelType: string[];
-  cylinders?: number;
-  torque?: string;
-  electrics?: number;
-  battery?: string;
 };
 
 export type vehicleDimensions = {
@@ -100,6 +91,7 @@ export type vehicleDimensions = {
   height: number;
   groundClearance: number;
   wheelbase: number;
+  doors: number;
 };
 
 export type vehicleCapacity = {
@@ -114,19 +106,19 @@ export type vehicleTyres = {
   type: string;
 };
 
-export type vehicleInterior = {
-  airCondition: string;
-  seatBelts: string;
-  outlets: string;
-  heater: string;
-};
+// export type vehicleInterior = {
+//   airCondition: string;
+//   seatBelts: string;
+//   outlets: string;
+//   heater: string;
+// };
 
-export type vehicleExterior = {
-  headlamp: string;
-  gradeMark: string;
-  mudGuards: string[];
-  windshield: string;
-};
+// export type vehicleExterior = {
+//   headlamp: string;
+//   gradeMark: string;
+//   mudGuards: string[];
+//   windshield: string;
+// };
 
 export type vehicleGallery = {
   images: Object[];

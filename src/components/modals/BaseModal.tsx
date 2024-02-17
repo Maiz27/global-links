@@ -40,7 +40,7 @@ const BaseModal = ({
       </button>
       <dialog id={`${id}-modal`} className='modal modal-bottom sm:modal-middle'>
         <div
-          className={`modal-box bg-base-200 border-2 border-base-300 ${classNames}`}
+          className={`modal-box bg-base-100 border-2 border-base-300 ${classNames}`}
         >
           <form method='dialog'>
             {/* if there is a button in form, it will close the modal */}

@@ -1,4 +1,3 @@
-import React from 'react';
 import SectionHeading from '../sectionHeading/SectionHeading';
 import { IconType } from 'react-icons';
 import {
@@ -9,7 +8,7 @@ import {
   FaCircleInfo,
 } from 'react-icons/fa6';
 import { vehicle } from '@/lib/types';
-import VehicleSpecModal from '../modals/VehicleSpecModal';
+import RequestVehicleSpecModal from '../modals/RequestVehicleSpecModal';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const { engine, dimensions, overview, capacity, tyres } = vehicle;
@@ -17,16 +16,17 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const overviewDetails = {
     'Model Code': overview?.model,
     Transmission: overview?.transmission,
-    'Speed (Gears Number)': overview?.speed,
+    'Gears (Speed)': overview?.speed,
     Drive: overview?.drive,
   };
   const engineDetails = {
     'Engine Model': engine?.model,
-    'Displacement (cc)': engine?.displacement,
     'Fuel Type': engine?.fuelType?.join(', '),
+    'Displacement (cc)': engine?.displacement,
     'Maximum Power (kw/rpm)': engine?.power,
   };
   const dimensionDetails = {
+    Doors: dimensions?.doors,
     'Lxwxh (mm)': `${dimensions?.length} x ${dimensions?.width} x ${dimensions?.height}`,
     'Ground Clearance (mm)': dimensions?.groundClearance,
     'Wheelbase (mm)': dimensions?.wheelbase,
@@ -59,7 +59,11 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
           <Card key={index} title={title} details={details} icon={icon} />
         ))}
         <div className='w-full h-full card bg-primary text-base-100 shadow p-6 text-center gap-4 grid place-items-center'>
-          <VehicleSpecModal />
+          <p>
+            Need The full specs list for {vehicle.name}? You can request
+            additional vehicle information.
+          </p>
+          <RequestVehicleSpecModal />
         </div>
       </div>
     </section>
