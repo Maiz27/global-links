@@ -6,6 +6,7 @@ import CTA from '@/components/CTA/CTA';
 import useFilterVehicles from '@/lib/hooks/useFilterVehicles';
 import VehicleSlider from './VehicleSlider';
 import { vehicle, vehicleType } from '@/lib/types';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const VehicleTabs = ({
   vehicles,
@@ -20,15 +21,18 @@ const VehicleTabs = ({
   );
 
   return (
-    <section className='min-h-screen grid place-items-center bg-triangle-pattern bg-cover bg-right-bottom bg-fixed text-base-100'>
-      <div className='w-full md:w-4/5 mx-auto text-center max-w-3xl space-y-2'>
+    <section className='min-h-screen grid place-items-center bg-triangle-pattern bg-cover bg-right-bottom bg-fixed text-base-100 py-20'>
+      <AnimateInView className='w-full md:w-4/5 mx-auto text-center max-w-3xl space-y-2'>
         <SectionHeading Tag='h2' text='Select Your Perfect Toyota Companion' />
         <p className=' text-center'>
           {`Explore our diverse range of Toyota vehicles, each meticulously crafted to meet the demands of South Sudan's landscapes and your lifestyle. Whether it's the ruggedness for off-road adventures or the sleekness for city elegance, we have the perfect Toyota for you.`}
         </p>
         <CTA path='/vehicles' text='Explore Vehicles' />
-      </div>
-      <div className='w-full xl:w-4/5 flex flex-col items-center'>
+      </AnimateInView>
+      <AnimateInView
+        delay={0.6}
+        className='w-full xl:w-4/5 flex flex-col items-center'
+      >
         <Tabs
           selectedTypes={selectedTypes}
           setSelectedType={setSelectedType}
@@ -50,7 +54,7 @@ const VehicleTabs = ({
             ) : undefined;
           })}
         </AnimatePresence>
-      </div>
+      </AnimateInView>
     </section>
   );
 };

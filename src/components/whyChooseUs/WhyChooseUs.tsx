@@ -3,11 +3,12 @@ import SectionHeading from '../sectionHeading/SectionHeading';
 import IconCard from '../cards/IconCard';
 import { whyChooseUs } from '@/lib/constants';
 import CTA from '../CTA/CTA';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const WhyChooseUs = () => {
   return (
     <section className='min-h-[80vh] flex flex-col items-center py-20 gap-6'>
-      <div className='mx-auto text-center max-w-3xl space-y-2'>
+      <AnimateInView className='mx-auto text-center max-w-3xl space-y-2'>
         <SectionHeading
           Tag='h2'
           text='Experience the Global Links Difference'
@@ -18,16 +19,17 @@ const WhyChooseUs = () => {
         </p>
 
         <CTA text='Learn More' path='/about' />
-      </div>
+      </AnimateInView>
       <div className='w-11/12 max-w-3xl mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 gap-4'>
-        {whyChooseUs.map(({ title, paragraph, icon }) => {
+        {whyChooseUs.map(({ title, paragraph, icon }, idx) => {
           return (
-            <IconCard
+            <AnimateInView
               key={title}
-              title={title}
-              paragraph={paragraph}
-              icon={icon}
-            />
+              delay={++idx * 0.4}
+              className='h-full w-full'
+            >
+              <IconCard title={title} paragraph={paragraph} icon={icon} />
+            </AnimateInView>
           );
         })}
       </div>

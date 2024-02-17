@@ -31,7 +31,7 @@ const AnimateInView = ({
       whileInView={whileInView}
       transition={{ delay: delay }}
       viewport={{ amount: threshold, once: once }}
-      className={className}
+      className={` ${className}`}
     >
       {children}
     </MotionComponent>

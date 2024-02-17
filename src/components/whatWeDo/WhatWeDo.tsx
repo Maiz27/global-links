@@ -1,14 +1,24 @@
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import ImageCard from '../cards/ImageCard';
 import CTA from '../CTA/CTA';
+import AnimateInView from '../animationWrappers/AnimateInView';
+import { slideLeft, slideRight } from '@/lib/constants';
 
 const WhatWeDo = () => {
   return (
     <section className='min-h-[80vh] flex flex-col items-around px-8 gap-16 lg:flex-row-reverse py-20'>
-      <div className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'>
+      <AnimateInView
+        initial={slideLeft.initial}
+        whileInView={slideLeft.whileInView}
+        className='w-full h-auto md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'
+      >
         <ImageCard image={`/imgs/paint.jpg`} title='Paint Job' />
-      </div>
-      <div className='w-full md:w-4/5 lg:w-3/5 m-auto max-w-2xl space-y-4'>
+      </AnimateInView>
+      <AnimateInView
+        initial={slideRight.initial}
+        whileInView={slideRight.whileInView}
+        className='w-full md:w-4/5 lg:w-3/5 m-auto max-w-2xl space-y-4'
+      >
         <SectionHeading
           Tag='h2'
           text='Comprehensive Car Care and Expertise'
@@ -22,7 +32,7 @@ const WhatWeDo = () => {
           <CTA path='/services' text='Explore Services' />
           <CTA path='/after-sale' text='After Sale' isOutline />
         </div>
-      </div>
+      </AnimateInView>
     </section>
   );
 };

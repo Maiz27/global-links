@@ -637,3 +637,13 @@ export const menuLinkArrowVariants = {
     x: -4,
   },
 };
+
+export const slideRight = {
+  initial: { opacity: 0, x: -25 },
+  whileInView: { opacity: 1, x: 0 },
+};
+
+export const slideLeft = {
+  initial: { opacity: 0, x: 25 },
+  whileInView: { opacity: 1, x: 0 },
+};

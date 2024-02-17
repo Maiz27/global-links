@@ -4,6 +4,7 @@ import BlogCard from '../blogComp/BlogCard';
 import { blog } from '@/lib/types';
 import CTA from '../CTA/CTA';
 import { fetchSanityData, getLatestPosts } from '@/lib/sanity/queries';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 export const revalidate = 60;
 
@@ -11,7 +12,7 @@ const LatestBlogs = async () => {
   const blogs: blog[] = await fetchSanityData(getLatestPosts);
   return (
     <section className='my-20 space-y-10'>
-      <div className='mx-auto text-center max-w-3xl space-y-2'>
+      <AnimateInView className='mx-auto text-center max-w-3xl space-y-2'>
         <SectionHeading
           Tag='h2'
           text='Insights and Inspirations from Our Road Experts'
@@ -21,10 +22,18 @@ const LatestBlogs = async () => {
         </p>
 
         <CTA text='Explore Blogs' path='/blog' />
-      </div>
+      </AnimateInView>
       <div className='w-11/12 pb-10 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'>
-        {blogs.map((blog) => {
-          return <BlogCard key={blog.slug.current} blog={blog} />;
+        {blogs.map((blog, idx) => {
+          return (
+            <AnimateInView
+              key={blog.slug.current}
+              delay={++idx * 0.2}
+              className='h-full'
+            >
+              <BlogCard blog={blog} />
+            </AnimateInView>
+          );
         })}
       </div>
     </section>
