@@ -36,7 +36,8 @@ const Logo = () => {
           loading='eager'
           width={200}
           height={200}
-          alt='Global Links'
+          alt='Global Links Auto'
+          title='Global Links Auto'
           className='h-full object-scale-down'
         />
       </Link>

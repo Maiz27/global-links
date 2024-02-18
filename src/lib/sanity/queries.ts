@@ -28,6 +28,16 @@ export const getAllPosts = `*[_type == 'post'] {
     body,
   }`;
 
+export const getAllPostsForSiteMap = `*[_type == 'post'] {
+    slug,
+    publishedAt,
+  }`;
+
+export const getAllVehicleForSiteMap = `*[_type == 'post'] {
+    slug,
+    publishedAt,
+  }`;
+
 export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     title,
     slug,
@@ -51,7 +61,6 @@ export const getPostDataForSEO = `*[_type == 'post' && slug.current == $slug] {
     description,
     mainImage,
     publishedAt,
-
   }[0]`;
 
 export const getLatestPosts = `*[_type == 'post'] 
