@@ -33,25 +33,13 @@ import {
   FaUserCog,
 } from 'react-icons/fa';
 
-const teamPic = '/imgs/team.jpg';
-const teamPic2 = '/imgs/team2.jpg';
-const paint = '/imgs/paint.jpg';
-const img1 = '/imgs/1.jpg';
-const img2 = '/imgs/2.jpg';
-const img3 = '/imgs/3.jpg';
-const img4 = '/imgs/4.jpg';
-const img5 = '/imgs/5.jpg';
-const img6 = '/imgs/6.jpg';
-const img7 = '/imgs/7.jpg';
-const img8 = '/imgs/8.jpg';
-const img9 = '/imgs/9.jpg';
-
 const one = '/imgs/team/1.jpg';
 const two = '/imgs/team/2.jpg';
 const three = '/imgs/team/3.jpg';
 const four = '/imgs/team/4.jpg';
 const five = '/imgs/team/5.jpg';
 const six = '/imgs/team/6.jpg';
+
 import { blogBody } from './types';
 import { Metadata } from 'next';
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
@@ -144,32 +132,6 @@ export const whatWeDoList = [
     paragraph:
       'We are actively involved in community projects and initiatives, making a positive impact on the lives of those we serve.',
     icon: FaHandshake,
-  },
-];
-
-export const faqData = [
-  {
-    question:
-      'What makes Global Links the official Toyota company in South Sudan?',
-    answer:
-      "Global Links earned the prestigious title of Toyota's Official company in South Sudan due to our longstanding commitment to excellence, unmatched customer service, and a proven track record in the automotive industry since our inception in November 2007.",
-    defaultOpen: true,
-  },
-  {
-    question: 'What types of vehicles does Global Links offer?',
-    answer:
-      "Global Links offers a diverse range of premium Toyota vehicles, including sedans, SUVs, trucks, and hybrids. Our extensive lineup ensures there's a perfect Toyota vehicle to suit every customer's preferences and requirements.",
-  },
-  {
-    question:
-      'Can I trust the quality of the pre-owned vehicles offered by Global Links?',
-    answer:
-      "Absolutely. At Global Links, we meticulously inspect and certify all our pre-owned vehicles to meet Toyota's high-quality standards. Our commitment to transparency and reliability ensures that you can trust the quality and performance of every pre-owned vehicle we offer.",
-  },
-  {
-    question: 'What after-sales services does Global Links provide?',
-    answer:
-      'Global Links is dedicated to providing comprehensive after-sales support. Our services include regular maintenance, genuine Toyota parts replacements, vehicle repairs, and expert technical assistance. Our goal is to ensure that your Toyota vehicle continues to perform optimally throughout its lifespan.',
   },
 ];
 
@@ -385,57 +347,6 @@ export const automotiveServices = [
     heading: 'Comprehensive Diagnostic and Repair',
     text: "Trust our expert technicians to diagnose and repair any issues using state-of-the-art tools, restoring your vehicle's performance and reliability.",
     icon: FaTools,
-  },
-];
-
-export const gallery = [
-  {
-    title: 'Image 1',
-    src: img1,
-  },
-  {
-    title: 'Image 2',
-    src: img2,
-  },
-  {
-    title: 'Image 3',
-    src: teamPic,
-  },
-  {
-    title: 'Image 4',
-    src: img3,
-  },
-  {
-    title: 'Image 5',
-    src: img4,
-  },
-  {
-    title: 'Image 6',
-    src: teamPic2,
-  },
-  {
-    title: 'Image 7',
-    src: img5,
-  },
-  {
-    title: 'Image 8',
-    src: img6,
-  },
-  {
-    title: 'Image 9',
-    src: paint,
-  },
-  {
-    title: 'Image 10',
-    src: img7,
-  },
-  {
-    title: 'Image 11',
-    src: img8,
-  },
-  {
-    title: 'Image 12',
-    src: img9,
   },
 ];
 

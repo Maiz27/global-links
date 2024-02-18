@@ -151,3 +151,14 @@ export const getVehicleAdditionalDetails = `*[_type == 'vehicle' && slug.current
   interior,
   exterior,
 }[0]`;
+
+export const getFAQs = `*[_type == 'faq']
+| order(index asc) {
+  index,
+  question,
+  answer,
+}`;
+
+export const getGalleryImages = `*[_type == 'gallery'] {
+  images
+}[0]`;

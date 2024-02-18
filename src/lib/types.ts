@@ -104,6 +104,22 @@ export type vehicleTyres = {
   type: string;
 };
 
+export type vehicleGallery = {
+  gallery: {
+    images: Object[];
+  };
+};
+
+export type Faq = {
+  index: number;
+  question: string;
+  answer: string;
+};
+
+export type Gallery = {
+  title?: string;
+  images: Object[];
+};
 // export type vehicleInterior = {
 //   airCondition: string;
 //   seatBelts: string;
@@ -117,12 +133,6 @@ export type vehicleTyres = {
 //   mudGuards: string[];
 //   windshield: string;
 // };
-
-export type vehicleGallery = {
-  gallery: {
-    images: Object[];
-  };
-};
 
 export type FormErrors = DeepMap<FieldValues, FieldError>;
 

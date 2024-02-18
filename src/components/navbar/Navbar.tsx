@@ -68,15 +68,19 @@ const NavLeft = () => {
 
 const NavLink = ({ name, path }: { name: string; path: string }) => {
   return (
-    <Link
-      href={path}
-      className='hidden lg:block h-[30px] overflow-hidden font-semibold '
-    >
-      <div className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'>
-        <span className='flex items-center h-[30px]'>{name}</span>
-        <span className='flex items-center h-[30px] text-primary'>{name}</span>
-      </div>
-    </Link>
+    <li>
+      <Link
+        href={path}
+        className='hidden lg:block h-[30px] overflow-hidden font-semibold '
+      >
+        <div className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'>
+          <span className='flex items-center h-[30px]'>{name}</span>
+          <span className='flex items-center h-[30px] text-primary'>
+            {name}
+          </span>
+        </div>
+      </Link>
+    </li>
   );
 };
 
@@ -117,7 +121,7 @@ const NavMenu = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   return (
-    <motion.div
+    <motion.ul
       variants={menuVariants}
       initial='closed'
       animate={isOpen ? 'open' : 'closed'}
@@ -128,7 +132,7 @@ const NavMenu = ({
           <MenuLink key={path} name={name} path={path} setIsOpen={setIsOpen} />
         );
       })}
-    </motion.div>
+    </motion.ul>
   );
 };
 
@@ -142,7 +146,7 @@ const MenuLink = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   return (
-    <motion.div
+    <motion.li
       variants={menuLinkVariants}
       className='h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2'
     >
@@ -157,7 +161,7 @@ const MenuLink = ({
         <span className='flex items-center h-[30px]'>{name}</span>
         <span className='flex items-center h-[30px] text-primary'>{name}</span>
       </Link>
-    </motion.div>
+    </motion.li>
   );
 };
 

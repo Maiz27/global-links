@@ -7,17 +7,25 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import {
   aboutGlobalLinks,
-  gallery,
   getMetadataByPageIndex,
   slideLeft,
   slideRight,
 } from '@/lib/constants';
+import { fetchSanityData, getGalleryImages } from '@/lib/sanity/queries';
+import { urlFor } from '@/lib/sanity/sanityClient';
+import { Gallery } from '@/lib/types';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = getMetadataByPageIndex(2);
 
-const page = () => {
+const page = async () => {
+  const gallery: Gallery = await fetchSanityData(getGalleryImages);
+
   const { about, mission, vision, leadership } = aboutGlobalLinks;
+
+  const images = gallery.images.map((image, index) => {
+    return { title: `Image (${index})`, src: urlFor(image).url() };
+  });
   return (
     <PageTransition>
       <PageHeader pageIndex={1} />
@@ -100,7 +108,7 @@ const page = () => {
       <AnimateInView tag='section' className='py-20 space-y-2'>
         <SectionHeading Tag='h2' text='Global Links Gallery' />
 
-        <ImageGallery images={gallery} />
+        <ImageGallery images={images} />
       </AnimateInView>
     </PageTransition>
   );

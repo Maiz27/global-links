@@ -1,8 +1,8 @@
-import BasicFAQ from '@/components/FAQ/FAQ';
 import Hero from '@/components/hero/Hero';
 import VehicleTabs from '@/components/vehicleComp/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 import WhyChooseUs from '@/components/whyChooseUs/WhyChooseUs';
+import FAQWrapper from '@/components/FAQ/FAQWrapper';
 import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import {
@@ -33,7 +33,7 @@ export default async function Home() {
 
       <WhatWeDo />
 
-      <BasicFAQ />
+      <FAQWrapper />
 
       <LatestBlogs />
     </PageTransition>

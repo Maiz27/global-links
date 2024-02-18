@@ -23,6 +23,19 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
     node,
   } = useImageGallery(images?.length);
 
+  if (!images) {
+    return (
+      <div className='max-w-4xl text-center mx-auto'>
+        <p>
+          There are no images in the gallery at the moment, we&apos;re working
+          diligently to enrich this space with high-quality photographs that
+          reflect our elegance and innovation. Please check back soon to
+          discover the world of Toyota through Global Links Auto&apos;s lens.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div>
       {isOpen && (
@@ -93,6 +106,7 @@ const MemoizedImage: React.FC<{
       <Image
         src={src}
         alt={title}
+        title={title}
         width={width}
         height={height}
         className={`max-w-full ${
