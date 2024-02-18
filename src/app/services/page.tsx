@@ -7,47 +7,13 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import {
   automotiveServices,
-  pagesMetaData,
+  getMetadataByPageIndex,
   slideLeft,
   slideRight,
 } from '@/lib/constants';
 import { Metadata } from 'next';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
-export const metadata: Metadata = {
-  title: pagesMetaData[4].title,
-  description: pagesMetaData[4].description,
-  icons: {
-    icon: pagesMetaData[4].icon,
-    shortcut: pagesMetaData[4].icon,
-    apple: pagesMetaData[4].icon,
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[4].icon,
-    },
-  },
-  openGraph: {
-    type: pagesMetaData[4].type,
-    url: pagesMetaData[4].url,
-    title: pagesMetaData[4].title,
-    description: pagesMetaData[4].description,
-    siteName: pagesMetaData[4].title,
-    images: [
-      {
-        url: pagesMetaData[4].image,
-      },
-    ],
-  } as OpenGraph,
-  twitter: {
-    card: 'summary_large_image',
-    site: pagesMetaData[4].url,
-    images: [
-      {
-        url: pagesMetaData[4].image,
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getMetadataByPageIndex(4);
 
 const page = () => {
   return (

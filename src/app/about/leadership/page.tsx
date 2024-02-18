@@ -1,46 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { pagesMetaData, team } from '@/lib/constants';
+import { getMetadataByPageIndex, team } from '@/lib/constants';
 import PageTransition from '@/components/animationWrappers/PageTransition';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
 import { Metadata } from 'next';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
-export const metadata: Metadata = {
-  title: pagesMetaData[3].title,
-  description: pagesMetaData[3].description,
-  icons: {
-    icon: pagesMetaData[3].icon,
-    shortcut: pagesMetaData[3].icon,
-    apple: pagesMetaData[3].icon,
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[3].icon,
-    },
-  },
-  openGraph: {
-    type: pagesMetaData[3].type,
-    url: pagesMetaData[3].url,
-    title: pagesMetaData[3].title,
-    description: pagesMetaData[3].description,
-    siteName: pagesMetaData[3].title,
-    images: [
-      {
-        url: pagesMetaData[3].image,
-      },
-    ],
-  } as OpenGraph,
-  twitter: {
-    card: 'summary_large_image',
-    site: pagesMetaData[3].url,
-    images: [
-      {
-        url: pagesMetaData[3].image,
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getMetadataByPageIndex(3);
+
 const page = () => {
   return (
     <PageTransition>

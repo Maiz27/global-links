@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import BlogBody from '@/components/blogComp/BlogBody';
 import Recommendations from '@/components/blogComp/Recommendations';
@@ -66,6 +67,11 @@ export async function generateMetadata({
 
 const page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = await fetchSanityData(getPostBySlug, { slug });
+
+  if (!post) {
+    return notFound();
+  }
+
   const { body, slug: currentSlug, categories } = post;
 
   return (

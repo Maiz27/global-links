@@ -4,44 +4,10 @@ import PageTransition from '@/components/animationWrappers/PageTransition';
 import ImageCard from '@/components/cards/ImageCard';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import { pagesMetaData, slideLeft, slideRight } from '@/lib/constants';
+import { getMetadataByPageIndex, slideLeft, slideRight } from '@/lib/constants';
 import { Metadata } from 'next';
-import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
-export const metadata: Metadata = {
-  title: pagesMetaData[6].title,
-  description: pagesMetaData[6].description,
-  icons: {
-    icon: pagesMetaData[6].icon,
-    shortcut: pagesMetaData[6].icon,
-    apple: pagesMetaData[6].icon,
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[6].icon,
-    },
-  },
-  openGraph: {
-    type: pagesMetaData[6].type,
-    url: pagesMetaData[6].url,
-    title: pagesMetaData[6].title,
-    description: pagesMetaData[6].description,
-    siteName: pagesMetaData[6].title,
-    images: [
-      {
-        url: pagesMetaData[6].image,
-      },
-    ],
-  } as OpenGraph,
-  twitter: {
-    card: 'summary_large_image',
-    site: pagesMetaData[6].url,
-    images: [
-      {
-        url: pagesMetaData[6].image,
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getMetadataByPageIndex(6);
 
 const page = () => {
   return (

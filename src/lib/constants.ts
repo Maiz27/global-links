@@ -53,6 +53,8 @@ const four = '/imgs/team/4.jpg';
 const five = '/imgs/team/5.jpg';
 const six = '/imgs/team/6.jpg';
 import { blogBody } from './types';
+import { Metadata } from 'next';
+import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 
 export const baseURl = 'https://globalinksauto.com';
 
@@ -686,6 +688,45 @@ export const calculateReadTime = (blocks: blogBody, speed = 200) => {
   const wordCount = getWordCount(blocks);
   const readTime = Math.ceil(wordCount / speed);
   return readTime;
+};
+
+export const getMetadataByPageIndex = (index: number): Metadata => {
+  const pageMetaData = pagesMetaData[index];
+
+  return {
+    title: pageMetaData.title,
+    description: pageMetaData.description,
+    icons: {
+      icon: pageMetaData.icon,
+      shortcut: pageMetaData.icon,
+      apple: pageMetaData.icon,
+      other: {
+        rel: 'apple-touch-icon-precomposed',
+        url: pageMetaData.icon,
+      },
+    },
+    openGraph: {
+      type: pageMetaData.type,
+      url: pageMetaData.url,
+      title: pageMetaData.title,
+      description: pageMetaData.description,
+      siteName: pageMetaData.title,
+      images: [
+        {
+          url: pageMetaData.image,
+        },
+      ],
+    } as OpenGraph,
+    twitter: {
+      card: 'summary_large_image',
+      site: pageMetaData.url,
+      images: [
+        {
+          url: pageMetaData.image,
+        },
+      ],
+    },
+  };
 };
 
 //Framer motion variables

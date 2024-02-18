@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import {
   fetchSanityData,
   getVehicleBySlug,
@@ -68,6 +69,10 @@ const page = async ({ params }: { params: { slug: string } }) => {
   const vehicle: vehicle = await fetchSanityData(getVehicleBySlug, {
     slug: params.slug,
   });
+
+  if (!vehicle) {
+    return notFound();
+  }
 
   return (
     <PageTransition>
