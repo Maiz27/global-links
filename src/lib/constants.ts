@@ -70,10 +70,6 @@ export const routes = [
     href: '/services',
   },
   {
-    name: 'After-Sale',
-    href: '/after-sale',
-  },
-  {
     name: 'Contact',
     href: '/contact',
   },
@@ -215,6 +211,10 @@ export const pageHeaderData = [
     text: 'Experience the commitment to satisfaction that extends beyond the sale with Global Links Auto in South Sudan. Benefit from our comprehensive warranty support, access to genuine Toyota parts, and exceptional customer care. Our periodic vehicle health checks and personalized setup services ensure your Toyota remains a joy to drive, mile after mile.',
   },
   {
+    heading: 'Authentic Toyota Spare Parts in South Sudan',
+    text: 'Find the Perfect Fit for Your Toyota with Global Links Auto’s Extensive Inventory of Genuine Spare Parts. Each Component is Crafted to the Highest Standards of Quality and Designed to Ensure Your Vehicle Operates at Its Best. In South Sudan, Trust in Our Authentic Parts for Your Toyota’s Maintenance and Upgrades.',
+  },
+  {
     heading: 'Get in Touch with Global Links Auto',
     text: "Your Exceptional Automotive Experience Begins with Global Links Auto in South Sudan. Contact Us for Personalized Service, Professional Assistance, and a Seamless Customer Journey. We're Here to Enhance Every Aspect of Your Vehicle Ownership, Ensuring Your Satisfaction with Every Mile.",
   },
@@ -250,7 +250,7 @@ export const pagesMetaData = [
       'Discover the rich heritage of Global Links Auto, where we marry automotive passion with service to bring you the best in vehicle dealership across South Sudan.',
     type: 'website',
     url: `${baseURl}/about`,
-    image: `${baseURl}/imgs/team2.png`,
+    image: `${baseURl}/imgs/team2.jpg`,
     icon: '/imgs/logo/favicon.ico',
   },
   {
@@ -259,7 +259,7 @@ export const pagesMetaData = [
       'The leadership at Global Links Auto brings together years of experience with a progressive vision, leading the automotive industry in South Sudan toward a brighter future.',
     type: 'website',
     url: `${baseURl}/leadership`,
-    image: `${baseURl}/imgs/team.png`,
+    image: `${baseURl}/imgs/team.jpg`,
     icon: '/imgs/logo/favicon.ico',
   },
   {
@@ -268,7 +268,7 @@ export const pagesMetaData = [
       "Rely on Global Links Auto for comprehensive Toyota services. Our team ensures your vehicle's longevity and performance with meticulous care and expert knowledge in South Sudan.",
     type: 'website',
     url: `${baseURl}/services`,
-    image: `${baseURl}/imgs/paint.png`,
+    image: `${baseURl}/imgs/paint.jpg`,
     icon: '/imgs/logo/favicon.ico',
   },
   {
@@ -276,10 +276,20 @@ export const pagesMetaData = [
     description:
       "Global Links Auto's after-sales service guarantees your Toyota's peak condition with unparalleled support and genuine parts in South Sudan.",
     type: 'website',
-    url: `${baseURl}/after-sales`,
-    image: `${baseURl}/images/after-sales.png`,
+    url: `${baseURl}/services/after-sales`,
+    image: `${baseURl}/images/garage.jpg`,
     icon: '/imgs/logo/favicon.ico',
   },
+  {
+    title: 'Genuine Toyota Spare Parts - Global Links Auto South Sudan',
+    description:
+      "Ensure your Toyota's integrity with Global Links Auto’s selection of genuine spare parts in South Sudan. Our authentic parts provide the perfect fit and long-lasting performance for your vehicle. Trust in our quality and expertise for all your Toyota spare part needs.",
+    type: 'website',
+    url: `${baseURl}/services/spare-parts`,
+    image: `${baseURl}/imgs/spare-parts.jpg`,
+    icon: '/imgs/logo/favicon.ico',
+  },
+
   {
     title: 'Contact Global Links Auto - Excellence in Customer Care',
     description:

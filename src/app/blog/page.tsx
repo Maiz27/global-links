@@ -13,35 +13,35 @@ import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: pagesMetaData[7].title,
-  description: pagesMetaData[7].description,
+  title: pagesMetaData[8].title,
+  description: pagesMetaData[8].description,
   icons: {
-    icon: pagesMetaData[7].icon,
-    shortcut: pagesMetaData[7].icon,
-    apple: pagesMetaData[7].icon,
+    icon: pagesMetaData[8].icon,
+    shortcut: pagesMetaData[8].icon,
+    apple: pagesMetaData[8].icon,
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: pagesMetaData[7].icon,
+      url: pagesMetaData[8].icon,
     },
   },
   openGraph: {
-    type: pagesMetaData[7].type,
-    url: pagesMetaData[7].url,
-    title: pagesMetaData[7].title,
-    description: pagesMetaData[7].description,
-    siteName: pagesMetaData[7].title,
+    type: pagesMetaData[8].type,
+    url: pagesMetaData[8].url,
+    title: pagesMetaData[8].title,
+    description: pagesMetaData[8].description,
+    siteName: pagesMetaData[8].title,
     images: [
       {
-        url: pagesMetaData[7].image,
+        url: pagesMetaData[8].image,
       },
     ],
   } as OpenGraph,
   twitter: {
     card: 'summary_large_image',
-    site: pagesMetaData[7].url,
+    site: pagesMetaData[8].url,
     images: [
       {
-        url: pagesMetaData[7].image,
+        url: pagesMetaData[8].image,
       },
     ],
   },
@@ -55,7 +55,7 @@ const page = async () => {
 
   return (
     <PageTransition>
-      <PageHeader pageIndex={6} />
+      <PageHeader pageIndex={7} />
 
       <BlogsGrid blogs={blogs} categories={categories} />
 

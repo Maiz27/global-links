@@ -30,7 +30,7 @@ const WhatWeDo = () => {
 
         <div className='flex items-center gap-4'>
           <CTA path='/services' text='Explore Services' />
-          <CTA path='/after-sale' text='After Sale' isOutline />
+          <CTA path='/services/after-sale' text='After Sale' isOutline />
         </div>
       </AnimateInView>
     </section>
