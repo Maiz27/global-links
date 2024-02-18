@@ -65,7 +65,7 @@ const page = () => {
 
       <AnimateInView tag='section' className='h-[40rem]'>
         <iframe
-          className='w-full h-full sepia-[6.1] saturate-[1.5]'
+          className='w-full h-full saturate-[1.5]'
           src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Global%20Links%20Auto)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
         />
       </AnimateInView>

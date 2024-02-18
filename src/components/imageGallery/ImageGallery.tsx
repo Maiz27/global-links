@@ -21,7 +21,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
     prevSlide,
     nextSlide,
     node,
-  } = useImageGallery(images.length);
+  } = useImageGallery(images?.length);
 
   return (
     <div>
