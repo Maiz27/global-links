@@ -605,6 +605,7 @@ export const getMetadataByPageIndex = (index: number): Metadata => {
   const pageMetaData = pagesMetaData[index];
 
   return {
+    metadataBase: new URL(baseURl),
     title: pageMetaData.title,
     description: pageMetaData.description,
     icons: {

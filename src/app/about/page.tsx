@@ -36,7 +36,7 @@ const page = async () => {
           whileInView={slideRight.whileInView}
           className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'
         >
-          <ImageCard image={`/imgs/team2.jpg`} />
+          <ImageCard image={`/imgs/team.jpg`} />
         </AnimateInView>
 
         <AnimateInView
