@@ -18,8 +18,6 @@ const useNavbar = () => {
     setIsOpen((prev) => (newState ? newState : !prev));
   };
 
-  console.log(isOpen);
-
   return {
     node,
     isOpen,
