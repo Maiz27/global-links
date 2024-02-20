@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useRef, useState } from 'react';
 import useLockBodyScroll from './useLockBodyScroll';
 import useOutsideClick from './useOutsideClick';

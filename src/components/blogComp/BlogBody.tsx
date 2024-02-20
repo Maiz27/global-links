@@ -14,7 +14,7 @@ const BlogBody = memo(({ body }: props) => {
         <Image
           loading='lazy'
           src={value.imageUrl}
-          alt=''
+          alt='Image'
           className='w-4/5 mx-auto'
         />
       ),

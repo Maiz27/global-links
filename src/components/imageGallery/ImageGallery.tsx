@@ -1,4 +1,3 @@
-'use client';
 import Image, { StaticImageData } from 'next/image';
 import React, { memo } from 'react';
 import useImageGallery from '@/lib/hooks/useImageGallery';

@@ -1,4 +1,3 @@
-'use client';
 import AnimateInView from '../animationWrappers/AnimateInView';
 import BlogCard from './BlogCard';
 import BlogsFilter from './BlogsFilter';

@@ -1,4 +1,3 @@
-'use client';
 import ImageCard from '@/components/cards/ImageCard';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import AnimateInView from '../animationWrappers/AnimateInView';

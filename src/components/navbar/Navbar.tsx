@@ -1,5 +1,3 @@
-'use client';
-import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -13,7 +11,7 @@ import {
 import { FaXmark, FaBars, FaArrowRight } from 'react-icons/fa6';
 
 const Navbar = () => {
-  const { isOpen, setIsOpen, node } = useNavbar();
+  const { isOpen, handleMenuButtonClick, node } = useNavbar();
 
   return (
     <nav
@@ -21,8 +19,8 @@ const Navbar = () => {
       className='bg-base-100 p-2 border-b-[1px] border-base-300 flex items-center justify-between relative z-50'
     >
       <NavLeft />
-      <NavRight setIsOpen={setIsOpen} isOpen={isOpen} />
-      <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+      <NavRight handleClick={handleMenuButtonClick} isOpen={isOpen} />
+      <NavMenu isOpen={isOpen} handleClick={handleMenuButtonClick} />
     </nav>
   );
 };
@@ -85,10 +83,10 @@ const NavLink = ({ name, path }: { name: string; path: string }) => {
 };
 
 const NavRight = ({
-  setIsOpen,
+  handleClick,
   isOpen,
 }: {
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  handleClick: (newState?: boolean) => void;
   isOpen: boolean;
 }) => {
   return (
@@ -97,7 +95,7 @@ const NavRight = ({
       <input
         type='checkbox'
         checked={isOpen}
-        onChange={() => setIsOpen((prev) => !prev)}
+        onChange={() => handleClick(!isOpen)}
       />
 
       {/* hamburger icon */}
@@ -115,10 +113,10 @@ const NavRight = ({
 
 const NavMenu = ({
   isOpen,
-  setIsOpen,
+  handleClick,
 }: {
   isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  handleClick: (newState?: boolean) => void;
 }) => {
   return (
     <motion.ul
@@ -129,7 +127,12 @@ const NavMenu = ({
     >
       {routes.map(({ name, href: path }) => {
         return (
-          <MenuLink key={path} name={name} path={path} setIsOpen={setIsOpen} />
+          <MenuLink
+            key={path}
+            name={name}
+            path={path}
+            handleClick={handleClick}
+          />
         );
       })}
     </motion.ul>
@@ -139,11 +142,11 @@ const NavMenu = ({
 const MenuLink = ({
   name,
   path,
-  setIsOpen,
+  handleClick,
 }: {
   name: string;
   path: string;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  handleClick: (newState?: boolean) => void;
 }) => {
   return (
     <motion.li
@@ -155,7 +158,7 @@ const MenuLink = ({
       </motion.span>
       <Link
         href={path}
-        onClick={() => setIsOpen(false)}
+        onClick={() => handleClick(false)}
         className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'
       >
         <span className='flex items-center h-[30px]'>{name}</span>

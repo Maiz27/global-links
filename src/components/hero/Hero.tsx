@@ -1,14 +1,9 @@
 import ImageSlider from './ImageSlider';
 import CTA from '../CTA/CTA';
 import { heroImage } from '@/lib/types';
-import { fetchSanityData, getAllHeroImages } from '@/lib/sanity/queries';
 import AnimateInView from '../animationWrappers/AnimateInView';
 
-export const revalidate = 60;
-
-const Hero = async () => {
-  const images: heroImage[] = await fetchSanityData(getAllHeroImages);
-
+const Hero = ({ images }: { images: heroImage[] }) => {
   return (
     <div className='h-[92vh] relative'>
       <ImageSlider images={images} />

@@ -1,4 +1,3 @@
-'use client';
 import { Dispatch, SetStateAction } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';

@@ -1,4 +1,3 @@
-'use client';
 import { AnimatePresence, motion } from 'framer-motion';
 import useFilterVehicles from '@/lib/hooks/useFilterVehicles';
 import VehicleCard from './VehicleCard';

@@ -1,4 +1,3 @@
-'use client';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import useWindowWidth from '@/lib/hooks/useWindowWidth';

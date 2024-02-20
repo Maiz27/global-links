@@ -1,4 +1,3 @@
-'use client';
 import { useState, useRef } from 'react';
 import useLockBodyScroll from './useLockBodyScroll';
 import useOutsideClick from './useOutsideClick';
@@ -15,10 +14,16 @@ const useNavbar = () => {
   // Use LockBodyScroll hook
   useLockBodyScroll(isOpen);
 
+  const handleMenuButtonClick = (newState?: boolean) => {
+    setIsOpen((prev) => (newState ? newState : !prev));
+  };
+
+  console.log(isOpen);
+
   return {
-    isOpen,
-    setIsOpen,
     node,
+    isOpen,
+    handleMenuButtonClick,
   };
 };
 
