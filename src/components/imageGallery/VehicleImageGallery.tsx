@@ -1,17 +1,12 @@
-import { fetchSanityData, getVehicleGalleryBySlug } from '@/lib/sanity/queries';
-import { vehicleGallery } from '@/lib/types';
 import ImageGallery from './ImageGallery';
 import { urlFor } from '@/lib/sanity/sanityClient';
 import SectionHeading from '../sectionHeading/SectionHeading';
 
-const VehicleImageGallery = async ({ slug }: { slug: string }) => {
-  const { gallery }: vehicleGallery = await fetchSanityData(
-    getVehicleGalleryBySlug,
-    {
-      slug,
-    }
-  );
-
+const VehicleImageGallery = ({
+  gallery,
+}: {
+  gallery: { images: Object[] };
+}) => {
   const images = gallery?.images.map((img, idx) => {
     return { title: `[GLA] Image ${idx + 1}`, src: urlFor(img).url() };
   });

@@ -1,6 +1,4 @@
-'use client';
 import { useEffect, useState } from 'react';
-import { useIsClient } from '@/context/IsClientContext';
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -21,10 +19,7 @@ import {
 import { RiTwitterXFill } from 'react-icons/ri';
 
 const BlogShare = () => {
-  const isClient = useIsClient();
-  const [currentURL, setCurrentURL] = useState(
-    isClient ? window.location.href : ''
-  );
+  const [currentURL, setCurrentURL] = useState(window.location.href);
 
   useEffect(() => {
     setCurrentURL(window.location.href);

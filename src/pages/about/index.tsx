@@ -5,27 +5,20 @@ import ImageCard from '@/components/cards/ImageCard';
 import ImageGallery from '@/components/imageGallery/ImageGallery';
 import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import {
-  aboutGlobalLinks,
-  getMetadataByPageIndex,
-  slideLeft,
-  slideRight,
-} from '@/lib/constants';
+import { aboutGlobalLinks, slideRight, slideLeft } from '@/lib/constants';
 import { fetchSanityData, getGalleryImages } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/sanityClient';
 import { Gallery } from '@/lib/types';
-import { Metadata } from 'next';
+import React from 'react';
 
-export const metadata: Metadata = getMetadataByPageIndex(2);
-
-const page = async () => {
-  const gallery: Gallery = await fetchSanityData(getGalleryImages);
-
+const About = ({ gallery }: { gallery: Gallery }) => {
   const { about, mission, vision, leadership } = aboutGlobalLinks;
 
   const images = gallery.images.map((image, index) => {
-    return { title: `Image (${index})`, src: urlFor(image).url() };
+    const src = urlFor(image).url();
+    return { title: `Image (${index})`, src };
   });
+
   return (
     <PageTransition>
       <PageHeader pageIndex={1} />
@@ -114,4 +107,15 @@ const page = async () => {
   );
 };
 
-export default page;
+export default About;
+
+export const getStaticProps = async () => {
+  const gallery: Gallery = await fetchSanityData(getGalleryImages);
+
+  return {
+    props: {
+      gallery,
+    },
+    revalidate: 60,
+  };
+};

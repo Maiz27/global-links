@@ -1,4 +1,3 @@
-'use client';
 import React, { useRef } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';

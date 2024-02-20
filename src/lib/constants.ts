@@ -688,3 +688,30 @@ export const slideLeft = {
   initial: { opacity: 0, x: 25 },
   whileInView: { opacity: 1, x: 0 },
 };
+
+export const galleryVariants = {
+  closed: {
+    y: '100%',
+    opacity: 0,
+    transition: {
+      // delay: 0.3,
+      duration: 0.2,
+      type: 'spring',
+      mass: 3,
+      stiffness: 400,
+      damping: 50,
+    },
+  },
+  open: {
+    y: '0%',
+    opacity: 1,
+    transition: {
+      // delay: 0.3,
+      duration: 0.2,
+      type: 'spring',
+      mass: 3,
+      stiffness: 400,
+      damping: 50,
+    },
+  },
+};

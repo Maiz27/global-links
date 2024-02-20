@@ -11,6 +11,10 @@ const config: Config = {
       backgroundImage: {
         'triangle-pattern': "url('/imgs/backgrounds/1.png')",
       },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        'open-sans': ['Open Sans', 'sans-serif'],
+      },
     },
   },
   safelist: [
@@ -55,4 +59,5 @@ const config: Config = {
     ],
   },
 };
+
 export default config;

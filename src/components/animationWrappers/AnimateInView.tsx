@@ -1,4 +1,3 @@
-'use client';
 import { motion, TargetAndTransition } from 'framer-motion';
 import { MotionTag } from '@/lib/types';
 

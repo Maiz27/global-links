@@ -1,4 +1,3 @@
-'use client';
 import React, { useEffect } from 'react';
 
 export const useOutsideClick = (
@@ -12,8 +11,13 @@ export const useOutsideClick = (
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
+    // Start listening for outside clicks after a short delay
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside);
+    }, 100);
+
     return () => {
+      clearTimeout(timeoutId);
       document.removeEventListener('click', handleClickOutside);
     };
   }, [ref, callback]);

@@ -1,4 +1,3 @@
-'use client';
 import { useEffect, useRef, useState } from 'react';
 import useLockBodyScroll from './useLockBodyScroll';
 import useOutsideClick from './useOutsideClick';
@@ -13,8 +12,8 @@ const useImageGallery = (imagesCount: number) => {
   useLockBodyScroll(isOpen);
 
   const handleOpenModal = (index: number) => {
-    setSlideNumber(index);
     setIsOpen(true);
+    setSlideNumber(index);
   };
 
   const handleCloseModal = () => {
@@ -50,8 +49,6 @@ const useImageGallery = (imagesCount: number) => {
     };
 
     document.addEventListener('keydown', handleKeyDown);
-
-    // Remove event listener on component unmount
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };

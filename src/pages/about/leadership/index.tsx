@@ -1,14 +1,10 @@
-import React from 'react';
 import Image from 'next/image';
-import PageHeader from '@/components/pageHeader/PageHeader';
-import { getMetadataByPageIndex, team } from '@/lib/constants';
-import PageTransition from '@/components/animationWrappers/PageTransition';
 import AnimateInView from '@/components/animationWrappers/AnimateInView';
-import { Metadata } from 'next';
+import PageTransition from '@/components/animationWrappers/PageTransition';
+import PageHeader from '@/components/pageHeader/PageHeader';
+import { team } from '@/lib/constants';
 
-export const metadata: Metadata = getMetadataByPageIndex(3);
-
-const page = () => {
+const Leadership = () => {
   return (
     <PageTransition>
       <PageHeader pageIndex={2} />
@@ -23,8 +19,6 @@ const page = () => {
     </PageTransition>
   );
 };
-
-export default page;
 
 type Position = 'left' | 'right' | 'down';
 
@@ -82,3 +76,5 @@ const TeamCard = ({
     </div>
   );
 };
+
+export default Leadership;

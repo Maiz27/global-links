@@ -1,18 +1,13 @@
-'use client';
 import { useState, useCallback, useEffect } from 'react';
-import { useIsClient } from '@/context/IsClientContext';
 
 const useWindowWidth = () => {
-  const isClient = useIsClient();
   const [width, setWidth] = useState(0);
 
   const handleResize = useCallback(() => setWidth(window.innerWidth), []);
 
   useEffect(() => {
-    if (isClient) {
-      setWidth(window.innerWidth);
-    }
-  }, [isClient]);
+    setWidth(window.innerWidth);
+  }, []);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -20,7 +15,7 @@ const useWindowWidth = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [handleResize, isClient]);
+  }, [handleResize]);
 
   return width;
 };

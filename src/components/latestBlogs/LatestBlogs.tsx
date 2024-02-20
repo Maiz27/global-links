@@ -1,15 +1,10 @@
-import React from 'react';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import BlogCard from '../blogComp/BlogCard';
-import { blog } from '@/lib/types';
 import CTA from '../CTA/CTA';
-import { fetchSanityData, getLatestPosts } from '@/lib/sanity/queries';
 import AnimateInView from '../animationWrappers/AnimateInView';
+import { blog } from '@/lib/types';
 
-export const revalidate = 60;
-
-const LatestBlogs = async () => {
-  const blogs: blog[] = await fetchSanityData(getLatestPosts);
+const LatestBlogs = ({ blogs }: { blogs: blog[] }) => {
   return (
     <section className='my-20 space-y-10'>
       <AnimateInView className='mx-auto text-center max-w-3xl space-y-2'>
