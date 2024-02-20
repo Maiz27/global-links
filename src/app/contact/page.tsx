@@ -2,14 +2,24 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
 import ContactForm from '@/components/forms/ContactForm';
 import { FaEnvelope, FaPhone, FaLocationDot } from 'react-icons/fa6';
+import PageTransition from '@/components/animationWrappers/PageTransition';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
+import { getMetadataByPageIndex, slideRight } from '@/lib/constants';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = getMetadataByPageIndex(7);
 
 const page = () => {
   return (
-    <main>
-      <PageHeader pageIndex={4} />
+    <PageTransition>
+      <PageHeader pageIndex={6} />
 
       <section className='my-20 flex w-full flex-col lg:flex-row justify-evenly items-center lg:items-start space-y-12 lg:space-y-0'>
-        <div className='w-4/5 lg:w-2/6 flex flex-col justify-center items-center space-y-8'>
+        <AnimateInView
+          initial={slideRight.initial}
+          whileInView={slideRight.whileInView}
+          className='w-4/5 lg:w-2/6 flex flex-col justify-center items-center space-y-8'
+        >
           <SectionHeading Tag='h2' text='Get In Touch' />
 
           <p>
@@ -49,17 +59,17 @@ const page = () => {
               <p>Amarat, Juba, CES, South Sudan</p>
             </div>
           </div>
-        </div>
+        </AnimateInView>
         <ContactForm />
       </section>
 
-      <section className='h-[40rem]'>
+      <AnimateInView tag='section' className='h-[40rem]'>
         <iframe
-          className='w-full h-full sepia-[0.1] saturate-[1.5]'
+          className='w-full h-full saturate-[1.5]'
           src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=+(Global%20Links%20Auto)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
         />
-      </section>
-    </main>
+      </AnimateInView>
+    </PageTransition>
   );
 };
 

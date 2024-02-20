@@ -2,6 +2,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import VehicleCard from './VehicleCard';
 import useWindowWidth from '@/lib/hooks/useWindowWidth';
 import { vehicle } from '@/lib/types';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 type props = {
   list: vehicle[];
@@ -31,9 +32,11 @@ const VehicleSlider = ({ list }: props) => {
         className='my-10'
       >
         <SplideTrack>
-          {list.map((vehicle) => (
+          {list.map((vehicle, idx) => (
             <SplideSlide key={`${vehicle.name}`} className='pb-1 h-full'>
-              <VehicleCard vehicle={vehicle} />
+              <AnimateInView delay={idx * 0.3} className='h-full '>
+                <VehicleCard vehicle={vehicle} />
+              </AnimateInView>
             </SplideSlide>
           ))}
         </SplideTrack>

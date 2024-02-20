@@ -1,4 +1,3 @@
-import React from 'react';
 import SectionHeading from '../sectionHeading/SectionHeading';
 import { IconType } from 'react-icons';
 import {
@@ -9,7 +8,8 @@ import {
   FaCircleInfo,
 } from 'react-icons/fa6';
 import { vehicle } from '@/lib/types';
-import VehicleSpecModal from '../modals/VehicleSpecModal';
+import RequestVehicleSpecModal from '../modals/RequestVehicleSpecModal';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const { engine, dimensions, overview, capacity, tyres } = vehicle;
@@ -17,16 +17,17 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   const overviewDetails = {
     'Model Code': overview?.model,
     Transmission: overview?.transmission,
-    'Speed (Gears Number)': overview?.speed,
+    'Gears (Speed)': overview?.speed,
     Drive: overview?.drive,
   };
   const engineDetails = {
     'Engine Model': engine?.model,
-    'Displacement (cc)': engine?.displacement,
     'Fuel Type': engine?.fuelType?.join(', '),
+    'Displacement (cc)': engine?.displacement,
     'Maximum Power (kw/rpm)': engine?.power,
   };
   const dimensionDetails = {
+    Doors: dimensions?.doors,
     'Lxwxh (mm)': `${dimensions?.length} x ${dimensions?.width} x ${dimensions?.height}`,
     'Ground Clearance (mm)': dimensions?.groundClearance,
     'Wheelbase (mm)': dimensions?.wheelbase,
@@ -51,18 +52,31 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
   ];
 
   return (
-    <section className='my-20 space-y-4'>
+    <AnimateInView tag='section' className='my-20 space-y-4'>
       <SectionHeading Tag='h2' text='Vehicle Specifications' />
 
       <div className='w-11/12 xl:w-4/5 max-w-7xl mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {detailsArray.map(({ title, details, icon }, index) => (
-          <Card key={index} title={title} details={details} icon={icon} />
+          <Card
+            key={index}
+            title={title}
+            details={details}
+            icon={icon}
+            idx={index}
+          />
         ))}
-        <div className='w-full h-full card bg-primary text-base-100 shadow p-6 text-center gap-4 grid place-items-center'>
-          <VehicleSpecModal />
-        </div>
+        <AnimateInView
+          delay={6 * 0.2}
+          className='w-full h-full card bg-primary text-base-100 shadow p-6 text-center gap-4 grid place-items-center'
+        >
+          <p>
+            Need The full specs list for {vehicle.name}? You can request
+            additional vehicle information.
+          </p>
+          <RequestVehicleSpecModal />
+        </AnimateInView>
       </div>
-    </section>
+    </AnimateInView>
   );
 };
 
@@ -72,12 +86,16 @@ type props = {
   title: string;
   details: Object;
   icon: IconType;
+  idx: number;
 };
 
-const Card = ({ title, details, icon }: props) => {
+const Card = ({ title, details, icon, idx }: props) => {
   const Icon = icon;
   return (
-    <div className='w-full h-full card bg-base-100 shadow p-6 text-center gap-4'>
+    <AnimateInView
+      delay={++idx * 0.2}
+      className='w-full h-full card bg-base-100 shadow p-6 text-center gap-4'
+    >
       <span className='w-fit shadow bg-base-100 rounded-md p-2 text-3xl text-primary mx-auto'>
         <Icon />
       </span>
@@ -90,6 +108,6 @@ const Card = ({ title, details, icon }: props) => {
           </li>
         ))}
       </ul>
-    </div>
+    </AnimateInView>
   );
 };

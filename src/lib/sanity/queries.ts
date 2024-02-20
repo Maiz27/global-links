@@ -28,6 +28,16 @@ export const getAllPosts = `*[_type == 'post'] {
     body,
   }`;
 
+export const getAllPostsForSiteMap = `*[_type == 'post'] {
+    slug,
+    publishedAt,
+  }`;
+
+export const getAllVehicleForSiteMap = `*[_type == 'post'] {
+    slug,
+    publishedAt,
+  }`;
+
 export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     title,
     slug,
@@ -43,6 +53,14 @@ export const getPostBySlug = `*[_type == 'post' && slug.current == $slug] {
     },
     publishedAt,
     body,
+  }[0]`;
+
+export const getPostDataForSEO = `*[_type == 'post' && slug.current == $slug] {
+    title,
+    slug,
+    description,
+    mainImage,
+    publishedAt,
   }[0]`;
 
 export const getLatestPosts = `*[_type == 'post'] 
@@ -114,6 +132,13 @@ export const getVehicleBySlug = `*[_type == 'vehicle' && slug.current == $slug] 
   tyres,
 }[0]`;
 
+export const getVehicleDataForSEO = `*[_type == 'vehicle' && slug.current == $slug] {
+  name,
+  slug,
+  description,
+  mainImage,
+}[0]`;
+
 export const getVehicleGalleryBySlug = `*[_type == 'vehicle' && slug.current == $slug] {
   gallery {
     images
@@ -125,4 +150,15 @@ export const getVehicleAdditionalDetails = `*[_type == 'vehicle' && slug.current
   engine,
   interior,
   exterior,
+}[0]`;
+
+export const getFAQs = `*[_type == 'faq']
+| order(index asc) {
+  index,
+  question,
+  answer,
+}`;
+
+export const getGalleryImages = `*[_type == 'gallery'] {
+  images
 }[0]`;

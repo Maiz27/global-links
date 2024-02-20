@@ -1,29 +1,38 @@
 import SectionHeading from '@/components/sectionHeading/SectionHeading';
-import IconCard from '../cards/IconCard';
-import { whatWeDoList } from '@/lib/constants';
+import ImageCard from '../cards/ImageCard';
+import CTA from '../CTA/CTA';
+import AnimateInView from '../animationWrappers/AnimateInView';
+import { slideLeft, slideRight } from '@/lib/constants';
 
 const WhatWeDo = () => {
   return (
-    <section className='min-h-screen py-20 grid place-items-center space-y-4 '>
-      <div className='mx-auto text-center max-w-2xl'>
-        <SectionHeading Tag='h2' text='What We Do' />
-        <p>
-          At Global Links, we are your premier destination for all things Toyota
-          in South Sudan. Our comprehensive range of services includes:
+    <section className='min-h-[80vh] flex flex-col items-around px-8 gap-16 lg:flex-row-reverse py-20'>
+      <AnimateInView
+        initial={slideLeft.initial}
+        whileInView={slideLeft.whileInView}
+        className='w-full h-auto md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'
+      >
+        <ImageCard image={`/imgs/paint.jpg`} title='Paint Job' />
+      </AnimateInView>
+      <AnimateInView
+        initial={slideRight.initial}
+        whileInView={slideRight.whileInView}
+        className='w-full md:w-4/5 lg:w-3/5 m-auto max-w-2xl space-y-4'
+      >
+        <SectionHeading
+          Tag='h2'
+          text='Comprehensive Car Care and Expertise'
+          isCentered={false}
+        />
+        <p className='text-balance'>
+          {`At Global Links Auto, we offer a full spectrum of automotive services designed to keep your Toyota in pristine condition. From routine check-ups to complex repairs, our expert technicians ensure your vehicle delivers peak performance and reliability.`}
         </p>
-      </div>
-      <div className='w-11/12 max-w-6xl mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {whatWeDoList.map(({ title, paragraph, icon }) => {
-          return (
-            <IconCard
-              key={title}
-              title={title}
-              paragraph={paragraph}
-              icon={icon}
-            />
-          );
-        })}
-      </div>
+
+        <div className='flex items-center gap-4'>
+          <CTA path='/services' text='Explore Services' />
+          <CTA path='/services/after-sale' text='After Sale' isOutline />
+        </div>
+      </AnimateInView>
     </section>
   );
 };

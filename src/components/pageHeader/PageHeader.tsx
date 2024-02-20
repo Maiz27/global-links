@@ -9,6 +9,7 @@ import {
 } from '@/lib/constants';
 import { FaUserPen, FaCalendarDays, FaStopwatch } from 'react-icons/fa6';
 import { blog } from '@/lib/types';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 type Props =
   | {
@@ -97,8 +98,8 @@ const PageHeader = ({
 
   return (
     <section className='min-h-[50vh] flex flex-col bg-triangle-pattern bg-cover bg-bottom text-base-100'>
-      <div className='h-5/6 grid place-items-center grow py-10'>
-        <div className='space-y-2'>
+      <div className='h-5/6 w-11/12 mx-auto grid place-items-center grow py-10'>
+        <AnimateInView className='space-y-2'>
           <SectionHeading
             Tag='h1'
             text={heading ? heading : pageHeaderData[pageIndex!].heading}
@@ -111,7 +112,7 @@ const PageHeader = ({
           >
             {paragraph ? paragraph : pageHeaderData[pageIndex!].text}
           </p>
-        </div>
+        </AnimateInView>
       </div>
       <Breadcrumbs />
     </section>

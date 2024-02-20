@@ -3,6 +3,7 @@ import CTA from '../CTA/CTA';
 import { fetchSanityData, getRecommendedPosts } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/sanityClient';
 import { blog, blogCategory } from '@/lib/types';
+import AnimateInView from '../animationWrappers/AnimateInView';
 
 type props = {
   slug: string;
@@ -20,8 +21,12 @@ const Recommendations = async ({ slug, categories }: props) => {
     return (
       <section className='w-full pb-4 gap-2'>
         <div className='w-full px-4 mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-1 gap-4'>
-          {posts.map((post) => {
-            return <RecommendationCard key={post.slug.current} post={post} />;
+          {posts.map((post, idx) => {
+            return (
+              <AnimateInView key={post.slug.current} delay={++idx * 0.2}>
+                <RecommendationCard post={post} />
+              </AnimateInView>
+            );
           })}
         </div>
       </section>

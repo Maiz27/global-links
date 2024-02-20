@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import graphic from '/public/imgs/graphics/triangles-3.png';
-import graphic2 from '/public/imgs/graphics/triangles-4.png';
 import { urlFor } from '@/lib/sanity/sanityClient';
 import { vehicle } from '@/lib/types';
 
@@ -31,14 +29,16 @@ const VehicleCard = ({ vehicle }: props) => {
           src={imgUrl}
           alt={name}
           width={500}
-          height={500}
+          height={300}
           loading='lazy'
           className='h-full object-contain'
         />
 
         <div className='absolute -top-1 right-0 z-10'>
           <Image
-            src={graphic}
+            src={`/imgs/graphics/triangles-3.png`}
+            width={100}
+            height={100}
             loading='lazy'
             alt='Triangle pattern'
             className='w-14 aspect-square object-cover'
@@ -46,7 +46,9 @@ const VehicleCard = ({ vehicle }: props) => {
         </div>
         <div className='absolute -bottom-[1px] left-0 z-10'>
           <Image
-            src={graphic2}
+            src={`/imgs/graphics/triangles-4.png`}
+            width={100}
+            height={100}
             loading='lazy'
             alt='Triangle pattern'
             className='w-14 aspect-square object-cover'

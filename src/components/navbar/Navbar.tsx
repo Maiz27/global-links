@@ -11,8 +11,6 @@ import {
   routes,
 } from '@/lib/constants';
 import { FaXmark, FaBars, FaArrowRight } from 'react-icons/fa6';
-import logo from '/public/imgs/logo/logo.png';
-import toyota from '/public/imgs/toyota.png';
 
 const Navbar = () => {
   const { isOpen, setIsOpen, node } = useNavbar();
@@ -34,15 +32,20 @@ const Logo = () => {
     <div className='flex h-12 w-40 divide-x-2'>
       <Link href='/' className='w-1/2'>
         <Image
-          src={logo}
+          src={`/imgs/logo/logo.png`}
           loading='eager'
-          alt='Global Links'
+          width={200}
+          height={200}
+          alt='Global Links Auto'
+          title='Global Links Auto'
           className='h-full object-scale-down'
         />
       </Link>
       <Image
-        src={toyota}
+        src={`/imgs/toyota.png`}
         loading='lazy'
+        width={200}
+        height={200}
         alt='Toyota Logo'
         className='h-full object-scale-down w-1/2'
       />
@@ -65,15 +68,19 @@ const NavLeft = () => {
 
 const NavLink = ({ name, path }: { name: string; path: string }) => {
   return (
-    <Link
-      href={path}
-      className='hidden lg:block h-[30px] overflow-hidden font-semibold '
-    >
-      <div className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'>
-        <span className='flex items-center h-[30px]'>{name}</span>
-        <span className='flex items-center h-[30px] text-primary'>{name}</span>
-      </div>
-    </Link>
+    <li>
+      <Link
+        href={path}
+        className='hidden lg:block h-[30px] overflow-hidden font-semibold '
+      >
+        <div className='hover:-translate-y-8 transition-transform duration-200 ease-in-out'>
+          <span className='flex items-center h-[30px]'>{name}</span>
+          <span className='flex items-center h-[30px] text-primary'>
+            {name}
+          </span>
+        </div>
+      </Link>
+    </li>
   );
 };
 
@@ -114,7 +121,7 @@ const NavMenu = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   return (
-    <motion.div
+    <motion.ul
       variants={menuVariants}
       initial='closed'
       animate={isOpen ? 'open' : 'closed'}
@@ -125,7 +132,7 @@ const NavMenu = ({
           <MenuLink key={path} name={name} path={path} setIsOpen={setIsOpen} />
         );
       })}
-    </motion.div>
+    </motion.ul>
   );
 };
 
@@ -139,7 +146,7 @@ const MenuLink = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   return (
-    <motion.div
+    <motion.li
       variants={menuLinkVariants}
       className='h-[30px] overflow-hidden font-medium text-lg flex items-start gap-2'
     >
@@ -154,7 +161,7 @@ const MenuLink = ({
         <span className='flex items-center h-[30px]'>{name}</span>
         <span className='flex items-center h-[30px] text-primary'>{name}</span>
       </Link>
-    </motion.div>
+    </motion.li>
   );
 };
 

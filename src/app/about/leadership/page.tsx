@@ -1,23 +1,26 @@
 import React from 'react';
 import Image from 'next/image';
 import PageHeader from '@/components/pageHeader/PageHeader';
-import { team } from '@/lib/constants';
+import { getMetadataByPageIndex, team } from '@/lib/constants';
+import PageTransition from '@/components/animationWrappers/PageTransition';
+import AnimateInView from '@/components/animationWrappers/AnimateInView';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = getMetadataByPageIndex(3);
 
 const page = () => {
   return (
-    <main>
+    <PageTransition>
       <PageHeader pageIndex={2} />
 
       <div className='w-4/5 md:w-11/12 xl:w-4/5 h-full mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 py-20'>
         {team.map((member, idx) => (
-          <TeamCard
-            key={idx}
-            member={member}
-            position={member.position as Position}
-          />
+          <AnimateInView key={idx} delay={++idx * 0.2} className='h-full'>
+            <TeamCard member={member} position={member.position as Position} />
+          </AnimateInView>
         ))}
       </div>
-    </main>
+    </PageTransition>
   );
 };
 
@@ -25,7 +28,7 @@ export default page;
 
 type Position = 'left' | 'right' | 'down';
 
-type member = (typeof team)[0];
+type member = (typeof team)[3];
 
 const TeamCard = ({
   position,
@@ -69,7 +72,9 @@ const TeamCard = ({
       <div className='w-full h-full bg-primary'>
         <Image
           src={img}
-          alt=''
+          alt={name}
+          width={500}
+          height={300}
           className='h-full object-cover'
           loading='lazy'
         />

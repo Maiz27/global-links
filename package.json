@@ -9,20 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@portabletext/react": "^3.0.11",
     "@sanity/client": "^6.8.6",
     "@sanity/image-url": "^1.0.2",
     "@splidejs/react-splide": "^0.7.12",
     "daisyui": "^4.4.4",
     "framer-motion": "^10.16.5",
-    "next": "14.0.3",
+    "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.50.1",
     "react-icons": "^4.12.0",
+    "react-loading-skeleton": "^3.4.0",
     "react-share": "^5.0.3",
     "react-toastify": "^10.0.4",
     "resend": "^2.0.0",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "zod": "3.21.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -30,7 +34,7 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "14.0.3",
+    "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"

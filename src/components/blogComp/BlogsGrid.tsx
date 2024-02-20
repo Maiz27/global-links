@@ -1,4 +1,5 @@
 'use client';
+import AnimateInView from '../animationWrappers/AnimateInView';
 import BlogCard from './BlogCard';
 import BlogsFilter from './BlogsFilter';
 import useFilterBlogs from '@/lib/hooks/useFilterBlogs';
@@ -22,7 +23,15 @@ const BlogsGrid = ({ blogs, categories }: props) => {
 
       <div className='w-full h-fit  grid place-items-center mx-auto gap-8 grid-cols-1 md:grid-cols-2 2xl:grid-cols-3'>
         {filteredList.map((blog, idx: number) => {
-          return <BlogCard key={idx} blog={blog} />;
+          return (
+            <AnimateInView
+              key={blog.slug.current}
+              delay={++idx * 0.2}
+              className='h-full w-full'
+            >
+              <BlogCard blog={blog} />
+            </AnimateInView>
+          );
         })}
       </div>
     </section>

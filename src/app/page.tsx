@@ -1,30 +1,31 @@
-import BasicFAQ from '@/components/FAQ/FAQ';
 import Hero from '@/components/hero/Hero';
 import VehicleTabs from '@/components/vehicleComp/VehicleTabs';
 import WhatWeDo from '@/components/whatWeDo/WhatWeDo';
 import WhyChooseUs from '@/components/whyChooseUs/WhyChooseUs';
+import FAQWrapper from '@/components/FAQ/FAQWrapper';
+import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
+import PageTransition from '@/components/animationWrappers/PageTransition';
 import {
   fetchSanityData,
-  getAllHeroImages,
   getAllVehicles,
-  getLatestPosts,
   getVehicleTypes,
 } from '@/lib/sanity/queries';
-import LatestBlogs from '@/components/latestBlogs/LatestBlogs';
+import { getMetadataByPageIndex } from '@/lib/constants';
+import { Metadata } from 'next';
 
-export const revalidate = 60; // revalidate every minute
+export const revalidate = 60;
+
+export const metadata: Metadata = getMetadataByPageIndex(0);
 
 export default async function Home() {
-  const [heroImages, vehicles, types, blogs] = await Promise.all([
-    fetchSanityData(getAllHeroImages),
+  const [vehicles, types] = await Promise.all([
     fetchSanityData(getAllVehicles),
     fetchSanityData(getVehicleTypes),
-    fetchSanityData(getLatestPosts),
   ]);
 
   return (
-    <main>
-      <Hero images={heroImages} />
+    <PageTransition>
+      <Hero />
 
       <WhyChooseUs />
 
@@ -32,9 +33,9 @@ export default async function Home() {
 
       <WhatWeDo />
 
-      <BasicFAQ />
+      <FAQWrapper />
 
-      <LatestBlogs blogs={blogs} />
-    </main>
+      <LatestBlogs />
+    </PageTransition>
   );
 }
