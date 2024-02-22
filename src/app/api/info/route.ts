@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { VehicleInfoTemplate } from '@/components/forms/EmailTemplates';
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+import { resend } from '@/lib/resend';
 
 export async function POST(req: any) {
   try {
