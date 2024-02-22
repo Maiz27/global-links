@@ -73,7 +73,7 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
             Need The full specs list for {vehicle.name}? You can request
             additional vehicle information.
           </p>
-          <RequestVehicleSpecModal />
+          <RequestVehicleSpecModal vehicleName={vehicle.name} />
         </AnimateInView>
       </div>
     </AnimateInView>

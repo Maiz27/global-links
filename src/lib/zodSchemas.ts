@@ -17,7 +17,7 @@ export const contactFormSchema = z.object({
       },
       {
         message:
-          'Invalid phone number format. Use +<country code><number> or local format like 03323323232',
+          'Invalid phone number format. Use +<country code><number> or local format like 09********',
       }
     ),
   subject: z.string().optional(),
@@ -51,7 +51,7 @@ export const afterSaleFormSchema = z.object({
     },
     {
       message:
-        'Invalid phone number format. Use +<country code><number> or local format like 03323323232',
+        'Invalid phone number format. Use +<country code><number> or local format like 09********',
     }
   ),
   model: z.string().min(4, { message: 'Name must be longer than 4 character' }),
@@ -71,6 +71,18 @@ export type AfterSaleFormData = z.infer<typeof afterSaleFormSchema>;
 export const requestVehicleFormSchema = z.object({
   name: z.string().min(4, { message: 'Name must be longer than 4 character' }),
   email: z.string().email('Invalid email address'),
+  phone: z.string().refine(
+    (phone) => {
+      const internationalFormat = /^\+\d{1,3}\d{6,14}$/;
+      const localFormat = /^0\d{9,10}$/;
+
+      return internationalFormat.test(phone) || localFormat.test(phone);
+    },
+    {
+      message:
+        'Invalid phone number format. Use +<country code><number> or local format like 09********',
+    }
+  ),
 });
 
 export type RequestVehicleFormData = z.infer<typeof afterSaleFormSchema>;

@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { MutableRefObject, useRef, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import BaseModal from './BaseModal';
@@ -11,29 +11,38 @@ import {
 } from '@/lib/zodSchemas';
 import { RegisterInput } from '../forms/fields/Input';
 import SectionHeading from '../sectionHeading/SectionHeading';
+import { toast } from 'react-toastify';
 
-const RequestVehicleSpecModal = () => {
+const RequestVehicleSpecModal = ({ vehicleName }: { vehicleName: string }) => {
   const closeBtn = useRef(null);
   return (
     <BaseModal
-      id='export-data'
+      id={`RequestVehicleSpecModal-${vehicleName}`}
       CTA='Request Information'
       closeBtn={closeBtn}
       btnStyle='accent'
       classNames='text-neutral py-16'
     >
       <SectionHeading Tag='h3' text='Request Vehicle Info' />
-      <RequestVehicleInfoForm />
+      <RequestVehicleInfoForm vehicleName={vehicleName} closeBtn={closeBtn} />
     </BaseModal>
   );
 };
 
 export default RequestVehicleSpecModal;
 
-const RequestVehicleInfoForm = () => {
+const RequestVehicleInfoForm = ({
+  vehicleName,
+  closeBtn,
+}: {
+  vehicleName: string;
+  closeBtn: MutableRefObject<null>;
+}) => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<RequestVehicleFormData>({
     resolver: zodResolver(requestVehicleFormSchema),
@@ -41,27 +50,35 @@ const RequestVehicleInfoForm = () => {
 
   const sendEmail: SubmitHandler<RequestVehicleFormData> = async (data) => {
     const validatedInput = requestVehicleFormSchema.parse(data);
+    console.log(validatedInput);
+
+    const toasts = {
+      success: () => toast.success('Information Request Sent Successfully!'),
+      error: () => toast.error('An Error Occurred, try again later!'),
+    };
 
     // try {
-    //   setIsLoading(true);
-    //   const response = await fetch('/api/send', {
+    //   setLoading(true);
+    //   const response = await fetch('/api/info', {
     //     method: 'POST',
     //     headers: {
     //       'Content-Type': 'application/json',
     //     },
-    //     body: JSON.stringify(formData),
+    //     body: JSON.stringify({ ...validatedInput, vehicle: vehicleName }),
     //   });
     //   console.log('response', response);
     //   if (response.status === 200) {
-    //     setFormData({ ...initialState });
-    //     setResult('Message Sent Successfully!');
+    //     toasts.success();
+    //     reset();
     //   } else {
-    //     setResult('An Error Occurred, try again later!');
+    //     toasts.error();
     //   }
     // } catch (error) {
-    //   setResult('An Error Occurred, try again later!');
+    //   toasts.error();
+    //   console.log('error', error);
     // } finally {
-    //   setIsLoading(false);
+    //   setLoading(false);
+    //   (closeBtn.current as unknown as HTMLButtonElement).click();
     // }
   };
 
@@ -75,7 +92,6 @@ const RequestVehicleInfoForm = () => {
           const Icon = icon;
           return (
             <div
-              // delay={idx * 0.2}
               key={name}
               className='form-control w-full text-neutral focus-within:text-primary transition-colors mt-2'
             >
@@ -104,7 +120,7 @@ const RequestVehicleInfoForm = () => {
           btnType='submit'
           bg='primary'
           textColor='base-100'
-          // loading={isLoading}
+          loading={loading}
         />
       </div>
     </form>

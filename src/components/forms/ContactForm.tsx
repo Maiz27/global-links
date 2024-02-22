@@ -46,6 +46,7 @@ const ContactForm = () => {
       }
     } catch (error) {
       toasts.error();
+      console.log('error', error);
     } finally {
       setLoading(false);
     }

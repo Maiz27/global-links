@@ -367,6 +367,14 @@ export const requestVehicleInfoFields = [
     placeholder: 'username@site.com',
     required: true,
   },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: FaPhone,
+    type: 'tel',
+    placeholder: '+211 / 09',
+    required: true,
+  },
 ];
 
 export const contactFormFields = [

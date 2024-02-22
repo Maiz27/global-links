@@ -53,7 +53,7 @@ export const AfterSaleTemplate = ({
     <div>
       <h1>After Sale Message from GLA Website.</h1>
       <h2>
-        from: {name}, {company && `, from "${company}".`}
+        from: {name}, {company && `,from "${company}".`}
       </h2>
       <p>{message}</p>
 
@@ -78,6 +78,34 @@ export const AfterSaleTemplate = ({
           {phone && <p>Phone: {phone}</p>}
         </div>
       )}
+    </div>
+  );
+};
+
+type VehicleInfoProps = {
+  name: string;
+  email: string;
+  phone: string;
+  vehicle: string;
+};
+
+export const VehicleInfoTemplate = ({
+  name,
+  email,
+  phone,
+  vehicle,
+}: VehicleInfoProps) => {
+  return (
+    <div>
+      <h1>Vehicle Information Request from GLA Website.</h1>
+      <h2>from: {name}.</h2>
+      <p>Requesting addition information about {vehicle}.</p>
+
+      <div>
+        <h2>Contact Information</h2>
+        {email && <p>Email: {email}</p>}
+        {phone && <p>Phone: {phone}</p>}
+      </div>
     </div>
   );
 };

@@ -33,7 +33,7 @@ const AfterSaleForm = () => {
 
     try {
       setLoading(true);
-      const response = await fetch('/api/send', {
+      const response = await fetch('/api/after-sale', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,6 +49,7 @@ const AfterSaleForm = () => {
       }
     } catch (error) {
       toasts.error();
+      console.log('error', error);
     } finally {
       setLoading(false);
     }
