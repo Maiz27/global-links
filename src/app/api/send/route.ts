@@ -9,7 +9,7 @@ export async function POST(req: any) {
     const data = await resend.emails.send({
       from: 'Website <website@globalinksauto.com>',
       to: ['info@globalinksauto.com'],
-      subject: subject,
+      subject: subject || 'Message From GLA Website',
       react: ContactTemplate({ ...body }),
     });
 
