@@ -15,6 +15,10 @@
   border: 0.1rem solid white; /* creates padding around scroll thumb */
 }
 
+.splide__arrow {
+  @apply bg-primary text-base-100 !important;
+}
+
 .react-loading-skeleton {
   @apply animate-pulse bg-base-300 !important;
 }

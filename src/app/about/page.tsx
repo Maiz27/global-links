@@ -101,7 +101,7 @@ const page = async () => {
         >
           <SectionHeading Tag='h2' text={leadership.title} />
           <p>{leadership.paragraph}</p>
-          <CTA text='Learn More' path='/about/leadership' />
+          <CTA text='Meet Our Visionaries' path='/about/leadership' />
         </AnimateInView>
       </section>
 
