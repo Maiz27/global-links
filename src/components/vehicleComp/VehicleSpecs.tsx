@@ -12,7 +12,8 @@ import RequestVehicleSpecModal from '../modals/RequestVehicleSpecModal';
 import AnimateInView from '../animationWrappers/AnimateInView';
 
 const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
-  const { engine, dimensions, overview, capacity, tyres } = vehicle;
+  const { engine, dimensions, overview, capacity, tyres, engineOptions } =
+    vehicle;
 
   const overviewDetails = {
     'Model Code': overview?.model,
@@ -69,10 +70,22 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
           delay={6 * 0.2}
           className='w-full h-full card bg-primary text-base-100 shadow p-6 text-center gap-4 grid place-items-center'
         >
-          <p>
-            Need The full specs list for {vehicle.name}? You can request
-            additional vehicle information.
-          </p>
+          {engineOptions.options ? (
+            <>
+              <h3>Engine Options</h3>
+              <ul>
+                {engineOptions.options?.map((option) => {
+                  return <li key={option}>{option}</li>;
+                })}
+              </ul>
+            </>
+          ) : (
+            <p>
+              Need The full specs list for {vehicle.name}? You can request
+              additional vehicle information.
+            </p>
+          )}
+
           <RequestVehicleSpecModal vehicleName={vehicle.name} />
         </AnimateInView>
       </div>

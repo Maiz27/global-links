@@ -7,7 +7,6 @@ import {
 } from 'react-hook-form';
 
 export type heroImage = {
-  title: string;
   index: number;
   image: Object;
 };
@@ -64,7 +63,9 @@ export type vehicle = {
   dimensions: vehicleDimensions;
   capacity: vehicleCapacity;
   tyres: vehicleTyres;
-  // interior?: vehicleInterior;
+  engineOptions: {
+    options?: string[];
+  };
   // exterior?: vehicleExterior;
   gallery?: vehicleGallery;
 };

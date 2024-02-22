@@ -130,6 +130,7 @@ export const getVehicleBySlug = `*[_type == 'vehicle' && slug.current == $slug] 
   dimensions,
   capacity,
   tyres,
+  engineOptions,
 }[0]`;
 
 export const getVehicleDataForSEO = `*[_type == 'vehicle' && slug.current == $slug] {
