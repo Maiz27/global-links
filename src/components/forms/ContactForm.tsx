@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '@/components/CTA/CTA';
@@ -6,40 +7,48 @@ import { RegisterInput, RegisterTextField } from './fields/Input';
 import { ContactFormData, contactFormSchema } from '@/lib/zodSchemas';
 import { contactFormFields, slideLeft } from '@/lib/constants';
 import AnimateInView from '../animationWrappers/AnimateInView';
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
   });
 
+  const toasts = {
+    success: () => toast.success('Message Sent Successfully!'),
+    error: () => toast.error('An Error Occurred, try again later!'),
+  };
+
   const sendEmail: SubmitHandler<ContactFormData> = async (data) => {
     const validatedInput = contactFormSchema.parse(data);
 
-    // try {
-    //   setIsLoading(true);
-    //   const response = await fetch('/api/send', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-    //   console.log('response', response);
-    //   if (response.status === 200) {
-    //     setFormData({ ...initialState });
-    //     setResult('Message Sent Successfully!');
-    //   } else {
-    //     setResult('An Error Occurred, try again later!');
-    //   }
-    // } catch (error) {
-    //   setResult('An Error Occurred, try again later!');
-    // } finally {
-    //   setIsLoading(false);
-    // }
+    try {
+      setLoading(true);
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validatedInput),
+      });
+      console.log('response', response);
+      if (response.status === 200) {
+        toasts.success();
+        reset();
+      } else {
+        toasts.error();
+      }
+    } catch (error) {
+      toasts.error();
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -92,7 +101,7 @@ const ContactForm = () => {
           btnType='submit'
           bg='primary'
           textColor='base-100'
-          // loading={isLoading}
+          loading={loading}
         />
       </div>
     </AnimateInView>
