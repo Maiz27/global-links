@@ -5,7 +5,7 @@ import Footer from '@/components/footer/Footer';
 import { IsClientCtxProvider } from '@/context/IsClientContext';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import 'react-loading-skeleton/dist/skeleton.css';
+// import 'react-loading-skeleton/dist/skeleton.css';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });

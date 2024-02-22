@@ -57,29 +57,29 @@ const RequestVehicleInfoForm = ({
       error: () => toast.error('An Error Occurred, try again later!'),
     };
 
-    // try {
-    //   setLoading(true);
-    //   const response = await fetch('/api/info', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ ...validatedInput, vehicle: vehicleName }),
-    //   });
-    //   console.log('response', response);
-    //   if (response.status === 200) {
-    //     toasts.success();
-    //     reset();
-    //   } else {
-    //     toasts.error();
-    //   }
-    // } catch (error) {
-    //   toasts.error();
-    //   console.log('error', error);
-    // } finally {
-    //   setLoading(false);
-    //   (closeBtn.current as unknown as HTMLButtonElement).click();
-    // }
+    try {
+      setLoading(true);
+      const response = await fetch('/api/info', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...validatedInput, vehicle: vehicleName }),
+      });
+      console.log('response', response);
+      if (response.status === 200) {
+        toasts.success();
+        reset();
+      } else {
+        toasts.error();
+      }
+    } catch (error) {
+      toasts.error();
+      console.log('error', error);
+    } finally {
+      setLoading(false);
+      (closeBtn.current as unknown as HTMLButtonElement).click();
+    }
   };
 
   return (

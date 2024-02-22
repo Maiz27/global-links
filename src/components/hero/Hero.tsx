@@ -10,7 +10,7 @@ const Hero = async () => {
   const images: heroImage[] = await fetchSanityData(getAllHeroImages);
 
   return (
-    <div className='h-[92vh] relative'>
+    <div className='h-[92dvh] relative'>
       <ImageSlider images={images} />
       <div className='pointer-events-none absolute inset-0 flex flex-col items-center justify-center p-8'>
         <AnimateInView

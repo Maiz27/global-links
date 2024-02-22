@@ -46,6 +46,17 @@ const CategoriesSelector = ({
   selected,
   setSelected,
 }: typesSelectorProps) => {
+  if (!categories) {
+    return (
+      <div className='collapse collapse-plus -mt-4'>
+        <input type='checkbox' />
+        <div className='collapse-title text-lg font-medium'>Categories</div>
+        <div className='collapse-content'>
+          <p>There are no Categories at the moment!</p>
+        </div>
+      </div>
+    );
+  }
   const handleChange = (title: string) => {
     setSelected((prevSelected) => {
       const newSelected = new Set(prevSelected);

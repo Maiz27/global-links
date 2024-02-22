@@ -25,7 +25,7 @@ const ImageSlider = ({ images }: { images: heroImage[] }) => {
             <SplideSlide key={title}>
               <Image
                 src={imgUrl}
-                alt={title}
+                alt={`Image (${idx})`}
                 width={1920}
                 height={720}
                 loading={idx < 2 ? 'eager' : 'lazy'}
