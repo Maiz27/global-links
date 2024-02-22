@@ -26,6 +26,8 @@ export default async function sitemap() {
     { name: 'Leadership', href: '/about/leadership' },
     { name: 'After Sale', href: '/services/after-sale' },
     { name: 'Spare Parts', href: '/services/spare-parts' },
+    { name: 'Terms of use', href: '/terms-of-uses' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
   ];
 
   const _routes = allRoutes.map(({ href }) => ({

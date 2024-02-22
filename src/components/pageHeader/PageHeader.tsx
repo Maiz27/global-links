@@ -66,10 +66,7 @@ const PageHeader = ({
             <ul className='w-full flex flex-wrap lg:justify-evenly gap-2'>
               {categories.map(({ title }) => {
                 return (
-                  <li
-                    key={title}
-                    className='badge badge-xs text-neutral badge-outline py-2'
-                  >
+                  <li key={title} className='badge badge-primary py-2'>
                     {title}
                   </li>
                 );

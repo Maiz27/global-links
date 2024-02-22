@@ -367,6 +367,14 @@ export const requestVehicleInfoFields = [
     placeholder: 'username@site.com',
     required: true,
   },
+  {
+    name: 'phone',
+    label: 'Phone Number',
+    icon: FaPhone,
+    type: 'tel',
+    placeholder: '+211 / 09',
+    required: true,
+  },
 ];
 
 export const contactFormFields = [
@@ -519,34 +527,26 @@ export const team = [
   {
     img: three,
     position: 'right',
-    name: 'Name',
-    title: 'Title',
+    name: 'Stephan Misasa',
+    title: 'Finance & Human Resources',
     paragraph:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
-  },
-  {
-    img: four,
-    position: 'left',
-    name: 'Name',
-    title: 'Title',
-    paragraph:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
+      'Stephan Misasa oversees Finance and Human Resources, integrating financial acumen with a visionary approach to team management. His expertise ensures sustainable growth and a culture of inclusivity, propelling Global Link Auto towards its strategic goals.',
   },
   {
     img: five,
     position: 'left',
-    name: 'Name',
-    title: 'Title',
+    name: 'Ravi Kiran',
+    title: 'Sales (UN&NGO)/ After Sale',
     paragraph:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
+      'Ravi Kiran specializes in Sales (UN&NGO) and After-Sale services, offering tailored solutions that foster long-term relationships with key stakeholders. His dedication to service excellence and client satisfaction makes him a pivotal figure in our sales strategy.',
   },
   {
     img: six,
-    position: 'right',
-    name: 'Name',
-    title: 'Title',
+    position: 'left',
+    name: 'Robert Ladu',
+    title: 'Parts Department',
     paragraph:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corporis excepturi? Magnam dolores quae natus inventore minima, nemo beatae, voluptas aperiam quaerat, possimus harum suscipit minus fugit culpa a facere.',
+      'Robert Ladu leads the Parts Department with a commitment to operational excellence and customer service. His extensive knowledge of automotive parts and logistics ensures the availability and timely delivery of high-quality components, supporting the company’s reputation for reliability.',
   },
 ];
 
@@ -687,4 +687,31 @@ export const slideRight = {
 export const slideLeft = {
   initial: { opacity: 0, x: 25 },
   whileInView: { opacity: 1, x: 0 },
+};
+
+export const galleryVariants = {
+  closed: {
+    y: '100%',
+    opacity: 0,
+    transition: {
+      // delay: 0.3,
+      duration: 0.2,
+      type: 'spring',
+      mass: 3,
+      stiffness: 400,
+      damping: 50,
+    },
+  },
+  open: {
+    y: '0%',
+    opacity: 1,
+    transition: {
+      // delay: 0.3,
+      duration: 0.2,
+      type: 'spring',
+      mass: 3,
+      stiffness: 400,
+      damping: 50,
+    },
+  },
 };

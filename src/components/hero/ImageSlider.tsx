@@ -19,17 +19,17 @@ const ImageSlider = ({ images }: { images: heroImage[] }) => {
       className='h-full after:content-[""] after:absolute after:w-full after:h-full after:inset-0 after:bg-[rgba(0,0,0,0.6)]'
     >
       <SplideTrack className='h-full'>
-        {images.map(({ title, image }, idx) => {
+        {images.map(({ index, image }) => {
           const imgUrl = urlFor(image).url();
           return (
-            <SplideSlide key={title}>
+            <SplideSlide key={index}>
               <Image
                 src={imgUrl}
-                alt={title}
+                alt={`Image (${index})`}
                 width={1920}
                 height={720}
-                loading={idx < 2 ? 'eager' : 'lazy'}
-                priority={idx < 2 && true}
+                loading={index < 2 ? 'eager' : 'lazy'}
+                priority={index < 2 && true}
                 className='h-full object-cover object-center'
               />
             </SplideSlide>

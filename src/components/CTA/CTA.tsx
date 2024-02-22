@@ -10,6 +10,7 @@ type props = {
   isOutline?: boolean;
   bg?: 'primary' | 'secondary' | 'accent' | 'ghost';
   textColor?: string;
+  loading?: boolean;
 };
 
 const CTA = ({
@@ -22,14 +23,20 @@ const CTA = ({
   bg = 'primary',
   btnSize = 'md',
   textColor,
+  loading = false,
 }: props) => {
   const className = `btn transition-transform hover:scale-105 active:scale-95 pointer-events-auto btn-${btnSize} ${
     isOutline ? `btn-outline btn-${bg}` : `btn-${bg}`
-  } ${textColor && `text-${textColor}`}`;
+  } ${textColor && `text-${textColor}`} ${loading && 'animate-pulse'}`;
   return (
     <div className='z-10'>
       {isBtn ? (
-        <button className={className} type={btnType} onClick={onClick}>
+        <button
+          className={className}
+          type={btnType}
+          onClick={onClick}
+          disabled={loading}
+        >
           {text}
         </button>
       ) : (
