@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
-import { ContactTemplate } from '@/components/forms/EmailTemplates';
 import { resend } from '@/lib/resend';
+import { AfterSaleTemplate } from '@/components/forms/EmailTemplates';
 
 export async function POST(req: any) {
   try {
     const body = await req.json();
-    const { subject } = body;
     const data = await resend.emails.send({
       from: 'Website <website@globalinksauto.com>',
       to: ['info@globalinksauto.com'],
-      subject: subject,
-      react: ContactTemplate({ ...body }),
+      subject: 'After Sale Request!',
+      react: AfterSaleTemplate({ ...body }),
     });
 
     return NextResponse.json(data);

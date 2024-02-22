@@ -20,13 +20,13 @@ const ContactForm = () => {
     resolver: zodResolver(contactFormSchema),
   });
 
-  const toasts = {
-    success: () => toast.success('Message Sent Successfully!'),
-    error: () => toast.error('An Error Occurred, try again later!'),
-  };
-
   const sendEmail: SubmitHandler<ContactFormData> = async (data) => {
     const validatedInput = contactFormSchema.parse(data);
+
+    const toasts = {
+      success: () => toast.success('Message Sent Successfully!'),
+      error: () => toast.error('An Error Occurred, try again later!'),
+    };
 
     try {
       setLoading(true);

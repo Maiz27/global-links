@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AfterSaleFormData, afterSaleFormSchema } from '@/lib/zodSchemas';
@@ -9,11 +10,14 @@ import {
   RegisterCheckbox,
 } from './fields/Input';
 import CTA from '../CTA/CTA';
+import { toast } from 'react-toastify';
 
 const AfterSaleForm = () => {
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<AfterSaleFormData>({
     resolver: zodResolver(afterSaleFormSchema),
@@ -22,29 +26,32 @@ const AfterSaleForm = () => {
   const sendEmail: SubmitHandler<AfterSaleFormData> = async (data) => {
     const validatedInput = afterSaleFormSchema.parse(data);
 
-    console.log('validatedInput', validatedInput);
+    const toasts = {
+      success: () => toast.success('After Sale Request Sent Successfully!'),
+      error: () => toast.error('An Error Occurred, try again later!'),
+    };
 
-    // try {
-    //   setIsLoading(true);
-    //   const response = await fetch('/api/send', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-    //   console.log('response', response);
-    //   if (response.status === 200) {
-    //     setFormData({ ...initialState });
-    //     setResult('Message Sent Successfully!');
-    //   } else {
-    //     setResult('An Error Occurred, try again later!');
-    //   }
-    // } catch (error) {
-    //   setResult('An Error Occurred, try again later!');
-    // } finally {
-    //   setIsLoading(false);
-    // }
+    try {
+      setLoading(true);
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(validatedInput),
+      });
+      console.log('response', response);
+      if (response.status === 200) {
+        toasts.success();
+        reset();
+      } else {
+        toasts.error();
+      }
+    } catch (error) {
+      toasts.error();
+    } finally {
+      setLoading(false);
+    }
   };
 
   const hasColumnSpan = ['model', 'services', 'message'];
@@ -61,7 +68,6 @@ const AfterSaleForm = () => {
           const Icon = icon;
           return (
             <div
-              // delay={idx * 0.2}
               key={name}
               className={`form-control w-full focus-within:text-primary transition-colors ${
                 hasColumnSpan.includes(name) ? 'col-span-2' : 'max-w-sm'
@@ -111,7 +117,7 @@ const AfterSaleForm = () => {
           btnType='submit'
           bg='primary'
           textColor='base-100'
-          // loading={isLoading}
+          loading={loading}
         />
       </div>
     </form>
