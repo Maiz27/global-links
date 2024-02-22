@@ -159,6 +159,14 @@ export const getFAQs = `*[_type == 'faq']
   answer,
 }`;
 
-export const getGalleryImages = `*[_type == 'gallery'] {
-  images
+export const getGalleryImages = `*[_type == 'other'] {
+  gallery
+}[0]`;
+
+export const getTermsOfUse = `*[_type == 'other'] {
+  terms
+}[0]`;
+
+export const getPrivacyPolicy = `*[_type == 'other'] {
+  privacy
 }[0]`;

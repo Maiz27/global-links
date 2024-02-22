@@ -13,17 +13,16 @@ import {
 } from '@/lib/constants';
 import { fetchSanityData, getGalleryImages } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/sanityClient';
-import { Gallery } from '@/lib/types';
+import { OtherGLAData } from '@/lib/types';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = getMetadataByPageIndex(2);
 
 const page = async () => {
-  const gallery: Gallery = await fetchSanityData(getGalleryImages);
-
+  const { gallery }: OtherGLAData = await fetchSanityData(getGalleryImages);
   const { about, mission, vision, leadership } = aboutGlobalLinks;
 
-  const images = gallery.images.map((image, index) => {
+  const images = gallery?.map((image, index) => {
     return { title: `Image (${index})`, src: urlFor(image).url() };
   });
   return (
@@ -36,7 +35,7 @@ const page = async () => {
           whileInView={slideRight.whileInView}
           className='w-full md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'
         >
-          <ImageCard image={`/imgs/team.jpg`} />
+          <ImageCard image={`/imgs/1.jpg`} />
         </AnimateInView>
 
         <AnimateInView
@@ -108,7 +107,7 @@ const page = async () => {
       <AnimateInView tag='section' className='py-20 space-y-2'>
         <SectionHeading Tag='h2' text='Global Links Gallery' />
 
-        <ImageGallery images={images} />
+        <ImageGallery images={images!} />
       </AnimateInView>
     </PageTransition>
   );

@@ -116,9 +116,10 @@ export type Faq = {
   answer: string;
 };
 
-export type Gallery = {
-  title?: string;
-  images: Object[];
+export type OtherGLAData = {
+  gallery?: Object[];
+  terms?: blogBody;
+  privacy?: blogBody;
 };
 // export type vehicleInterior = {
 //   airCondition: string;
