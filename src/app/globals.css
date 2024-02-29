@@ -26,3 +26,21 @@
 .react-loading-skeleton::after {
   @apply bg-gradient-to-r from-secondary to-secondary/70 !important;
 }
+
+@media screen and (min-width: 1024px) {
+  .splide__arrow--prev {
+    left: -2rem !important;
+  }
+  .splide__arrow--next {
+    right: -2rem !important;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .splide__arrow--prev {
+    left: -4rem !important;
+  }
+  .splide__arrow--next {
+    right: -4rem !important;
+  }
+}

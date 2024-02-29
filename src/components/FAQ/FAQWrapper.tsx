@@ -1,7 +1,8 @@
 import { fetchSanityData, getFAQs } from '@/lib/sanity/queries';
 import { Faq } from '@/lib/types';
-import React from 'react';
 import BasicFAQ from './FAQ';
+
+export const revalidate = 60;
 
 const FAQWrapper = async () => {
   const faqs: Faq[] = await fetchSanityData(getFAQs);

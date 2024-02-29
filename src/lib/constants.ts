@@ -36,7 +36,6 @@ import {
 const one = '/imgs/team/1.jpg';
 const two = '/imgs/team/2.jpg';
 const three = '/imgs/team/3.jpg';
-const four = '/imgs/team/4.jpg';
 const five = '/imgs/team/5.jpg';
 const six = '/imgs/team/6.jpg';
 
@@ -71,7 +70,7 @@ export const routes = [
 
 export const whyChooseUs = [
   {
-    title: 'Authorized Toyota Dealer',
+    title: 'Authorized Toyota Company',
     paragraph:
       "As the official representative of Toyota in South Sudan, we offer a wide range of vehicles, from rugged SUVs to sleek sedans, all backed by Toyota's legendary reliability.",
     icon: TbBrandToyota,
@@ -160,7 +159,7 @@ export const pageHeaderData = [
   },
   {
     heading: 'About Global Links Auto Company',
-    text: "Dive into the World of Global Links Auto Company Limited, South Sudan's Premier Automotive Dealer. Our Heritage is Built on a Profound Passion for Automobiles and a Commitment to Serve the Journeys of Our Esteemed Clients. A Car from Global Links is More Than a Vehicle; It's a Partner for Life, Ready to Create Unforgettable Stories on the Road.",
+    text: "Dive into the World of Global Links Auto Company Limited, South Sudan's Official Toyota Company. Our Heritage is Built on a Profound Passion for Automobiles and a Commitment to Serve the Journeys of Our Esteemed Clients. A Car from Global Links is More Than a Vehicle; It's a Partner for Life, Ready to Create Unforgettable Stories on the Road.",
   },
   {
     heading: 'Experienced Automotive Leadership',
@@ -190,9 +189,9 @@ export const pageHeaderData = [
 
 export const pagesMetaData = [
   {
-    title: 'Official Toyota Dealer in South Sudan - Global Links Auto',
+    title: 'Official Toyota Company in South Sudan - Global Links Auto',
     description:
-      'Global Links Auto, the authorized Toyota dealer in South Sudan, offers a superior selection of vehicles known for durability and excellence. Begin your journey with a trusted name in automotive.',
+      'Global Links Auto, the official Toyota company in South Sudan, offers a superior selection of vehicles known for durability and excellence. Begin your journey with a trusted name in automotive.',
     type: 'website',
     url: `${baseURl}`,
     image: `${baseURl}/imgs/logo/logo.png`,
@@ -211,7 +210,7 @@ export const pagesMetaData = [
   {
     title: "Our Story - Global Links Auto | South Sudan's Automotive Leader",
     description:
-      'Discover the rich heritage of Global Links Auto, where we marry automotive passion with service to bring you the best in vehicle dealership across South Sudan.',
+      'Discover the rich heritage of Global Links Auto, where we marry automotive passion with service to bring you the best Toyota vehicles across South Sudan.',
     type: 'website',
     url: `${baseURl}/about`,
     image: `${baseURl}/imgs/team2.jpg`,
@@ -232,7 +231,7 @@ export const pagesMetaData = [
       "Rely on Global Links Auto for comprehensive Toyota services. Our team ensures your vehicle's longevity and performance with meticulous care and expert knowledge in South Sudan.",
     type: 'website',
     url: `${baseURl}/services`,
-    image: `${baseURl}/imgs/paint.jpg`,
+    image: `${baseURl}/imgs/toyotaService.jpg`,
     icon: '/imgs/logo/favicon.ico',
   },
   {
@@ -241,7 +240,7 @@ export const pagesMetaData = [
       "Global Links Auto's after-sales service guarantees your Toyota's peak condition with unparalleled support and genuine parts in South Sudan.",
     type: 'website',
     url: `${baseURl}/services/after-sales`,
-    image: `${baseURl}/images/garage.jpg`,
+    image: `${baseURl}/imgs/workshop.jpg`,
     icon: '/imgs/logo/favicon.ico',
   },
   {
@@ -278,7 +277,7 @@ export const aboutGlobalLinks = {
   about: {
     title: 'About Us',
     paragraph:
-      'Founded in the vibrant heart of Juba in November 2007, Global Link Auto Company Limited embarked on its journey to redefine automotive excellence in South Sudan. As an authorized Toyota dealer, we commenced operations in August 2008, committing ourselves to delivering not just cars, but a legacy of trust and unparalleled service. Our commitment goes beyond the showroom. It extends to the long-lasting relationships we build with our customers, the comprehensive care we provide for every car, and the personalized experience each client receives. We are more than just a car dealership; we are a team of enthusiasts, professionals, and friends who believe in delivering nothing but the best. Join us at Global Link Auto Company Limited, where your automotive journey is not just about reaching a destination, but about enjoying every mile of the journey, securely and stylishly.',
+      'Founded in the vibrant heart of Juba in November 2007, Global Link Auto Company Limited embarked on its journey to redefine automotive excellence in South Sudan. As the official Toyota company, we commenced operations in August 2008, committing ourselves to delivering not just cars, but a legacy of trust and unparalleled service. Our commitment goes beyond the showroom. It extends to the long-lasting relationships we build with our customers, the comprehensive care we provide for every car, and the personalized experience each client receives. We are more than just a car dealership; we are a team of enthusiasts, professionals, and friends who believe in delivering nothing but the best. Join us at Global Link Auto Company Limited, where your automotive journey is not just about reaching a destination, but about enjoying every mile of the journey, securely and stylishly.',
   },
   mission: {
     title: 'Our Mission',
@@ -300,52 +299,82 @@ export const aboutGlobalLinks = {
 export const automotiveServices = [
   {
     heading: 'Routine Vehicle Maintenance',
-    text: "Keep your car running like new with our comprehensive routine maintenance program. Regular check-ups are the key to ensuring your vehicle's longevity and reliability.",
+    list: [
+      'Comprehensive routine maintenance program.',
+      'Regular check-ups for longevity and reliability.',
+    ],
     icon: FaRegCalendarCheck,
   },
   {
     heading: 'Fluid and Filter Servicing',
-    text: "Optimize your car's performance with our fluid and filter services. Regular changes are essential for maintaining engine health and vehicle efficiency.",
+    list: [
+      'Optimize performance with fluid and filter changes.',
+      'Essential for maintaining engine health and efficiency.',
+    ],
     icon: FaOilCan,
   },
   {
     heading: 'Tire Inspection and Services',
-    text: 'Ensure maximum safety and performance with our tire services, including expert inspection, rotation, and replacement tailored to your driving needs.',
+    list: [
+      'Expert tire inspection.',
+      'Rotation and replacement tailored to your needs.',
+    ],
     icon: FaDotCircle,
   },
   {
     heading: 'Brake System Maintenance',
-    text: "Stay safe on the road with our comprehensive brake services, including system inspections, pad replacements, and fluid checks to maintain your car's stopping power.",
+    list: [
+      'Comprehensive brake services.',
+      'System inspections, pad replacements, and fluid checks.',
+    ],
     icon: FaHandPaper,
   },
   {
     heading: 'Battery Testing and Replacement',
-    text: "Never get stranded with our battery services. Regular testing and maintenance will keep your car's electrical systems running smoothly without interruption.",
+    list: [
+      'Regular battery testing and maintenance.',
+      "Ensures smooth running of car's electrical systems.",
+    ],
     icon: FaCarBattery,
   },
   {
     heading: 'Alignment and Suspension Tuning',
-    text: 'Drive smoothly with precise alignment and suspension services. Proper adjustments ensure stability, comfort, and extend the life of your tires.',
+    list: [
+      'Precise alignment and suspension services.',
+      'Ensures stability, comfort, and tire longevity.',
+    ],
     icon: FaGripHorizontal,
   },
   {
     heading: 'Exhaust System Maintenance',
-    text: 'Reduce emissions and improve fuel efficiency with our exhaust system inspections and services, ensuring a quieter ride and cleaner performance.',
+    list: [
+      'Exhaust system inspections and services.',
+      'Reduces emissions, improves fuel efficiency, and ensures a quieter ride.',
+    ],
     icon: FaSmog,
   },
   {
     heading: 'Air Conditioning Repair and Maintenance',
-    text: 'Stay cool and comfortable all year round with our air conditioning maintenance services, designed for optimal performance in extreme weather conditions.',
+    list: [
+      'Optimal performance air conditioning services.',
+      'Designed for comfort in extreme weather.',
+    ],
     icon: FaSnowflake,
   },
   {
     heading: 'Electrical System Diagnostics',
-    text: 'Keep every component powered up with our electrical system checks, ensuring all electronics from headlights to onboard computers are functioning perfectly.',
+    list: [
+      'Comprehensive electrical system checks.',
+      'Ensures functionality of all electronic components.',
+    ],
     icon: FaChargingStation,
   },
   {
     heading: 'Comprehensive Diagnostic and Repair',
-    text: "Trust our expert technicians to diagnose and repair any issues using state-of-the-art tools, restoring your vehicle's performance and reliability.",
+    list: [
+      'State-of-the-art diagnostic tools.',
+      'Expert technicians for all repair needs.',
+    ],
     icon: FaTools,
   },
 ];
@@ -514,7 +543,7 @@ export const team = [
     name: 'Victor Gore',
     title: 'General Manager',
     paragraph:
-      'As the General Manager at Global Link Auto Company Limited, Victor Gore brings over a decade of industry expertise, exemplifying a blend of strategic leadership and a deep passion for automotive excellence.',
+      'Victor Gore, serving as the General Manager at Global Link Auto Company Limited, epitomizes strategic leadership coupled with an ardent zeal for automotive distinction. His tenure of over a decade in the industry underscores a commitment to excellence and visionary guidance.',
   },
   {
     img: two,
@@ -522,7 +551,7 @@ export const team = [
     name: 'Mary Ngugi',
     title: 'Sales & Marketing',
     paragraph:
-      "As the Head of Sales and Marketing at Global Link Auto Company Limited, Mary Ngugi stands out for her exceptional skills in customer engagement and market strategy. She's a dynamic leader",
+      'Mary Ngugi, the helm of Sales and Marketing at Global Link Auto Company Limited, excels in crafting engaging customer interactions and strategic market positioning. Her leadership is marked by a proactive approach and a knack for dynamic market navigation.',
   },
   {
     img: three,
@@ -538,7 +567,7 @@ export const team = [
     name: 'Ravi Kiran',
     title: 'Sales (UN&NGO)/ After Sale',
     paragraph:
-      'Ravi Kiran specializes in Sales (UN&NGO) and After-Sale services, offering tailored solutions that foster long-term relationships with key stakeholders. His dedication to service excellence and client satisfaction makes him a pivotal figure in our sales strategy.',
+      'Ravi Kiran, specializing in Sales (UN&NGO) and After-Sale services, excels in devising bespoke solutions that cement long-standing relations with essential stakeholders. His unwavering commitment to excellence and customer satisfaction is central to our sales framework.',
   },
   {
     img: six,
@@ -546,7 +575,7 @@ export const team = [
     name: 'Robert Ladu',
     title: 'Parts Department',
     paragraph:
-      'Robert Ladu leads the Parts Department with a commitment to operational excellence and customer service. His extensive knowledge of automotive parts and logistics ensures the availability and timely delivery of high-quality components, supporting the company’s reputation for reliability.',
+      'Robert Ladu, at the helm of the Parts Department, prioritizes operational superiority and unparalleled service. His profound understanding of automotive parts and logistical prowess guarantees the prompt provision and delivery of premium components, reinforcing our commitment to dependability.',
   },
 ];
 
@@ -608,6 +637,9 @@ export const getMetadataByPageIndex = (index: number): Metadata => {
     metadataBase: new URL(baseURl),
     title: pageMetaData.title,
     description: pageMetaData.description,
+    alternates: {
+      canonical: pageMetaData.url,
+    },
     icons: {
       icon: pageMetaData.icon,
       shortcut: pageMetaData.icon,

@@ -12,7 +12,7 @@ const WhatWeDo = () => {
         whileInView={slideLeft.whileInView}
         className='w-full h-auto md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'
       >
-        <ImageCard image={`/imgs/paint.jpg`} title='Paint Job' />
+        <ImageCard image={`/imgs/workshop.jpg`} title='Paint Job' />
       </AnimateInView>
       <AnimateInView
         initial={slideRight.initial}

@@ -23,12 +23,12 @@ const page = () => {
       <section className='my-20'>
         <SectionHeading Tag='h2' text='Our Services' />
         <div className='w-11/12 max-w-6xl mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-          {automotiveServices.map(({ heading, text, icon }, idx) => {
+          {automotiveServices.map(({ heading, list, icon }, idx) => {
             return (
               <IconCard
                 key={heading}
                 title={heading}
-                paragraph={text}
+                list={list}
                 icon={icon}
                 index={idx}
               />
@@ -62,7 +62,7 @@ const page = () => {
           whileInView={slideRight.whileInView}
           className='w-full h-auto md:w-4/5 lg:w-2/5 mx-auto grid place-items-center'
         >
-          <ImageCard image={`/imgs/garage.jpg`} title='After Sale Garage' />
+          <ImageCard image={`/imgs/workshop2.jpg`} title='After Sale Garage' />
         </AnimateInView>
       </section>
 

@@ -40,7 +40,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
 
   return (
     <div>
-      <div className='w-11/12 mx-auto grid place-items-center gap-4 grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
+      <div className='w-11/12 mx-auto grid place-items-center gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 auto-rows-min'>
         {images &&
           images.map(({ title, src }, index) => (
             <AnimateInView
@@ -49,45 +49,53 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
               delay={(index + 1) * 0.2}
               onClick={() => handleOpenModal(index)}
             >
-              <MemoizedImage src={src} title={title} />
+              <div className='w-full h-32 xl:h-40 relative'>
+                <MemoizedImage src={src} title={title} />
+              </div>
             </AnimateInView>
           ))}
       </div>
 
       <AnimatePresence>
         {isOpen && (
-          <div className='fixed z-50 inset-0 w-full mx-auto grid place-items-center before:content-[""] before:absolute before:w-full before:h-full before:inset-0 before:bg-[rgba(0,0,0,0.8)]'>
+          <div className='fixed z-50 inset-0 w-full h-full m-auto grid place-items-center before:content-[""] before:absolute before:w-full before:h-full before:inset-0 before:bg-[rgba(0,0,0,0.8)]'>
             <motion.div
               initial='closed'
               animate={isOpen ? 'open' : 'closed'}
               exit='closed'
               variants={galleryVariants}
               ref={node as React.MutableRefObject<HTMLDivElement>}
-              className='z-50 relative max-w-6xl w-full lg:w-4/5'
+              className='z-50 relative max-w-6xl w-11/12 md:w-fit m-auto'
             >
-              <MemoizedImage
-                src={images[slideNumber].src}
-                title={images[slideNumber].title}
-                withHoverEffect={!isOpen}
-                width={1080}
-                height={500}
-              />
+              <div
+                className={`h-full md:h-[35rem] xl:h-[40rem] max-h-[4/5] ${
+                  isOpen ? 'w-full' : 'w-full'
+                }`}
+              >
+                <MemoizedImage
+                  src={images[slideNumber].src}
+                  title={images[slideNumber].title}
+                  isOpen={isOpen}
+                  width={1080}
+                  height={300}
+                />
+              </div>
               <button
-                className='z-50 absolute -top-4 lg:-top-6 right-0 lg:-right-6 text-2xl md:text-3xl lg:text-4xl text-base-100'
+                className='z-50 absolute -top-4 lg:-top-6 right-0 lg:-right-6 text-2xl md:text-3xl lg:text-4xl text-base-100 shadow-xl'
                 title='Close Gallery'
                 onClick={handleCloseModal}
               >
                 <FaCircleXmark />
               </button>
               <button
-                className='z-50 absolute left-2 lg:-left-8  top-1/2 -translate-y-1/2 text-2xl md:text-3xl lg:text-4xl text-base-100'
+                className='z-50 absolute left-2 lg:-left-8  top-1/2 -translate-y-1/2 text-2xl md:text-3xl lg:text-4xl text-base-100 shadow-xl'
                 title='Previous Image'
                 onClick={prevSlide}
               >
                 <FaCircleLeft />
               </button>
               <button
-                className='z-50 absolute right-2 lg:-right-8 top-1/2 -translate-y-1/2 text-2xl md:text-3xl lg:text-4xl text-base-100'
+                className='z-50 absolute right-2 lg:-right-8 top-1/2 -translate-y-1/2 text-2xl md:text-3xl lg:text-4xl text-base-100 shadow-xl'
                 title='Next Image'
                 onClick={nextSlide}
               >
@@ -105,26 +113,26 @@ const ImageGallery: React.FC<ImageGalleryProps> = React.memo(({ images }) => {
 const MemoizedImage: React.FC<{
   src: string | StaticImageData;
   title: string;
-  withHoverEffect?: boolean;
+  isOpen?: boolean;
   width?: number;
   height?: number;
 }> = memo(
-  ({ src, title, withHoverEffect = true, width = 500, height = 300 }) => (
-    <div className='relative w-fit mx-auto'>
+  ({ src, title, isOpen = false, width = 500, height = 300 }) => (
+    <div className={`relative h-full w-full`}>
       <Image
         src={src}
         alt={title}
         title={title}
         width={width}
         height={height}
-        className={`max-w-full ${
-          withHoverEffect
-            ? 'hover:scale-110 transition-transform duration-300 '
-            : 'rounded-2xl'
+        className={` w-full h-full ${
+          isOpen
+            ? 'rounded-2xl object-contain'
+            : 'hover:scale-110 transition-transform duration-300 h-full object-cover'
         }`}
         loading='lazy'
       />
-      {withHoverEffect && (
+      {!isOpen && (
         <div className='absolute top-0 right-0'>
           <Image
             src={`/imgs/graphics/triangles-3.png`}

@@ -43,7 +43,7 @@ const page = () => {
           whileInView={slideRight.whileInView}
           className='w-full md:w-4/5 xl:w-2/5 mx-auto grid place-items-center'
         >
-          <ImageCard image={`/imgs/garage.jpg`} title='After Sale Garage' />
+          <ImageCard image={`/imgs/workshop.jpg`} title='After Sale Garage' />
         </AnimateInView>
         <AnimateInView
           initial={slideLeft.initial}

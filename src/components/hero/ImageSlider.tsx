@@ -28,8 +28,8 @@ const ImageSlider = ({ images }: { images: heroImage[] }) => {
                 alt={`Image (${index})`}
                 width={1920}
                 height={720}
-                loading={index < 2 ? 'eager' : 'lazy'}
-                priority={index < 2 && true}
+                loading={index < 3 ? 'eager' : 'lazy'}
+                priority={index < 3 && true}
                 className='h-full object-cover object-center'
               />
             </SplideSlide>

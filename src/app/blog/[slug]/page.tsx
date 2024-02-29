@@ -30,7 +30,9 @@ export async function generateMetadata({
       title: `${post.title} - Global Links Auto`,
       description: post.description,
       image: imgUrl,
-
+      alternates: {
+        canonical: url,
+      },
       icons: {
         icon: '/imgs/logo/favicon.ico',
         shortcut: '/imgs/logo/favicon.ico',

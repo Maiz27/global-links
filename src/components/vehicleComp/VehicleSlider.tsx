@@ -41,7 +41,7 @@ const VehicleSlider = ({ list }: props) => {
           ))}
         </SplideTrack>
 
-        <div className={`${list.length <= perPage && 'hidden'}`}>
+        <div className={`${list.length <= perPage ? 'hidden' : ''}`}>
           <div className='splide__arrows' />
         </div>
         <div className='hidden'>

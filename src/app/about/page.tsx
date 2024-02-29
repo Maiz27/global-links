@@ -18,6 +18,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = getMetadataByPageIndex(2);
 
+export const revalidate = 60;
+
 const page = async () => {
   const { gallery }: OtherGLAData = await fetchSanityData(getGalleryImages);
   const { about, mission, vision, leadership } = aboutGlobalLinks;

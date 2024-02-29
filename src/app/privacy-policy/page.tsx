@@ -4,6 +4,8 @@ import PageHeader from '@/components/pageHeader/PageHeader';
 import { fetchSanityData, getPrivacyPolicy } from '@/lib/sanity/queries';
 import { OtherGLAData } from '@/lib/types';
 
+export const revalidate = 14400;
+
 const page = async () => {
   const { privacy }: OtherGLAData = await fetchSanityData(getPrivacyPolicy);
 

@@ -70,7 +70,7 @@ const VehicleSpecs = ({ vehicle }: { vehicle: vehicle }) => {
           delay={6 * 0.2}
           className='w-full h-full card bg-primary text-base-100 shadow p-6 text-center gap-4 grid place-items-center'
         >
-          {engineOptions.options ? (
+          {engineOptions?.options ? (
             <>
               <h3>Engine Options</h3>
               <ul>

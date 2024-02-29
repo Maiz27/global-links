@@ -23,7 +23,7 @@ const RequestVehicleSpecModal = ({ vehicleName }: { vehicleName: string }) => {
       btnStyle='accent'
       classNames='text-neutral py-16'
     >
-      <SectionHeading Tag='h3' text='Request Vehicle Info' />
+      <SectionHeading Tag='h3' text='Request Information' />
       <RequestVehicleInfoForm vehicleName={vehicleName} closeBtn={closeBtn} />
     </BaseModal>
   );
